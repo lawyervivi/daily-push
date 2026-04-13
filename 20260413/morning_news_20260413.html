@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小太阳财经政法早报 - 2026年4月13日</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #1565c0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 600px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            color: white;
+            padding: 30px 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 10px;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header .date {
+            font-size: 14px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .content {
+            padding: 25px;
+            min-height: 400px;
+        }
+
+        .news-item {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .news-item.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .news-category {
+            display: inline-block;
+            padding: 5px 15px;
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(26, 35, 126, 0.3);
+        }
+
+        .news-category.finance {
+            background: linear-gradient(135deg, #1b5e20 0%, #43a047 100%);
+        }
+
+        .news-category.politics {
+            background: linear-gradient(135deg, #b71c1c 0%, #e53935 100%);
+        }
+
+        .news-category.law {
+            background: linear-gradient(135deg, #e65100 0%, #ff6f00 100%);
+        }
+
+        .news-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .news-summary {
+            font-size: 15px;
+            color: #424242;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .news-source {
+            font-size: 12px;
+            color: #757575;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            border-left: 3px solid #1a237e;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            background: #fafafa;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .page-info {
+            font-size: 14px;
+            color: #757575;
+            font-weight: 500;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: #1a237e;
+            border: 2px solid #1a237e;
+        }
+
+        .btn-secondary:hover {
+            background: #1a237e;
+            color: white;
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .footer {
+            background: #f5f5f5;
+            padding: 15px 25px;
+            text-align: center;
+            font-size: 12px;
+            color: #757575;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="header">
+            <div class="logo">☀️</div>
+            <h1>小太阳财经政法早报</h1>
+            <div class="date">2026年4月13日 星期一</div>
+        </div>
+
+        <div class="content" id="content">
+            <!-- 新闻内容将通过JS动态加载 -->
+        </div>
+
+        <div class="pagination">
+            <button class="btn btn-secondary" id="prevBtn" onclick="prevNews()">上一条</button>
+            <div class="page-info" id="pageInfo">1 / 15</div>
+            <button class="btn btn-primary" id="nextBtn" onclick="nextNews()">下一条</button>
+        </div>
+
+        <div class="footer">
+            数据来源：新华网、央视新闻、人民日报、证监会官网等权威媒体<br>
+            每日早08:30推送 | 小太阳财经政法早报
+        </div>
+    </div>
+
+    <script>
+        const newsData = [
+            {
+                category: "finance",
+                categoryText: "财经新闻",
+                title: "知名投资人警告：美联储降息无望，市场需适应新现实",
+                summary: "洛克菲勒国际主席Ruchir Sharma警告，即便美国经济陷入困境，也别指望美联储会急于出手相助。他表示，美联储在降息提振经济增长方面已束手无策，那种央行随时准备救市的时代已经过去，市场需要适应这一新的现实。美国3月CPI同比上涨3.3%，为2024年6月以来最高水平。",
+                source: "来源：新华网 | 发布时间：2026-04-12"
+            },
+            {
+                category: "finance",
+                categoryText: "财经新闻",
+                title: "南京公用2025年报：地产托底营收，扣非净利跌超17%",
+                summary: "南京公用(000421)披露2025年年度业绩：全年营业收入69.81亿元，同比增幅6.27%；归母净利润4808.03万元，同比微涨4.70%；但扣非归母净利润仅3994.89万元，同比大幅下滑17.20%。营收增长完全由房地产开发业务托举，燃气销售、客运、汽车服务等传统业务全线遇冷。",
+                source: "来源：金融界 | 发布时间：2026-04-12"
+            },
+            {
+                category: "finance",
+                categoryText: "财经新闻",
+                title: "集泰股份2025年报：营收净利双降，业绩由盈转亏",
+                summary: "集泰股份2025年报出炉，核心经营数据全线承压：全年实现营业总收入10.86亿元，同比下滑15.5%；归母净利润亏损2772.93万元，结束此前盈利状态；扣非净利润亏损3995.37万元。公司十大流通股东名单出现大换血，截至2026年4月3日累计26.05%股份质押。",
+                source: "来源：金融界 | 发布时间：2026-04-11"
+            },
+            {
+                category: "finance",
+                categoryText: "财经新闻",
+                title: "韩国推出\"高油价补贴\"，超3200万人将获现金援助",
+                summary: "韩国政府4月11日正式宣布实施\"高油价补贴\"计划，预计将为约3256万人提供直接援助，以缓解能源价格上涨带来的生活压力。被纳入\"基础生活保障制度\"的群体每人可领取55万韩元，次上位阶层及单亲家庭可领取45万韩元。所有补贴必须在8月31日前使用完毕。",
+                source: "来源：韩联社 | 发布时间：2026-04-11"
+            },
+            {
+                category: "finance",
+                categoryText: "财经新闻",
+                title: "崔东树建议：购车支出纳入个税专项抵扣",
+                summary: "中国汽车流通协会乘用车市场信息联席分会秘书长崔东树在北京举行的智能电动汽车发展高层论坛上建议，将购车支出纳入个税专项抵扣。他指出，如果将购车支出纳入个税专项扣除，对于收入较高的群体，可能抵扣约30%的个人所得税。同时，他对汽车消费信贷利息税前扣除提出了看法。",
+                source: "来源：新华网 | 发布时间：2026-04-12"
+            },
+            {
+                category: "finance",
+                categoryText: "财经新闻",
+                title: "中国期货市场3月统计数据：规模达100万亿元",
+                summary: "中国期货业协会公布的数据显示，我国期货市场3月份统计数据规模达100万亿元，继续保持稳健增长态势。期货市场作为资本市场的重要组成部分，在服务实体经济、防范金融风险方面发挥着重要作用。今年以来，期货市场交易活跃度稳步提升，新品种上市有序推进。",
+                source: "来源：期货日报 | 发布时间：2026-04-11"
+            },
+            {
+                category: "finance",
+                categoryText: "财经新闻",
+                title: "中国证监会印发2026年度立法工作计划",
+                summary: "中国证监会近日制定2026年度立法工作计划，对全年立法工作做了总体部署。纳入计划的规章项目共有20件，包括\"力争年内出台的重点项目\"8件以及\"需要抓紧研究、择机出台的项目\"12件。立法重心是进一步健全资本市场法律制度体系，加强资本市场重点领域监管，维护市场平稳健康发展。",
+                source: "来源：央广网 | 发布时间：2026-04-10"
+            },
+            {
+                category: "politics",
+                categoryText: "政闻要闻",
+                title: "中央台办受权发布十项促进两岸交流合作的政策措施",
+                summary: "中共中央台办4月12日受权发布十项促进两岸交流合作的政策措施，包括探索建立国共两党常态化沟通机制、建立国共两党青年双向交流机制化平台、推动福建沿海地区同金门马祖通水通电通气通桥、推动全面恢复两岸空中客运直航正常化、推动恢复上海市及福建省居民赴台(本岛)个人游试点等。",
+                source: "来源：新华社 | 发布时间：2026-04-12"
+            },
+            {
+                category: "politics",
+                categoryText: "政闻要闻",
+                title: "第六届消博会4月13日在海南海口启幕，超3400个品牌参展",
+                summary: "13日至18日，第六届中国国际消费品博览会在海南海口举办。本届消博会共设8大展馆，聚焦绿色、健康、数字智能等新型消费，预计有超过200件新品发布，新品数量比去年翻了一番。超3400个品牌参展，展示全球最新消费趋势和产品创新。",
+                source: "来源：央视新闻 | 发布时间：2026-04-13"
+            },
+            {
+                category: "politics",
+                categoryText: "政闻要闻",
+                title: "西藏自治区人大常委会原副主任丁业现被查",
+                summary: "西藏自治区人大常委会原党组副书记、副主任丁业现涉嫌严重违纪违法，目前正接受中央纪委国家监委纪律审查和监察调查。这是中央持续深入推进反腐败斗争的又一重要举措，彰显了党中央有腐必反、有贪必肃的坚定决心。",
+                source: "来源：中央纪委国家监委 | 发布时间：2026-04-12"
+            },
+            {
+                category: "politics",
+                categoryText: "政闻要闻",
+                title: "特朗普宣布美军将封锁霍尔木兹海峡，伊朗回应称海峡在其掌控之中",
+                summary: "美国总统特朗普4月12日发文称，即刻起，美国海军将开始对所有试图进入或离开霍尔木兹海峡的船只实施封锁。伊朗伊斯兰革命卫队海军同日发布无人机监控画面，强调目前霍尔木兹海峡内所有的船只活动都在其武装部队的严密监控与完全掌控之下。局势引发国际社会高度关注。",
+                source: "来源：央视新闻 | 发布时间：2026-04-12"
+            },
+            {
+                category: "law",
+                categoryText: "法制新闻",
+                title: "\"机闹\"正式入刑！6类行为最高可判10年",
+                summary: "4月9日起，\"两高\"联合发布的《关于办理危害民航飞行安全刑事案件适用法律若干问题的解释》正式施行。飞机上撒泼、打架、擅自开舱门、谎称有炸弹等\"机闹\"行为，不再只是罚款拘留，而是直接触犯刑法、判刑坐牢。6类行为直接入刑，最高可判10年有期徒刑。",
+                source: "来源：最高法 | 发布时间：2026-04-09"
+            },
+            {
+                category: "law",
+                categoryText: "法制新闻",
+                title: "\"两高\"发布贪污贿赂司法解释(二)，加大对新型隐性腐败惩治力度",
+                summary: "最高人民法院、最高人民检察院4月10日联合发布《关于办理贪污贿赂刑事案件适用法律若干问题的解释(二)》，自2026年5月1日起施行。《解释(二)》细化完善法律适用标准，实现贪污贿赂定罪量刑标准全覆盖，依法加大对新型隐性腐败的惩治力度，健全特定财物真伪鉴定和价格认定规则。",
+                source: "来源：最高法 | 发布时间：2026-04-10"
+            },
+            {
+                category: "law",
+                categoryText: "法制新闻",
+                title: "公安部\"4·2行动\"雷霆出击！非法网贷、暴力催收全面清零",
+                summary: "4月2日，公安部经侦局联合国家金融监督管理总局，正式启动代号\"4·2行动\"的全国金融黑灰产集群打击工作。截至4月10日，全国已打掉非法团伙276个，抓获4120人，关停违规平台1130家，涉案超360亿元。无牌非法网贷全面关停，暴力催收直接入刑。",
+                source: "来源：公安部 | 发布时间：2026-04-11"
+            },
+            {
+                category: "law",
+                categoryText: "法制新闻",
+                title: "证监会短线交易监管新规4月7日起施行",
+                summary: "证监会制定发布的《关于短线交易监管的若干规定》自2026年4月7日起施行。《规定》共12条，进一步明确了大股东、董监高短线交易有关监管安排，规定\"其他具有股权性质的证券\"包括存托凭证、可交债、可转债等。同时明确13种豁免适用情形，支持市场发展和监管需要。",
+                source: "来源：证监会 | 发布时间：2026-04-07"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function renderNews() {
+            const news = newsData[currentIndex];
+            const content = document.getElementById('content');
+            const pageInfo = document.getElementById('pageInfo');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            content.innerHTML = `
+                <div class="news-item active">
+                    <span class="news-category ${news.category}">${news.categoryText}</span>
+                    <h2 class="news-title">${news.title}</h2>
+                    <p class="news-summary">${news.summary}</p>
+                    <div class="news-source">${news.source}</div>
+                </div>
+            `;
+
+            pageInfo.textContent = `${currentIndex + 1} / ${newsData.length}`;
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === newsData.length - 1;
+        }
+
+        function prevNews() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderNews();
+            }
+        }
+
+        function nextNews() {
+            if (currentIndex < newsData.length - 1) {
+                currentIndex++;
+                renderNews();
+            }
+        }
+
+        // 键盘导航
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') prevNews();
+            if (e.key === 'ArrowRight') nextNews();
+        });
+
+        // 初始化
+        renderNews();
+    </script>
+</body>
+</html>
