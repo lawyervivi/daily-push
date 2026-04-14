@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小太阳财经政法早报 | 2026年4月14日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%);
+  min-height: 100vh;
+  color: #fff;
+}
+.header {
+  background: linear-gradient(90deg, #1e3a5f, #2d5a87);
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.header h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.header .subtitle { color: #a0c4e8; font-size: 14px; }
+.header .date { color: #7fb3e0; font-size: 13px; margin-top: 5px; }
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px;
+  background: rgba(0,0,0,0.2);
+  flex-wrap: wrap;
+}
+.nav button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.3s;
+}
+.nav button.cai { background: #e67e22; color: #fff; }
+.nav button.zheng { background: #3498db; color: #fff; }
+.nav button.fa { background: #27ae60; color: #fff; }
+.nav button.active { transform: scale(1.1); box-shadow: 0 0 15px rgba(255,255,255,0.3); }
+
+.cards-container { padding: 20px; max-width: 800px; margin: 0 auto; }
+.card {
+  display: none;
+  background: linear-gradient(145deg, #ffffff 0%, #f0f4f8 100%);
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  color: #2c3e50;
+}
+.card.show { display: block; animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.card-category {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.card-category.cai { background: #fdebd0; color: #d35400; }
+.card-category.zheng { background: #d6eaf8; color: #2471a3; }
+.card-category.fa { background: #d5f5e3; color: #1e8449; }
+
+.card h2 { font-size: 18px; margin-bottom: 12px; line-height: 1.5; color: #1a252f; }
+.card-content { font-size: 14px; line-height: 1.8; color: #34495e; }
+.card-content p { margin-bottom: 10px; }
+
+.card-footer {
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.source { font-size: 12px; color: #7f8c8d; }
+.link-btn {
+  background: #3498db;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(10,22,40,0.95), transparent);
+}
+.pagination button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  background: #3498db;
+  color: #fff;
+}
+.pagination button:disabled { background: #95a5a6; cursor: not-allowed; }
+.pagination .page-info { color: #a0c4e8; font-size: 14px; }
+
+.footer-tip { text-align: center; padding: 15px; color: #7f9db8; font-size: 12px; margin-bottom: 80px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>☀️ 小太阳财经政法早报</h1>
+  <div class="subtitle">财经 · 政闻 · 法制 综合资讯</div>
+  <div class="date">📅 2026年4月14日 星期二</div>
+</div>
+
+<div class="nav">
+  <button class="cai active" onclick="filterNews('cai')">📈 财经</button>
+  <button class="zheng" onclick="filterNews('zheng')">🌐 政闻</button>
+  <button class="fa" onclick="filterNews('fa')">⚖️ 法制</button>
+  <button class="active" onclick="filterNews('all')">📋 全部</button>
+</div>
+
+<div class="cards-container" id="cards"></div>
+<div class="footer-tip">👆 左右滑动或点击按钮切换分类 | 点击阅读原文链接获取详情</div>
+
+<div class="pagination">
+  <button onclick="prevCard()" id="prevBtn">◀ 上一条</button>
+  <span class="page-info" id="pageInfo">1 / 14</span>
+  <button onclick="nextCard()" id="nextBtn">下一条 ▶</button>
+</div>
+
+<script>
+const newsData = [
+  // 财经
+  {cat:'cai', title:'🎯 美伊谈判破裂，美股低开后反弹收涨', content:'美伊周末谈判未达成协议，特朗普宣布封锁霍尔木兹海峡，但投资者押注双方将达成和平协议，美股低开后反弹。道指涨0.63%，纳指涨1.23%，标普500指数涨1.02%。甲骨文因发布AI新品涨超12%。', source:'华尔街见闻', link:'http://news.qq.com/rain/a/20260414A01H2S00'},
+  {cat:'cai', title:'⛽ 原油价格剧烈波动，WTI逼近100美元', content:'因美国海军封锁伊朗港口，原油价格飙升，WTI原油盘中涨超9%重新站上100美元/桶。但美伊和谈预期限制涨幅，原油回吐过半涨幅。伦敦铝价跃升至四年新高，现货溢价飙升43%。', source:'新浪财经', link:'http://finance.sina.cn/headline/2026-04-14/detail-inhummye4978456.d.html'},
+  {cat:'cai', title:'🥇 黄金两连跌，期金一度跌超3%', content:'现货黄金跌0.21%报4739.75美元/盎司，COMEX黄金期货跌0.48%报4764.6美元/盎司，期金一度跌超3%后收窄跌幅。市场避险情绪有所降温，但地缘风险仍存。', source:'华尔街见闻', link:'http://news.qq.com/rain/a/20260414A01H2S00'},
+  {cat:'cai', title:'📊 一季度A股近九成公司业绩预喜', content:'4月中旬A股进入业绩验证期，87家披露预告的公司中71家预喜，占比近九成。业绩爆发集中在AI产业链、有色金属和储能锂电等领域。AI算力推动存储芯片企业业绩上升，如香农芯创、德明利等。', source:'芝麻AI', link:'https://cj.sina.cn/article/norm_detail'},
+  {cat:'cai', title:'💰 央行发布3月金融数据：M2同比增长8.5%', content:'央行数据显示，3月末广义货币(M2)余额353.86万亿元，同比增长8.5%；狭义货币(M1)余额119.32万亿元，同比增长5.1%。一季度社会融资规模增量累计14.83万亿元，一季度人民币贷款增加8.6万亿元。', source:'东方财富', link:'https://finance.eastmoney.com/a/202604133703339386.html'},
+  {cat:'cai', title:'🌐 港交所：全球资本回流中国资产', content:'港交所证券产品主管Brian Roberts表示，全球宏观格局变化使国际资本再配置，中国内地及香港市场将是资本回流主受益地。AI和半导体企业是增长动力，主权基金减持美债转投新兴市场趋势明显。', source:'芝麻AI', link:'https://cj.sina.cn/article/norm_detail'},
+  {cat:'cai', title:'🔋 CPO技术成AI算力核心', content:'共封装光学(CPO)是颠覆传统算力互联架构的集成技术，在AI算力集群场景有显著优势，能降低功耗、提升带宽和传输效率。美股光通信龙头称全球超大规模云厂商资本开支高，未来3-5年CPO有望规模化渗透。', source:'芝麻AI', link:'https://cj.sina.cn/article/norm_detail'},
+  {cat:'cai', title:'🌱 多晶硅期货涨停，通威股份一度涨停', content:'一则光伏龙头齐聚成都商议多晶硅控产挺价的会议纪要在网络流传，受此影响多晶硅主力合约涨停，通威股份一度涨停。但业内人士回应称该消息为假消息，市场报价暂无变化。', source:'东方财富', link:'https://finance.eastmoney.com/a/202604133703339386.html'},
+  // 政闻
+  {cat:'zheng', title:'🗺️ 俄罗斯外长拉夫罗夫访华', content:'应外交部长王毅邀请，俄罗斯外长拉夫罗夫将于4月14日至15日对中国进行正式访问。访华期间，两国外长将就双边关系发展、各领域合作以及共同关心的国际地区问题交换意见，协调立场。', source:'新华社', link:'http://m.toutiao.com/group/7628182445287916082/'},
+  {cat:'zheng', title:'🇺🇸 美伊谈判僵局与封锁对峙', content:'美国与伊朗谈判因伊朗授权不足陷入僵局，美国副总统万斯透露伊朗在谈判中向美方立场靠拢但幅度不够。特朗普警告若伊朗两周内不达成协议后果不容乐观，但表示目前不会开战。双方接触仍在继续，或于16日在伊斯兰堡举行第二轮会谈。', source:'华尔街见闻', link:'http://news.qq.com/rain/a/20260414A01H2S00'},
+  {cat:'zheng', title:'🇱🇧 黎以华盛顿会谈在即', content:'黎巴嫩与以色列将于4月14日在美国国务院举行首次直接会晤，但以色列拒绝与黎巴嫩真主党讨论停火，坚持先解除武装。4月8日以军空袭造成至少357人死亡、1223人受伤。国际社会多国强烈谴责呼吁停火。', source:'今日头条', link:'http://m.toutiao.com/group/7628048546234745350/'},
+  {cat:'zheng', title:'🌟 段永平确认买入泡泡玛特', content:'知名投资人段永平在社交媒体确认买入泡泡玛特，并表示"很久没有这种兴奋感了"。泡泡玛特近期股价表现强劲，受到年轻消费者和投资者的高度关注。', source:'华尔街见闻', link:'http://news.qq.com/rain/a/20260414A01H2S00'},
+  // 法制
+  {cat:'fa', title:'📋 证监会发布2026年度立法工作计划', content:'证监会发布2026年度立法工作计划，涵盖20件规章项目，包括修订《上市公司证券发行注册管理办法》、制定《私募投资基金募集监督管理办法》、制定《中国证监会行政处罚案件违法所得认定办法》等。', source:'央广网', link:'http://m.toutiao.com/group/7627113867084038710/'},
+  {cat:'fa', title:'🌿 生态环境法典将于8月15日起施行', content:'今年3月颁布的生态环境法典，是我国继民法典之后第二部以"法典"命名的法律。法典建构了"党委领导、政府主导、部门协同、企业主责、公众参与、多方监督、司法保障"的多元共治新体制机制。', source:'新华网', link:'http://m.toutiao.com/group/7627452356455645723/'},
+  {cat:'fa', title:'⚔️ 两高发布司法解释惩治新型隐性腐败', content:'最高人民法院、最高人民检察院联合发布《关于办理贪污贿赂刑事案件适用法律若干问题的解释(二)》，加大对新型隐性腐败的惩治力度，自2026年5月1日起施行。', source:'法治瞭望', link:'https://www.fzbdw.org.cn/news/'},
+  {cat:'fa', title:'✈️ 两高发文惩治"机闹"维护民航安全', content:'最高法、最高检联合发布关于办理危害民航飞行安全刑事案件适用法律若干问题的解释，填补了危害民航飞行安全刑事案件法律适用的细化空白，明确了罪与非罪的边界，自2026年4月9日起施行。', source:'法治瞭望', link:'https://www.fzbdw.org.cn/news/'},
+  {cat:'fa', title:'💸 高利贷入刑！2026新规重拳出击', content:'2026年国家金融监管总局等多部门联合发力，非法高利放贷正式入刑。无资质放贷、以营利为目的高频向陌生人放款、利率超36%均将面临刑事追责。新规还严禁暴力催收，22:00-8:00严禁催收，违者直接处罚。', source:'今日头条', link:'http://m.toutiao.com/group/7628100380789883426/'}
+];
+
+let currentIndex = 0;
+let filteredNews = [...newsData];
+
+function renderCards() {
+  const container = document.getElementById('cards');
+  container.innerHTML = '';
+  filteredNews.forEach((news, i) => {
+    const card = document.createElement('div');
+    card.className = `card ${i === currentIndex ? 'show' : ''}`;
+    card.innerHTML = `
+      <span class="card-category ${news.cat}">${news.cat === 'cai' ? '📈 财经' : news.cat === 'zheng' ? '🌐 政闻' : '⚖️ 法制'}</span>
+      <h2>${news.title}</h2>
+      <div class="card-content"><p>${news.content}</p></div>
+      <div class="card-footer">
+        <span class="source">📰 来源：${news.source}</span>
+        <a href="${news.link}" target="_blank" class="link-btn">阅读原文 →</a>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+  updatePagination();
+}
+
+function updatePagination() {
+  document.getElementById('pageInfo').textContent = `${currentIndex + 1} / ${filteredNews.length}`;
+  document.getElementById('prevBtn').disabled = currentIndex === 0;
+  document.getElementById('nextBtn').disabled = currentIndex === filteredNews.length - 1;
+  document.querySelectorAll('.card').forEach((c, i) => c.classList.toggle('show', i === currentIndex));
+}
+
+function nextCard() {
+  if (currentIndex < filteredNews.length - 1) { currentIndex++; renderCards(); }
+}
+function prevCard() {
+  if (currentIndex > 0) { currentIndex--; renderCards(); }
+}
+
+function filterNews(type) {
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  filteredNews = type === 'all' ? [...newsData] : newsData.filter(n => n.cat === type);
+  currentIndex = 0;
+  renderCards();
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextCard();
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') prevCard();
+});
+
+renderCards();
+</script>
+</body>
+</html>
