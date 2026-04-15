@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广州法律服务需求资讯 - 2026年4月15日</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            color: white;
+            padding: 30px;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .header .date {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .content {
+            background: white;
+            padding: 25px;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #1a73e8;
+        }
+        .item.hot {
+            border-left-color: #ea4335;
+            background: #fff8f8;
+        }
+        .item-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a73e8;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .item.hot .item-title {
+            color: #ea4335;
+        }
+        .badge {
+            background: #ea4335;
+            color: white;
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+        .info-label {
+            color: #666;
+            margin-right: 5px;
+        }
+        .info-value {
+            color: #333;
+            font-weight: 500;
+        }
+        .description {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .link {
+            font-size: 13px;
+            color: #1a73e8;
+            word-break: break-all;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 12px;
+        }
+        .summary {
+            background: #e8f0fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .summary h3 {
+            color: #1a73e8;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .summary p {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚖️ 广州法律服务需求资讯</h1>
+            <p class="date">2026年4月15日 星期三</p>
+        </div>
+        <div class="content">
+            <div class="summary">
+                <h3>📊 本期概览</h3>
+                <p>本期共收录 <strong>5条</strong> 广州市法律服务需求信息，其中 <strong>🔥 紧急项目1条</strong>（今日截止）。重点关注：广州日报报业集团常年法律顾问项目今日16:00截止投标。</p>
+            </div>
+            
+            <div class="item hot">
+                <div class="item-title">
+                    🔥 紧急项目
+                    <span class="badge">今日截止</span>
+                </div>
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">💰 采购方式：</span>
+                        <span class="info-value">询价</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">⏰ 截止时间：</span>
+                        <span class="info-value">2026年4月15日 16:00</span>
+                    </div>
+                </div>
+                <div class="description">
+                    <strong>广州日报报业集团（广州日报社）2026年度常年法律顾问服务项目</strong><br>
+                    <br>
+                    <strong>重点内容：</strong><br>
+                    • 要求在广州设有常驻服务机构，专职执业律师人数应达100人以上<br>
+                    • 服务团队至少3名执业律师，主办负责律师须高级合伙人、10年以上执业经验<br>
+                    • 需具有中国证监会证券法律业务备案资质<br>
+                    • 响应文件递交地址：广州市海珠区阅江西路366号广州报业文化中心裙楼一楼大堂
+                </div>
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">📎 原链接：</span>
+                    </div>
+                </div>
+                <div class="link">https://m.bidcenter.com.cn/news-1-413194712.html</div>
+            </div>
+
+            <div class="item">
+                <div class="item-title">📋 2026-2029年度常年法律顾问招募公告</div>
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">💰 预算：</span>
+                        <span class="info-value">75万元（3年）</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">📅 截止：</span>
+                        <span class="info-value">2026年4月17日</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">🏢 采购方式：</span>
+                        <span class="info-value">竞价</span>
+                    </div>
+                </div>
+                <div class="description">
+                    <strong>重点内容：</strong><br>
+                    • 服务年限3年，总预算75万<br>
+                    • 要求具有服务央企、省企、市属国企工作经验<br>
+                    • 擅长公司治理、股东纠纷、并购重组、房地产租赁、资产处置等领域<br>
+                    • 服务团队需1名10年以上+2名5年以上执业经验律师
+                </div>
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">📎 原链接：</span>
+                    </div>
+                </div>
+                <div class="link">https://m.bidcenter.com.cn/news-1-413865257.html</div>
+            </div>
+
+            <div class="item">
+                <div class="item-title">📋 广州琶醍投资管理有限公司2026-2027年常年法律顾问</div>
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">💰 控制价：</span>
+                        <span class="info-value">98,000元（常年顾问部分）</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">📅 报名截止：</span>
+                        <span class="info-value">2026年4月17日 18:00</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">🏢 采购方式：</span>
+                        <span class="info-value">询比</span>
+                    </div>
+                </div>
+                <div class="description">
+                    <strong>重点内容：</strong><br>
+                    • 服务期2年，含常年法律顾问及另行委托专项服务<br>
+                    • 具有律师事务所执业许可证，年检合格<br>
+                    • 未被列入失信名单及珠江啤酒不良行为供应商名单<br>
+                    • 详情查看"律标通"微信公众号或官网
+                </div>
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">📎 原链接：</span>
+                    </div>
+                </div>
+                <div class="link">http://m.toutiao.com/group/7627333393377739279/</div>
+            </div>
+
+            <div class="item">
+                <div class="item-title">📋 广州市荔湾区白鹅潭管理委员会法律服务</div>
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">💰 预算：</span>
+                        <span class="info-value">100,000元/年</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">🏢 采购方式：</span>
+                        <span class="info-value">定点议价</span>
+                    </div>
+                </div>
+                <div class="description">
+                    <strong>重点内容：</strong><br>
+                    • 基本服务：重大决策法律意见、规范性文件审查、民法合同审核、信息公开及信访处理<br>
+                    • 需协助负责人出庭应诉工作<br>
+                    • 专项服务：代理行政复议/诉讼、旧城改造征收补偿项目专项法律服务
+                </div>
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">📎 原链接：</span>
+                    </div>
+                </div>
+                <div class="link">http://www.yfbzb.com/inviteBid/detail/20260410_588443151.html</div>
+            </div>
+
+            <div class="item">
+                <div class="item-title">📋 广州市荔湾区人民政府多宝街道办事处2026年度法务综合服务</div>
+                <div class="info-row">
+                    <div class="info-item">
+                        <span class="info-label">💰 预算：</span>
+                        <span class="info-value">49,800元</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">🏢 采购方式：</span>
+                        <span class="info-value">定点采购</span>
+                    </div>
+                </div>
+                <div class="description">
+                    <strong>重点内容：</strong><br>
+                    • 采购计划编号：440103-2026-01307<br>
+                    • 为街道办事处提供日常法务综合服务
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>🦞 龙虾小霸王整理 | 数据来源：采招网、中国政府采购网等公开渠道</p>
+            <p>生成时间：2026年4月15日 09:00</p>
+        </div>
+    </div>
+</body>
+</html>
