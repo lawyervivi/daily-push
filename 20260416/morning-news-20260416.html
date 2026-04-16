@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小太阳财经政法早报 | 2026年4月16日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+            background: #0a1628;
+            color: #e8f4fc;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #1a365d 100%);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 3px solid #4a9eff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .header .date {
+            color: #90cdf4;
+            font-size: 16px;
+        }
+        .slides-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .slide {
+            display: none;
+            background: linear-gradient(145deg, #132744 0%, #1a3a5c 100%);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            border: 1px solid rgba(74, 158, 255, 0.2);
+            animation: fadeIn 0.4s ease;
+        }
+        .slide.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .slide-category {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .category-caijing { background: linear-gradient(135deg, #276749, #38a169); }
+        .category-zhengwen { background: linear-gradient(135deg, #7b341e, #dd6b20); }
+        .category-fazhi { background: linear-gradient(135deg, #553c9a, #805ad5); }
+        .slide-title {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            border-left: 4px solid #4a9eff;
+            padding-left: 15px;
+        }
+        .slide-content {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #cbd5e0;
+        }
+        .slide-content p { margin-bottom: 10px; }
+        .slide-content strong { color: #90cdf4; }
+        .navigation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 22, 40, 0.95);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            border-top: 1px solid rgba(74, 158, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        .nav-btn {
+            background: linear-gradient(135deg, #2c5282, #3182ce);
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover { background: linear-gradient(135deg, #3182ce, #4299e1); transform: scale(1.05); }
+        .nav-btn:disabled { background: #4a5568; cursor: not-allowed; transform: none; }
+        .page-indicator { color: #90cdf4; font-size: 14px; }
+        .slide-link {
+            display: block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: rgba(74, 158, 255, 0.1);
+            border-radius: 8px;
+            color: #63b3ed;
+            font-size: 13px;
+            text-decoration: none;
+            border: 1px solid rgba(74, 158, 255, 0.2);
+        }
+        .slide-link:hover { background: rgba(74, 158, 255, 0.2); }
+        .content-padding { padding-bottom: 80px; }
+        .summary-box {
+            background: rgba(74, 158, 255, 0.1);
+            border: 1px solid rgba(74, 158, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+        .summary-box h4 { color: #90cdf4; margin-bottom: 10px; }
+        .summary-box ul { padding-left: 20px; }
+        .summary-box li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📰 小太阳财经政法早报</h1>
+        <div class="date">2026年4月16日 星期四 | 每日8:30更新</div>
+    </div>
+    
+    <div class="slides-container content-padding">
+        <!-- 封面 -->
+        <div class="slide active">
+            <div style="text-align: center; padding: 40px 20px;">
+                <h2 style="font-size: 26px; color: #fff; margin-bottom: 20px;">🌅 今日要闻速览</h2>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 30px 0;">
+                    <div style="background: rgba(39, 103, 73, 0.3); padding: 20px; border-radius: 12px; border: 1px solid rgba(56, 161, 105, 0.3);">
+                        <div style="font-size: 28px; margin-bottom: 8px;">💹</div>
+                        <div style="color: #68d391; font-weight: bold;">财经</div>
+                        <div style="font-size: 12px; color: #cbd5e0; margin-top: 5px;">A股震荡守4027点<br>一季度GDP今日发布</div>
+                    </div>
+                    <div style="background: rgba(123, 52, 30, 0.3); padding: 20px; border-radius: 12px; border: 1px solid rgba(221, 107, 32, 0.3);">
+                        <div style="font-size: 28px; margin-bottom: 8px;">🏛️</div>
+                        <div style="color: #f6ad55; font-weight: bold;">政闻</div>
+                        <div style="font-size: 12px; color: #cbd5e0; margin-top: 5px;">美伊谈判重启<br>中央巡视进驻</div>
+                    </div>
+                    <div style="background: rgba(85, 60, 154, 0.3); padding: 20px; border-radius: 12px; border: 1px solid rgba(128, 90, 213, 0.3);">
+                        <div style="font-size: 28px; margin-bottom: 8px;">⚖️</div>
+                        <div style="color: #b794f4; font-weight: bold;">法制</div>
+                        <div style="font-size: 12px; color: #cbd5e0; margin-top: 5px;">恒大案一审开庭<br>两高反腐新解释</div>
+                    </div>
+                </div>
+                <p style="color: #90cdf4; font-size: 14px;">← 左右滑动查看详细内容 →</p>
+            </div>
+        </div>
+
+        <!-- 财经1 -->
+        <div class="slide">
+            <span class="slide-category category-caijing">💹 财经</span>
+            <h3 class="slide-title">一季度GDP等重磅数据今日发布</h3>
+            <div class="slide-content">
+                <p><strong>国家统计局今日10:00发布一季度国民经济运行数据</strong>，包括GDP、工业增加值、社零总额、固定资产投资等核心指标。</p>
+                <div class="summary-box">
+                    <h4>📊 市场预期</h4>
+                    <ul>
+                        <li><strong>一季度GDP：</strong>主流机构预测均值4.8%，区间4.7%-5.0%</li>
+                        <li><strong>工业增加值：</strong>预期同比5.3%-5.5%</li>
+                        <li><strong>社零总额：</strong>预期同比7.0%-8.0%</li>
+                        <li><strong>固定资产投资：</strong>预期同比4.2%-4.5%</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 15px;"><strong>外贸开门红：</strong>一季度进出口总值11.84万亿元，同比增长15%，增速创近5年新高。</p>
+            </div>
+            <a class="slide-link" href="http://www.stats.gov.cn/" target="_blank">📌 数据来源：国家统计局</a>
+        </div>
+
+        <!-- 财经2 -->
+        <div class="slide">
+            <span class="slide-category category-caijing">💹 财经</span>
+            <h3 class="slide-title">A股震荡整固 沪指守住4027点</h3>
+            <div class="slide-content">
+                <p><strong>昨日A股表现：</strong>沪指微涨0.01%收4027点，创业板指跌1.22%，两市成交2.42万亿。</p>
+                <div class="summary-box">
+                    <h4>🔍 盘面特征</h4>
+                    <ul>
+                        <li>沪指冲高4050点后回落，创业板创10年新高后跳水</li>
+                        <li>主力资金净流出665亿，高位科技股兑现明显</li>
+                        <li>北向资金净流入42.7亿，连续7日净买入</li>
+                        <li>医药板块逆势走强，电网设备获资金青睐</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 15px;"><strong>今日预判：</strong>4000-4040点区间震荡整固，高低切换格局延续，关注一季度数据对市场的影响。</p>
+            </div>
+        </div>
+
+        <!-- 财经3 -->
+        <div class="slide">
+            <span class="slide-category category-caijing">💹 财经</span>
+            <h3 class="slide-title">央行5000亿逆回购 医药行业重磅利好</h3>
+            <div class="slide-content">
+                <p><strong>流动性支持：</strong>央行开展5000亿元6个月期买断式逆回购，中标利率2.5%，规模超预期。</p>
+                <div class="summary-box">
+                    <h4>💊 医药政策利好</h4>
+                    <p>国办发布《关于健全药品价格形成机制的若干意见》:</p>
+                    <ul>
+                        <li>创新药定价权回归企业，取消上市初期价格限制</li>
+                        <li>仿制药禁止恶性价格战</li>
+                        <li>医保支付向创新药倾斜</li>
+                        <li>这是时隔11年的药品价格纲领性文件</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 15px;"><strong>险资入市：</strong>六部门发文将险资权益配置上限从30%提至35%，预计带来超5000亿增量资金。</p>
+            </div>
+        </div>
+
+        <!-- 财经4 -->
+        <div class="slide">
+            <span class="slide-category category-caijing">💹 财经</span>
+            <h3 class="slide-title">美股纳指11连涨 英伟达引爆量子计算</h3>
+            <div class="slide-content">
+                <p><strong>美股表现：</strong>纳指收涨1.59%创历史新高，实现11连涨；标普500涨0.8%创新高，道指微跌0.15%。</p>
+                <div class="summary-box">
+                    <h4>🚀 英伟达重磅发布</h4>
+                    <p>全球首个开源量子AI模型"Ising"发布:</p>
+                    <ul>
+                        <li>用于加速量子处理器开发</li>
+                        <li>量子校准耗时从数天缩短到数小时</li>
+                        <li>纠错速度提升2.5倍，准确率提升3倍</li>
+                        <li>量子计算概念股IonQ大涨超20%</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 15px;"><strong>黄金原油：</strong>金价4798美元附近震荡；美油91美元/桶，霍尔木兹海峡局势影响持续。</p>
+            </div>
+        </div>
+
+        <!-- 政闻1 -->
+        <div class="slide">
+            <span class="slide-category category-zhengwen">🏛️ 政闻</span>
+            <h3 class="slide-title">美伊今日在伊斯兰堡重启谈判</h3>
+            <div class="slide-content">
+                <p><strong>最新进展：</strong>美伊双方今日在巴基斯坦伊斯兰堡重启第二轮直接谈判，美方由副总统万斯率团参会。</p>
+                <div class="summary-box">
+                    <h4>📋 谈判背景</h4>
+                    <ul>
+                        <li>双方临时停火将持续至4月22日</li>
+                        <li>美方要求伊朗停止高浓缩铀活动、销毁弹道导弹</li>
+                        <li>伊朗尚未正式同意延长停火协议</li>
+                        <li>美财政部宣布新一轮涉伊制裁</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 15px;"><strong>市场影响：</strong>中东局势不确定性持续压制全球风险偏好，国际油价宽幅震荡。</p>
+            </div>
+            <a class="slide-link" href="https://www.fmprc.gov.cn/" target="_blank">📌 外交部官网</a>
+        </div>
+
+        <!-- 政闻2 -->
+        <div class="slide">
+            <span class="slide-category category-zhengwen">🏛️ 政闻</span>
+            <h3 class="slide-title">二十届中央第七轮巡视开始进驻</h3>
+            <div class="slide-content">
+                <p><strong>巡视部署：</strong>根据党中央统一部署，15个巡视组近期陆续进驻被巡视单位，开展为期2个半月的常规巡视。</p>
+                <div class="summary-box">
+                    <h4>📌 重点关注</h4>
+                    <ul>
+                        <li>目前中央巡视组已进驻31家单位</li>
+                        <li>重点检查履行全面从严治党责任</li>
+                        <li>巡视工作坚持问题导向</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 15px;"><strong>投资审批改革：</strong>国务院办公厅印发《关于深化投资审批制度改革的意见》，严打围标串标等违法行为。</p>
+            </div>
+            <a class="slide-link" href="http://www.xinhuanet.com/" target="_blank">📌 新华网</a>
+        </div>
+
+        <!-- 政闻3 -->
+        <div class="slide">
+            <span class="slide-category category-zhengwen">🏛️ 政闻</span>
+            <h3 class="slide-title">国台办：和平统一将给台湾带来巨大机遇</h3>
+            <div class="slide-content">
+                <p><strong>国台办表态：</strong>发言人陈斌华在例行发布会上表示，和平统一将给台湾经济社会发展创造巨大机遇。</p>
+                <div class="summary-box">
+                    <h4>💡 政策要点</h4>
+                    <ul>
+                        <li>两岸公共服务和公共资源共享</li>
+                        <li>台湾地区无需在防务上巨额支出</li>
+                        <li>台胞可享受更多就业选择和发展机遇</li>
+                        <li>一季度台胞证办理人次同比上升11.8%</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 15px;"><strong>数据说话：</strong>台胞入境大陆人次同比上升27.6%，要和平、要发展是台湾主流民意。</p>
+            </div>
+            <a class="slide-link" href="http://www.gwytb.gov.cn/" target="_blank">📌 国台办官网</a>
+        </div>
+
+        <!-- 政闻4 -->
+        <div class="slide">
+            <span class="slide-category category-zhengwen">🏛️ 政闻</span>
+            <h3 class="slide-title">103名群众获国家安全机关表彰</h3>
+            <div class="slide-content">
+                <p><strong>全民国家安全教育日：</strong>国家安全机关开展年度表彰奖励活动，103名群众受表彰，人数创历史新高。</p>
+                <div class="summary-box">
+                    <h4>🛡️ 举报案例</h4>
+                    <ul>
+                        <li>网络公司员工举报向境外出卖生物研究数据</li>
+                        <li>科研专家捞获境外军机投放的可疑装置</li>
+                        <li>务工人员举报境外间谍散布煽动性言论</li>
+                        <li>旅游博主举报外籍人员发放反宣材料</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 15px;"><strong>举报热线：</strong>12339国家安全举报受理渠道，全年无休接受举报。</p>
+            </div>
+            <a class="slide-link" href="http://www.moj.gov.cn/" target="_blank">📌 司法部官网</a>
+        </div>
+
+        <!-- 法制1 -->
+        <div class="slide">
+            <span class="slide-category category-fazhi">⚖️ 法制</span>
+            <h3 class="slide-title">两高发布贪污贿赂司法解释(二)</h3>
+            <div class="slide-content">
+                <p><strong>重磅出台：</strong>最高法、最高检联合发布法释〔2026〕6号，自5月1日起施行，实现贪污贿赂定罪量刑标准全覆盖。</p>
+                <div class="summary-box">
+                    <h4>📋 核心内容</h4>
+                    <ul>
+                        <li><strong>民企平等保护：</strong>非国家工作人员受贿罪等参照公职人员标准</li>
+                        <li><strong>8类行为明确入刑：</strong>差价型利益输送、挂名领薪、期权腐败等</li>
+                        <li><strong>终身追责：</strong>退休、离职后仍可追责</li>
+                        <li><strong>民生领域从重：</strong>医疗、教育、食品药品等领域行贿严惩</li>
+                    </ul>
+                </div>
+            </div>
+            <a class="slide-link" href="http://www.court.gov.cn/" target="_blank">📌 最高人民法院官网</a>
+        </div>
+
+        <!-- 法制2 -->
+        <div class="slide">
+            <span class="slide-category category-fazhi">⚖️ 法制</span>
+            <h3 class="slide-title">恒大集团及许家印案一审开庭</h3>
+            <div class="slide-content">
+                <p><strong>案件进展：</strong>深圳市中级人民法院对恒大集团、恒大地产及许家印案进行公开开庭审理，许家印当庭表示认罪悔罪。</p>
+                <div class="summary-box">
+                    <h4>⚠️ 涉案罪名（八项）</h4>
+                    <ul>
+                        <li>非法吸收公众存款、集资诈骗</li>
+                        <li>违法发放贷款、欺诈发行证券</li>
+                        <li>违规披露重要信息、职务侵占</li>
+                        <li>单位行贿、违法运用资金</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 15px;"><strong>法律警示：</strong>涉案广、危害大，不仅坑害无数投资人，更扰乱市场秩序，法律对金融犯罪、单位犯罪从严追责。</p>
+            </div>
+            <a class="slide-link" href="https://www.spp.gov.cn/" target="_blank">📌 最高人民检察院官网</a>
+        </div>
+
+        <!-- 法制3 -->
+        <div class="slide">
+            <span class="slide-category category-fazhi">⚖️ 法制</span>
+            <h3 class="slide-title">央视曝光"无人机坠箭"非法狩猎案</h3>
+            <div class="slide-content">
+                <p><strong>案件详情：</strong>央视法治在线专题报道贵州省江口县法院审理的无人机非法狩猎案，被告改装无人机搭载箭支发射装置狩猎。</p>
+                <div class="summary-box">
+                    <h4>🔧 作案手段</h4>
+                    <ul>
+                        <li>无人机搭载红外热成像仪高空侦察</li>
+                        <li>挂载特制铁箭精准猎杀</li>
+                        <li>在梵净山周边禁猎区、禁猎期作案</li>
+                    </ul>
+                    <h4 style="margin-top: 10px;">⚖️ 判决结果</h4>
+                    <ul>
+                        <li>4名被告人分别被判有期徒刑八个月至拘役三个月</li>
+                        <li>连带赔偿生态损失1.44万元</li>
+                    </ul>
+                </div>
+            </div>
+            <a class="slide-link" href="http://www.legaldaily.com.cn/" target="_blank">📌 法治日报</a>
+        </div>
+
+        <!-- 法制4 -->
+        <div class="slide">
+            <span class="slide-category category-fazhi">⚖️ 法制</span>
+            <h3 class="slide-title">反外国不当域外管辖条例正式施行</h3>
+            <div class="slide-content">
+                <p><strong>条例生效：</strong>国务院总理李强签署第835号国务院令，《中华人民共和国反外国不当域外管辖条例》自公布之日起施行。</p>
+                <div class="summary-box">
+                    <h4>🛡️ 三大法律利器</h4>
+                    <ul>
+                        <li><strong>禁执令：</strong>禁止执行或协助执行外国非法管辖措施</li>
+                        <li><strong>恶意实体清单：</strong>可限制入境、冻结资产</li>
+                        <li><strong>索赔诉讼权：</strong>受损者可依法起诉</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 15px;"><strong>立法意义：</strong>针对外国违反国际法的不当管辖，构建识别、阻断、反制、救济全流程闭环体系。</p>
+            </div>
+            <a class="slide-link" href="http://www.moj.gov.cn/" target="_blank">📌 司法部官网</a>
+        </div>
+
+        <!-- 法制5 -->
+        <div class="slide">
+            <span class="slide-category category-fazhi">⚖️ 法制</span>
+            <h3 class="slide-title">5月1日起严查外来物种引进</h3>
+            <div class="slide-content">
+                <p><strong>海关总署公告：</strong>5月1日起，擅自引进21类外来物种将面临最高25万元处罚。</p>
+                <div class="summary-box">
+                    <h4>📌 法规要点</h4>
+                    <ul>
+                        <li>明确禁止引进的外来物种清单</li>
+                        <li>规范引进审批程序</li>
+                        <li>加大违法行为处罚力度</li>
+                        <li>保护国家生物安全</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 15px;"><strong>医保新规：</strong>医保局明确医疗机构在集采协议外可使用非中选产品，包括原研药，避免一刀切。</p>
+            </div>
+        </div>
+
+        <!-- 结尾 -->
+        <div class="slide">
+            <div style="text-align: center; padding: 40px 20px;">
+                <h2 style="font-size: 24px; color: #fff; margin-bottom: 20px;">🌟 今日要点回顾</h2>
+                <div style="text-align: left; background: rgba(74, 158, 255, 0.1); border-radius: 12px; padding: 20px; border: 1px solid rgba(74, 158, 255, 0.2);">
+                    <p style="margin-bottom: 12px;"><strong>💹 财经：</strong>一季度GDP数据今日发布，央行5000亿逆回购释放流动性，A股震荡整固。</p>
+                    <p style="margin-bottom: 12px;"><strong>🏛️ 政闻：</strong>美伊谈判今日重启，中央巡视进驻推进反腐，国台办阐述和平统一利好。</p>
+                    <p style="margin-bottom: 12px;"><strong>⚖️ 法制：</strong>两高反腐新解释5月施行，恒大许家印案受审，反外国长臂管辖条例生效。</p>
+                </div>
+                <p style="margin-top: 30px; color: #90cdf4; font-size: 14px;">制作：小太阳AI | 数据来源：权威媒体公开报道</p>
+                <p style="margin-top: 10px; color: #718096; font-size: 12px;">⚠️ 本报内容仅供参考，不构成投资建议</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← 上一页</button>
+        <span class="page-indicator" id="pageIndicator">1 / 16</span>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">下一页 →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('pageIndicator').textContent = (currentSlide + 1) + ' / ' + totalSlides;
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+        }
+
+        function changeSlide(n) { showSlide(currentSlide + n); }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        // Touch support
+        let touchStartX = 0;
+        document.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
+        document.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) changeSlide(diff > 0 ? 1 : -1);
+        });
+
+        showSlide(0);
+    </script>
+</body>
+</html>
