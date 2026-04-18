@@ -3,217 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>广州法律服务需求资讯 - 2026年4月18日</title>
+    <title>📅 广州法律服务需求资讯（2026年04月18日）</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        .header { background: linear-gradient(135deg, #1a73e8, #4285f4); color: white; padding: 30px; border-radius: 16px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(26, 115, 232, 0.3); }
-        .header h1 { font-size: 28px; margin-bottom: 8px; }
-        .header .date { opacity: 0.9; font-size: 16px; }
-        .section { background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-        .section-title { color: #1a73e8; font-size: 18px; font-weight: 600; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid #e8f0fe; }
-        .section-title .icon { margin-right: 8px; }
-        .project-card { background: #f8f9fa; border-left: 4px solid #1a73e8; padding: 16px 20px; margin-bottom: 16px; border-radius: 0 8px 8px 0; transition: transform 0.2s; }
-        .project-card:hover { transform: translateX(4px); }
-        .project-card h3 { color: #1a73e8; font-size: 16px; margin-bottom: 8px; }
-        .project-card .info { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0; font-size: 14px; color: #666; }
-        .project-card .tag { display: inline-block; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500; }
-        .tag-budget { background: #e8f5e9; color: #2e7d32; }
-        .tag-deadline { background: #fff3e0; color: #e65100; }
-        .tag-new { background: #e3f2fd; color: #1565c0; }
-        .source { font-size: 13px; color: #888; margin-top: 12px; padding-top: 12px; border-top: 1px dashed #ddd; }
-        .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
-        .summary-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; }
-        .summary-box h3 { margin-bottom: 12px; }
-        .summary-box ul { list-style: none; padding-left: 0; }
-        .summary-box li { padding: 6px 0; display: flex; align-items: center; gap: 8px; }
-        .summary-box li::before { content: "📌"; }
-        @media (max-width: 768px) { .project-card .info { flex-direction: column; gap: 6px; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .header .date {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid #3498db;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .card.hot {
+            border-left-color: #e74c3c;
+        }
+        .card.hot::before {
+            content: "🔥 热门";
+            display: inline-block;
+            background: #e74c3c;
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .card h2 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .card .info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .card .tag {
+            background: #ecf0f1;
+            color: #555;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+        .card .tag.money {
+            background: #d4edda;
+            color: #155724;
+        }
+        .card .tag.time {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .card .tag.company {
+            background: #cce5ff;
+            color: #004085;
+        }
+        .card .content {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .card .content ul {
+            padding-left: 20px;
+        }
+        .card .content li {
+            margin-bottom: 6px;
+        }
+        .card .link {
+            display: inline-block;
+            color: #3498db;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .card .link:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #95a5a6;
+            font-size: 13px;
+        }
+        .summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+        .summary h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .summary p {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>⚖️ 广州法律服务需求资讯</h1>
-            <div class="date">📅 2026年4月18日 星期六</div>
+            <h1>📅 广州法律服务需求资讯</h1>
+            <p class="date">2026年04月18日 星期六</p>
         </div>
 
-        <div class="summary-box">
+        <div class="summary">
             <h3>📊 今日概览</h3>
-            <ul>
-                <li>本周新增招标项目 20+ 个</li>
-                <li>最高预算项目：中新广州知识城综合法律咨询 60万</li>
-                <li>即将截止项目：广州轻工常年法律顾问 4月29日</li>
-                <li>新增专项服务：应收账款诉讼、立法后评估等</li>
-            </ul>
+            <p>今日共收录 <strong>5条</strong> 广州市法律服务采购需求，涵盖常年法律顾问、专项法律服务、诉讼代理等领域，预算金额从6万至90万元不等。</p>
         </div>
 
-        <div class="section">
-            <h2 class="section-title"><span class="icon">🔥</span>热门项目（即将截止）</h2>
-            
-            <div class="project-card">
-                <h3>广州轻工国有资本运营集团 2026年常年法律顾问服务</h3>
-                <div class="info">
-                    <span class="tag tag-budget">💰 预算面议</span>
-                    <span class="tag tag-deadline">⏰ 截止：4月29日 17:30</span>
-                    <span class="tag tag-new">🏢 国企</span>
-                </div>
-                <p><strong>服务内容：</strong>常年法律顾问服务，要求20名以上律师团队，含香港法律服务资质</p>
-                <p><strong>服务期：</strong>1年</p>
-                <div class="source">📎 来源：采招网 | 方式：竞争性谈判</div>
+        <div class="card hot">
+            <h2>某电力公司2026年法律服务项目</h2>
+            <div class="info">
+                <span class="tag company">某电力公司</span>
+                <span class="tag money">💰 预算90万元</span>
+                <span class="tag time">⏰ 截止04月23日 14:30</span>
             </div>
-
-            <div class="project-card">
-                <h3>某电力公司 2026年法律服务项目</h3>
-                <div class="info">
-                    <span class="tag tag-budget">💰 合同估算90万元</span>
-                    <span class="tag tag-deadline">⏰ 截止：4月23日 14:30</span>
-                    <span class="tag tag-new">⚡ 专项诉讼+非诉</span>
-                </div>
-                <p><strong>服务内容：</strong>诉讼代理（调解/仲裁/诉讼）、应收款项清理、尽职调查等，含15份法律意见书</p>
-                <p><strong>资质要求：</strong>需2名成交供应商，报价按下浮率结算</p>
-                <div class="source">📎 来源：采招网 | 方式：公开谈判采购</div>
-            </div>
-
-            <div class="project-card">
-                <h3>广州市高新技术创业服务中心 应收账款专项法律服务</h3>
-                <div class="info">
-                    <span class="tag tag-budget">💰 预算6万元（总价包干）</span>
-                    <span class="tag tag-deadline">⏰ 截止：4月22日 17:30</span>
-                </div>
-                <p><strong>服务内容：</strong>代理12家企业房屋租赁/服务合同纠纷诉讼，一审至执行全流程</p>
-                <p><strong>资质要求：</strong>律所成立5年以上，合伙人执业8年以上</p>
-                <div class="source">📎 来源：律标通 | 方式：询价</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title"><span class="icon">📋</span>常年法律顾问（近期招标）</h2>
-            
-            <div class="project-card">
-                <h3>广汽商贸有限公司 2026-2029年度常年法律顾问招募</h3>
-                <div class="info">
-                    <span class="tag tag-budget">💰 3年总预算75万</span>
-                    <span class="tag tag-new">🏢 世界500强旗下</span>
-                </div>
-                <p><strong>服务内容：</strong>合同审核、法律咨询、普法培训、合规建议、法律意见书出具</p>
-                <p><strong>团队要求：</strong>1名10年+律师 + 2名5年+律师</p>
-                <div class="source">📎 来源：千万路径 | 国企采购</div>
-            </div>
-
-            <div class="project-card">
-                <h3>广州琶醍投资管理有限公司 2026-2027年常年法律顾问</h3>
-                <div class="info">
-                    <span class="tag tag-budget">💰 控制价9.8万元/年</span>
-                    <span class="tag tag-deadline">⏰ 截止：4月24日 14:00</span>
-                    <span class="tag tag-new">🍺 珠江啤酒旗下</span>
-                </div>
-                <p><strong>服务内容：</strong>常年法律顾问+专项服务，服务期2年</p>
-                <div class="source">📎 来源：律帮手 | 方式：询比</div>
-            </div>
-
-            <div class="project-card">
-                <h3>广州市体育科学研究所 法律顾问服务</h3>
-                <div class="info">
-                    <span class="tag tag-budget">💰 预算3万元</span>
-                </div>
-                <p><strong>服务内容：</strong>常年法律顾问服务</p>
-                <div class="source">📎 来源：广州政府采购</div>
-            </div>
-
-            <div class="project-card">
-                <h3>广州市劳动就业服务管理中心 2026-2028年法律顾问</h3>
-                <div class="info">
-                    <span class="tag tag-budget">💰 预算5.9万元</span>
-                    <span class="tag tag-new">🏛️ 政府机关</span>
-                </div>
-                <p><strong>服务内容：</strong>2年期常年法律顾问</p>
-                <div class="source">📎 来源：广州政府采购</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title"><span class="icon">💡</span>专项服务采购</h2>
-            
-            <div class="project-card">
-                <h3>中新广州知识城开发建设办公室 综合法律咨询服务</h3>
-                <div class="info">
-                    <span class="tag tag-budget">💰 预算60万元</span>
-                    <span class="tag tag-new">🏛️ 政府机关</span>
-                </div>
-                <p><strong>服务内容：</strong>综合法律咨询服务</p>
-                <div class="source">📎 来源：广州政府采购</div>
-            </div>
-
-            <div class="project-card">
-                <h3>广州市水务局 立法后评估法律服务</h3>
-                <div class="info">
-                    <span class="tag tag-new">📜 立法评估</span>
-                </div>
-                <p><strong>服务内容：</strong>对《广州市供水用水条例》《广州市排水条例》开展立法后评估</p>
-                <p><strong>要求：</strong>5年内独立承担至少2项地方性法规立法后评估项目</p>
-                <div class="source">📎 来源：广州政府采购意向</div>
-            </div>
-
-            <div class="project-card">
-                <h3>南方电网国际（香港）乌兹别克斯坦项目 法律顾问</h3>
-                <div class="info">
-                    <span class="tag tag-budget">💰 面议</span>
-                    <span class="tag tag-new">🌐 海外项目</span>
-                </div>
-                <p><strong>服务内容：</strong>电池储能项目法律顾问选聘</p>
-                <div class="source">📎 来源：南方电网采购</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title"><span class="icon">🏫</span>教育系统采购</h2>
-            
-            <div class="project-card">
-                <h3>多所中小学校 法律顾问服务</h3>
-                <div class="info">
-                    <span class="tag tag-budget">💰 0.9万~5万</span>
-                </div>
-                <p><strong>已发布采购计划的学校：</strong></p>
-                <ul style="margin: 8px 0 8px 20px; font-size: 14px; color: #666;">
-                    <li>广州市中学生劳动技术学校 - 2.95万</li>
-                    <li>广州市天河区旭景小学 - 1.4万</li>
-                    <li>广州市天河区清荷幼儿园 - 1万</li>
-                    <li>广州市骏景中学 - 0.9万</li>
+            <div class="content">
+                <strong>采购内容：</strong>
+                <ul>
+                    <li>诉讼类法律服务：代理调解、仲裁或诉讼案件，含律师函、专项法律意见书</li>
+                    <li>专项法律服务：应收应付款项清理、欠款追收、劳动纠纷处理、法律尽职调查等</li>
+                    <li>服务期内法律意见书出具及现场指导梳理分析</li>
                 </ul>
-                <div class="source">📎 来源：广州政府采购</div>
+                <br>
+                <strong>结算方式：</strong>参照粤价〔2006〕298号收费标准，按成交下浮率结算。二审及执行阶段按一审律师费减半收取。
             </div>
+            <a class="link" href="https://m.bidcenter.com.cn/news-1-414666336.html" target="_blank">查看详情 →</a>
         </div>
 
-        <div class="section">
-            <h2 class="section-title"><span class="icon">📈</span>中标喜讯</h2>
-            
-            <div class="project-card">
-                <h3>广州市广园市政建设公司 2026-2029常年法律顾问</h3>
-                <div class="info">
-                    <span class="tag tag-budget">💰 成交价20.7万元</span>
-                    <span class="tag tag-new">✅ 已成交</span>
-                </div>
-                <p><strong>成交律所：</strong>广东合富律师事务所</p>
-                <p><strong>服务内容：</strong>公司内部管理、重大事项决策、合同审阅等</p>
-                <div class="source">📎 来源：广州阳光采购服务平台</div>
+        <div class="card hot">
+            <h2>广州市高新技术创业服务中心应收账款专项法律服务</h2>
+            <div class="info">
+                <span class="tag company">广州高新技术创业服务中心</span>
+                <span class="tag money">💰 预算6万元（总价包干）</span>
+                <span class="tag time">⏰ 截止04月22日 17:30</span>
             </div>
+            <div class="content">
+                <strong>采购内容：</strong>
+                <ul>
+                    <li>代理12家企业房屋租赁合同纠纷、服务合同纠纷诉讼</li>
+                    <li>发送律师催款函，代理一审、二审、执行期间所有诉讼工作</li>
+                    <li>包括代为出庭、起诉、答辩、上诉、调解、强制执行申请、财产保全等</li>
+                </ul>
+                <br>
+                <strong>资质要求：</strong>律所成立5年以上，指定合伙人执业8年以上，近5年无处罚处分。
+            </div>
+            <a class="link" href="http://m.toutiao.com/group/7629559004796060212/" target="_blank">查看详情 →</a>
+        </div>
 
-            <div class="project-card">
-                <h3>广州市体育局 法律服务定点采购</h3>
-                <div class="info">
-                    <span class="tag tag-budget">💰 成交价9.5万元</span>
-                    <span class="tag tag-new">✅ 已成交</span>
-                </div>
-                <p><strong>成交律所：</strong>广东广信君达律师事务所</p>
-                <div class="source">📎 来源：广州政府采购</div>
+        <div class="card">
+            <h2>广汽商贸有限公司2026-2029年度常年法律顾问招募</h2>
+            <div class="info">
+                <span class="tag company">广汽商贸有限公司</span>
+                <span class="tag money">💰 3年总预算75万元</span>
+                <span class="tag time">⏰ 截止04月28日</span>
             </div>
+            <div class="content">
+                <strong>服务内容：</strong>
+                <ul>
+                    <li>合同及法律文件审核、规范性文件审查、合同模板制定</li>
+                    <li>日常法律咨询、参加会议提供法律意见、重大决策法律论证</li>
+                    <li>普法培训、法律知识讲座、新法规合规建议</li>
+                    <li>非诉讼谈判协调、律师函出具、年度工作报告</li>
+                </ul>
+                <br>
+                <strong>资质要求：</strong>律所成立3年以上，本地设有常驻机构，20名以上律师（其中5名10年以上执业经验），近3年无处罚。
+            </div>
+            <a class="link" href="https://m.bidcenter.com.cn/news-1-413865257.html" target="_blank">查看详情 →</a>
+        </div>
+
+        <div class="card">
+            <h2>广州琶醍投资管理有限公司2026-2027年常年法律顾问</h2>
+            <div class="info">
+                <span class="tag company">广州琶醍投资管理</span>
+                <span class="tag money">💰 控制价9.8万元（2年）</span>
+                <span class="tag time">⏰ 截止04月24日 14:00</span>
+            </div>
+            <div class="content">
+                <strong>服务内容：</strong>常年法律顾问服务及另行委托法律专项服务，服务期2年。
+                <br><br>
+                <strong>资质要求：</strong>具有律师事务所执业许可证，年检合格，未被列入经营异常或失信名单。
+            </div>
+            <a class="link" href="http://m.toutiao.com/group/7627333393377739279/" target="_blank">查看详情 →</a>
+        </div>
+
+        <div class="card">
+            <h2>广州轻工国有企业2026年常年法律顾问服务项目</h2>
+            <div class="info">
+                <span class="tag company">广州轻工国有企业</span>
+                <span class="tag time">⏰ 截止04月29日 17:30</span>
+            </div>
+            <div class="content">
+                <strong>采购方式：</strong>竞争性谈判
+                <br><br>
+                <strong>资质要求：</strong>
+                <ul>
+                    <li>律所成立3年以上，本地常驻机构20名以上律师</li>
+                    <li>其中至少5名10年以上执业经验律师</li>
+                    <li>至少1名具有香港法律事务服务资质律师</li>
+                    <li>熟悉国资监管法律法规，有国企或政府部门法律顾问经验</li>
+                    <li>服务团队不少于4人</li>
+                </ul>
+            </div>
+            <a class="link" href="https://m.bidcenter.com.cn/news-1-414585316.html" target="_blank">查看详情 →</a>
         </div>
 
         <div class="footer">
-            <p>🦞 龙虾整理 | 数据来源：广州政府采购网、采招网、律标通等</p>
-            <p>📅 每日更新 | 如需了解更多详情请访问对应采购平台</p>
+            <p>📮 本资讯由AI自动整理，仅供参考。如需参与投标，请以官方公告为准。</p>
+            <p>🦞 龙虾日记 · 白泽小霸虾</p>
         </div>
     </div>
 </body>
