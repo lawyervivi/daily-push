@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>财经政法早报 | 2026年4月19日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: #1a1a2e; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.header .date {
+  font-size: 14px;
+  color: #8892b0;
+}
+.card-container {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  perspective: 1000px;
+}
+.card {
+  background: linear-gradient(145deg, #16213e 0%, #1a1a2e 100%);
+  border-radius: 20px;
+  padding: 28px 24px;
+  min-height: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+}
+.card-category {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.category-caijing { background: rgba(102, 126, 234, 0.2); color: #667eea; }
+.category-zhengwen { background: rgba(118, 75, 162, 0.2); color: #9b59b6; }
+.category-fazhi { background: rgba(231, 76, 60, 0.2); color: #e74c3c; }
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.card-content {
+  font-size: 15px;
+  color: #a8b2d1;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.card-content ul {
+  padding-left: 18px;
+}
+.card-content li {
+  margin-bottom: 10px;
+}
+.card-content strong {
+  color: #fff;
+}
+.card-content em {
+  color: #667eea;
+  font-style: normal;
+}
+.card-highlight {
+  background: rgba(102, 126, 234, 0.1);
+  border-left: 3px solid #667eea;
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 16px;
+}
+.card-highlight p {
+  font-size: 13px;
+  color: #a8b2d1;
+}
+.card-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-indicator {
+  font-size: 12px;
+  color: #5a6a8a;
+}
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+.nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.nav-btn:hover {
+  background: rgba(102, 126, 234, 0.3);
+  border-color: #667eea;
+}
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.3s;
+}
+.dot.active {
+  background: #667eea;
+  width: 24px;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📰 小太阳财经政法早报</h1>
+  <div class="date">2026年4月19日 星期日 | 第12期</div>
+</div>
+
+<div class="card-container">
+  <div class="card" id="card">
+    <!-- 内容由JS填充 -->
+  </div>
+  <div class="dots" id="dots"></div>
+</div>
+
+<div class="card-container" style="margin-top: 20px;">
+  <div class="nav-buttons" style="justify-content: center;">
+    <button class="nav-btn" id="prevBtn" onclick="prevCard()">◀</button>
+    <button class="nav-btn" id="nextBtn" onclick="nextCard()">▶</button>
+  </div>
+</div>
+
+<script>
+const cards = [
+  {
+    category: "caijing",
+    categoryText: "💹 财经",
+    title: "一季度GDP同比增长5.0%，经济实现良好开局",
+    content: `<ul>
+      <li><strong>宏观数据超预期</strong>：一季度GDP达33.42万亿元，同比增长5.0%，改变去年二季度以来下行态势</li>
+      <li><strong>企业信用稳中向好</strong>：3月企业信用指数162.26，环比+0.17，金融业、教育、电力领跑</li>
+      <li><strong>扩大内需方案加速</strong>：7550亿中央预算内投资+1万亿特别国债力争6月底前下达</li>
+    </ul>`,
+    highlight: "发改委：打好宏观政策"组合拳"，推动今年7550亿元中央预算内投资、1万亿元超长期特别国债于6月底前基本下达完毕"
+  },
+  {
+    category: "caijing",
+    categoryText: "💹 财经",
+    title: "美股纳斯达克13连涨创历史新高",
+    content: `<ul>
+      <li><strong>纳指</strong>：24,468.48点，+1.52%，创2013年来最长连涨纪录</li>
+      <li><strong>标普500</strong>：首破7100点，道指逼近5万点</li>
+      <li><strong>科技股爆发</strong>：苹果+2.59%、Meta+1.73%、谷歌+1.68%</li>
+    </ul>`,
+    highlight: "特斯拉5天累涨14%，AI5芯片亮相引发关注。但VIX仅17.48，市场亢奋与潜在风险并存"
+  },
+  {
+    category: "caijing",
+    categoryText: "💹 财经",
+    title: "原油价格暴跌，全球能源市场震荡",
+    content: `<ul>
+      <li><strong>WTI原油</strong>：单日暴跌11.45%至83.85美元/桶，创近年最大跌幅</li>
+      <li><strong>布伦特原油</strong>：跌9.07%至90.38美元/桶</li>
+      <li><strong>原因</strong>：美伊达成两周停火协议，但伊朗宣布控制霍尔木兹海峡</li>
+      <li><strong>黄金</strong>：逆势上涨1.48%至4,879.60美元/盎司</li>
+    </ul>`,
+    highlight: "霍尔木兹海峡承担全球约20%石油贸易运输量，目前通行量较战前下降约70%，超300艘油轮锚泊等待"
+  },
+  {
+    category: "caijing",
+    categoryText: "💹 财经",
+    title: "创业板指创近11年新高3678点",
+    content: `<ul>
+      <li><strong>沪指</strong>：五连阳站上4055点</li>
+      <li><strong>创业板</strong>：周涨1.43%至3678.29点，创2015年6月以来新高</li>
+      <li><strong>北证50</strong>：周大涨4.77%</li>
+      <li><strong>成交额</strong>：连续8个交易日突破2万亿元</li>
+    </ul>`,
+    highlight: "AI硬件、光通信(CPO)板块持续爆发，宁德时代、中际旭创等龙头业绩亮眼"
+  },
+  {
+    category: "caijing",
+    categoryText: "💹 财经",
+    title: "DeepSeek启动首轮外部融资",
+    content: `<ul>
+      <li><strong>估值</strong>：≥100亿美元</li>
+      <li><strong>募资</strong>：≥3亿美元</li>
+      <li><strong>市场反响</strong>：资金方反馈"完全投不进去"</li>
+      <li><strong>V4进展</strong>：传闻将彻底摆脱英伟达依赖，国产AI自主可控加速</li>
+    </ul>`,
+    highlight: "源杰科技超越茅台，成A股新"股王"，AI算力产业链持续受资金追捧"
+  },
+  {
+    category: "zhengwen",
+    categoryText: "🏛️ 政闻",
+    title: "二十届中央第七轮巡视完成进驻",
+    content: `<ul>
+      <li><strong>巡视规模</strong>：15个中央巡视组对36家中央和国家机关开展常规巡视</li>
+      <li><strong>重点监督</strong>：落实"两个维护"、贯彻党中央决策部署情况</li>
+      <li><strong>巡视时长</strong>：约2个半月</li>
+      <li><strong>受理时间</strong>：截至2026年6月23日</li>
+    </ul>`,
+    highlight: "聚焦中央和国家机关这一践行"两个维护"的第一方阵，深化全面从严治党"
+  },
+  {
+    category: "zhengwen",
+    categoryText: "🏛️ 政闻",
+    title: "神舟二十一号完成第三次出舱",
+    content: `<ul>
+      <li><strong>出舱时间</strong>：4月17日凌晨1时36分</li>
+      <li><strong>航天员</strong>：张陆累计出舱7次，刷新中国航天员出舱纪录</li>
+      <li><strong>任务</strong>：完成舱外设备维护、空间实验等关键任务</li>
+      <li><strong>意义</strong>：为后续空间站建设提供重要支撑</li>
+    </ul>`,
+    highlight: "中国航天事业持续突破，为空间站建设打下坚实基础"
+  },
+  {
+    category: "zhengwen",
+    categoryText: "🏛️ 政闻",
+    title: "东部战区在东海开展联合战备巡航",
+    content: `<ul>
+      <li><strong>地点</strong>：东海相关海空域</li>
+      <li><strong>行动</strong>：组织海空兵力开展联合战备巡航</li>
+      <li><strong>目的</strong>：全面检验部队联合作战能力</li>
+    </ul>`,
+    highlight: "坚决维护国家主权和领土完整，展现强大军事实力"
+  },
+  {
+    category: "fazhi",
+    categoryText: "⚖️ 法制",
+    title: "最高法公布一季度司法审判数据",
+    content: `<ul>
+      <li><strong>案件总量</strong>：受理各类案件1060.79万件</li>
+      <li><strong>调解成效</strong>：调解成功119.36万件，同比增长205.11%</li>
+      <li><strong>未结案件</strong>：两年以上未结诉讼案件同比下降8.87%</li>
+      <li><strong>立案满意率</strong>：86.56%，较上年同期增加7个百分点</li>
+    </ul>`,
+    highlight: "民商事案件中，物业服务纠纷上升37.28%；人身安全保护令申请上升25.26%，涉未成年人案件上升105.08%"
+  },
+  {
+    category: "fazhi",
+    categoryText: "⚖️ 法制",
+    title: "两高发布贪污贿赂案件司法解释（二）",
+    content: `<ul>
+      <li><strong>施行时间</strong>：2026年5月1日</li>
+      <li><strong>重点内容</strong>：加大对新型隐性腐败惩治力度</li>
+      <li><strong>明确范围</strong>：单位受贿罪、单位行贿罪等定罪量刑标准</li>
+      <li><strong>退赃规则</strong>：完善积极退赃认定规则，加大违法所得追缴力度</li>
+    </ul>`,
+    highlight: "落实对不同所有制企业依法平等保护，完善斡旋受贿、介绍贿赂等认定规则"
+  },
+  {
+    category: "fazhi",
+    categoryText: "⚖️ 法制",
+    title: "7家平台因"幽灵外卖"被罚没35.97亿元",
+    content: `<ul>
+      <li><strong>涉及平台</strong>：拼多多、美团、京东、饿了么、抖音、淘宝、天猫</li>
+      <li><strong>处罚金额</strong>：合计罚没款35.97亿元</li>
+      <li><strong>违规类型</strong>：无证无照、虚假注册、地址造假的"幽灵外卖"</li>
+      <li><strong>整改情况</strong>：7家平台已相继回应将全面落实整改</li>
+    </ul>`,
+    highlight: "市场监管总局重拳出击，守护数亿消费者外卖饮食安全，倒逼平台压实主体责任"
+  },
+  {
+    category: "fazhi",
+    categoryText: "⚖️ 法制",
+    title: "两高发文惩治"机闹"维护民航安全",
+    content: `<ul>
+      <li><strong>施行时间</strong>：2026年4月9日</li>
+      <li><strong>背景</strong>：填补危害民航飞行安全刑事案件法律适用空白</li>
+      <li><strong>明确边界</strong>：罪与非罪、刑事处罚与行政处罚的界限</li>
+      <li><strong>内容</strong>：共7条具体规定</li>
+    </ul>`,
+    highlight: "安全是飞行的生命线，明确各类"机闹"行为的法律后果"
+  }
+];
+
+let currentIndex = 0;
+
+function renderCard(index) {
+  const card = cards[index];
+  const cardEl = document.getElementById('card');
+  cardEl.innerHTML = `
+    <span class="card-category ${card.category}">${card.categoryText}</span>
+    <h2 class="card-title">${card.title}</h2>
+    <div class="card-content">${card.content}</div>
+    <div class="card-highlight">
+      <p>${card.highlight}</p>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">${index + 1} / ${cards.length}</span>
+    </div>
+  `;
+  
+  // 更新dots
+  const dotsContainer = document.getElementById('dots');
+  dotsContainer.innerHTML = cards.map((_, i) => 
+    `<span class="dot ${i === index ? 'active' : ''}"></span>`
+  ).join('');
+  
+  // 更新按钮状态
+  document.getElementById('prevBtn').disabled = index === 0;
+  document.getElementById('nextBtn').disabled = index === cards.length - 1;
+}
+
+function prevCard() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    renderCard(currentIndex);
+  }
+}
+
+function nextCard() {
+  if (currentIndex < cards.length - 1) {
+    currentIndex++;
+    renderCard(currentIndex);
+  }
+}
+
+// 键盘控制
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') prevCard();
+  if (e.key === 'ArrowRight') nextCard();
+});
+
+// 触摸滑动支持
+let touchStartX = 0;
+document.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+});
+document.addEventListener('touchend', (e) => {
+  const touchEndX = e.changedTouches[0].clientX;
+  const diff = touchStartX - touchEndX;
+  if (diff > 50) nextCard();
+  if (diff < -50) prevCard();
+});
+
+// 初始化
+renderCard(0);
+</script>
+</body>
+</html>
