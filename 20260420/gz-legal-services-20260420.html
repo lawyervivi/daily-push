@@ -1,198 +1,269 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>广州法律服务需求资讯 - 2026年4月20日</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #f5f5f5; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .header { background: linear-gradient(135deg, #1a5276, #2980b9); color: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; text-align: center; }
-        .header h1 { font-size: 24px; margin-bottom: 8px; }
-        .header p { font-size: 14px; opacity: 0.9; }
-        .section { background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .section-title { font-size: 18px; color: #1a5276; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #3498db; display: flex; align-items: center; gap: 8px; }
-        .section-title::before { content: "📋"; font-size: 20px; }
-        .notice { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px 15px; border-radius: 6px; margin-bottom: 15px; }
-        .notice-title { color: #856404; font-weight: bold; margin-bottom: 5px; }
-        .notice p { color: #856404; font-size: 14px; }
-        .item { padding: 15px; border-bottom: 1px solid #eee; }
-        .item:last-child { border-bottom: none; }
-        .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-        .item-title { font-size: 15px; font-weight: bold; color: #2c3e50; flex: 1; }
-        .item-date { font-size: 12px; color: #e74c3c; background: #fde8e8; padding: 3px 8px; border-radius: 10px; white-space: nowrap; margin-left: 10px; }
-        .item-content { font-size: 13px; color: #666; line-height: 1.6; }
-        .item-content p { margin-bottom: 5px; }
-        .item-content strong { color: #2980b9; }
-        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-right: 5px; }
-        .tag-hot { background: #e74c3c; color: white; }
-        .tag-new { background: #27ae60; color: white; }
-        .tag-deal { background: #9b59b6; color: white; }
-        .price { color: #e74c3c; font-weight: bold; }
-        .footer { text-align: center; padding: 15px; color: #999; font-size: 12px; }
-        .highlight { background: #e8f6f3; padding: 10px; border-radius: 6px; margin-top: 10px; }
-        .highlight-title { font-weight: bold; color: #1abc9c; margin-bottom: 5px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📅 广州法律服务需求资讯（2026年04月20日）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f5f5;
+    padding: 20px;
+    color: #333;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #1E88E5, #42A5F5);
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .header .date {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  .content {
+    padding: 24px;
+  }
+  .info-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-left: 4px solid #1E88E5;
+  }
+  .info-item:nth-child(2) {
+    border-left-color: #FF9800;
+  }
+  .info-item:nth-child(3) {
+    border-left-color: #4CAF50;
+  }
+  .info-item:nth-child(4) {
+    border-left-color: #9C27B0;
+  }
+  .info-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .info-title .badge {
+    background: #1E88E5;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .info-title .badge.warning {
+    background: #FF9800;
+  }
+  .info-title .badge.success {
+    background: #4CAF50;
+  }
+  .info-title .badge.purple {
+    background: #9C27B0;
+  }
+  .info-detail {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #555;
+  }
+  .info-detail p {
+    margin-bottom: 8px;
+  }
+  .info-detail strong {
+    color: #333;
+  }
+  .contact-box {
+    background: #e3f2fd;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 12px;
+  }
+  .contact-box p {
+    margin: 4px 0;
+    font-size: 13px;
+  }
+  .deadline {
+    color: #e53935;
+    font-weight: 600;
+  }
+  .footer {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-size: 12px;
+    border-top: 1px solid #eee;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1E88E5;
+    margin: 20px 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e3f2fd;
+  }
+  .success-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-left: 4px solid #4CAF50;
+  }
+  .success-item .title {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  .success-item .info {
+    font-size: 13px;
+    color: #666;
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>⚖️ 广州法律服务需求资讯</h1>
-            <p>2026年4月20日 星期一 | 律师团队商机速递</p>
+<div class="container">
+  <div class="header">
+    <h1>📅 广州法律服务需求资讯</h1>
+    <div class="date">2026年04月20日 · 周一</div>
+  </div>
+  
+  <div class="content">
+    <div class="section-title">🆕 招标公告</div>
+    
+    <div class="info-item">
+      <div class="info-title">
+        <span class="badge warning">紧急</span>
+        广州市南沙区民政局2026年法律服务项目询价公告
+      </div>
+      <div class="info-detail">
+        <p><strong>📌 项目概况：</strong>为南沙区民政局（含下属事业单位）提供全年法律服务，包括重大决策法律论证、规范性文件审查、行政行为合法性审查、合同审核、诉讼代理等。</p>
+        <p><strong>💰 项目控制价：</strong>130,000元/年（含驻场人员工资、税费、补贴、加班费和交通费等）</p>
+        <p><strong>📅 服务期限：</strong>2026年6月-2027年6月</p>
+        <p><strong>📋 人员要求：</strong>安排全日制法学本科以上人员驻场，需具备法律职业资格证书、律师执业证</p>
+        <p class="deadline"><strong>⏰ 报价截止：</strong>2026年4月22日 18:00</p>
+        <div class="contact-box">
+          <p><strong>📞 联系方式：</strong></p>
+          <p>联系人：林小姐</p>
+          <p>电话：020-34689095</p>
+          <p>地址：广州市南沙区环市大道中13号 南沙区民政局303室</p>
         </div>
-        
-        <div class="notice">
-            <div class="notice-title">⏰ 截止日期提醒</div>
-            <p>近期多个项目即将截止投标，请及时跟进：南方电网项目(4/22)、创业服务中心项目(4/22)、琶醍公司项目(4/24)、轻工国企项目(4/29)</p>
-        </div>
-
-        <div class="section">
-            <div class="section-title">🔥 热门招标项目</div>
-            
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">广州轻工国有企业 2026年常年法律顾问服务<span class="tag tag-hot">热门</span></div>
-                    <div class="item-date">截止4月29日</div>
-                </div>
-                <div class="item-content">
-                    <p><strong>采购方式：</strong>竞争性谈判 | <strong>服务期：</strong>常年</p>
-                    <p><strong>供应商要求：</strong></p>
-                    <p>• 律师事务所在广州设常驻机构，20名以上律师</p>
-                    <p>• 至少5名10年以上执业经验律师</p>
-                    <p>• 熟悉国资监管，有国企/政府法律顾问经验</p>
-                    <p>• 服务团队不少于4人，含1名具香港法律服务资质律师</p>
-                    <p><strong>优先领域：</strong>企业出清、改制、土地收储征收、特殊资产处置</p>
-                    <p>📍 地址：广州外贸大楼9楼 | 联系人：林女士</p>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">南方电网广州公司 2026年法律服务项目<span class="tag tag-hot">大额</span></div>
-                    <div class="item-date">截止4月22日</div>
-                </div>
-                <div class="item-content">
-                    <p><strong>预算金额：</strong><span class="price">90万元</span></p>
-                    <p><strong>服务内容：</strong></p>
-                    <p>• 诉讼类：代理调解、仲裁、诉讼等案件</p>
-                    <p>• 专项服务：应收应付款清理、欠款追收、尽职调查等</p>
-                    <p>• 律师函、法律意见书出具</p>
-                    <p><strong>成交：</strong>2家供应商各50%权重 | <strong>报价方式：</strong>按下浮率%</p>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">琶醍投资管理公司 2026-2027年常年法律顾问<span class="tag tag-new">新增</span></div>
-                    <div class="item-date">截止4月24日</div>
-                </div>
-                <div class="item-content">
-                    <p><strong>控制价：</strong><span class="price">98,000元/年</span> | <strong>服务期：</strong>2年</p>
-                    <p><strong>采购方式：</strong>询比</p>
-                    <p><strong>服务内容：</strong>常年法律顾问及专项法律服务</p>
-                    <p><strong>资质要求：</strong>具律师事务所执业许可证，年检合格</p>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">广州市高新技术创业服务中心 应收账款专项法律服务<span class="tag tag-new">新增</span></div>
-                    <div class="item-date">截止4月22日</div>
-                </div>
-                <div class="item-content">
-                    <p><strong>控制价：</strong><span class="price">6万元</span>（总价包干）</p>
-                    <p><strong>服务内容：</strong>代理12家企业房屋租赁/服务合同纠纷诉讼</p>
-                    <p>含一审、二审、执行全流程代理，律师催款函等</p>
-                    <p><strong>资质：</strong>律所设立5年以上，合伙人执业8年以上</p>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">广州大学 2026年法律顾问室法律诉讼服务</div>
-                    <div class="item-date">进行中</div>
-                </div>
-                <div class="item-content">
-                    <p><strong>采购方式：</strong>定点议价采购</p>
-                    <p><strong>服务内容：</strong>法律诉讼代理服务</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">📊 近期成交公告</div>
-            
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">广东合富律师事务所<span class="tag tag-deal">已成交</span></div>
-                </div>
-                <div class="item-content">
-                    <p><strong>采购方：</strong>广州市广园市政建设有限公司及下属企业 2026-2029年度常年法律顾问</p>
-                    <p><strong>成交价：</strong><span class="price">207,000元</span></p>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="item-header">
-                    <div class="item-title">多个区属单位法律服务成交<span class="tag tag-deal">已成交</span></div>
-                </div>
-                <div class="item-content">
-                    <table style="width:100%; border-collapse: collapse; font-size: 13px;">
-                        <tr style="background:#f8f9fa;">
-                            <th style="padding:8px; text-align:left; border:1px solid #ddd;">成交律所</th>
-                            <th style="padding:8px; text-align:left; border:1px solid #ddd;">采购单位</th>
-                            <th style="padding:8px; text-align:right; border:1px solid #ddd;">金额</th>
-                        </tr>
-                        <tr>
-                            <td style="padding:8px; border:1px solid #ddd;">广东卓信律师事务所</td>
-                            <td style="padding:8px; border:1px solid #ddd;">海珠区南石头街道</td>
-                            <td style="padding:8px; border:1px solid #ddd; text-align:right;">37,500元</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:8px; border:1px solid #ddd;">广东南方福瑞德律师事务所</td>
-                            <td style="padding:8px; border:1px solid #ddd;">市体育科学研究所</td>
-                            <td style="padding:8px; border:1px solid #ddd; text-align:right;">30,000元</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:8px; border:1px solid #ddd;">广东上茂律师事务所</td>
-                            <td style="padding:8px; border:1px solid #ddd;">越秀区司法局</td>
-                            <td style="padding:8px; border:1px solid #ddd; text-align:right;">8,000元</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:8px; border:1px solid #ddd;">北京大成(广州)律师事务所</td>
-                            <td style="padding:8px; border:1px solid #ddd;">天河区车陂小学</td>
-                            <td style="padding:8px; border:1px solid #ddd; text-align:right;">6,000元</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:8px; border:1px solid #ddd;">广东国智律师事务所</td>
-                            <td style="padding:8px; border:1px solid #ddd;">天河区珠江新城猎德幼儿园</td>
-                            <td style="padding:8px; border:1px solid #ddd; text-align:right;">5,256元</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:8px; border:1px solid #ddd;">东广信君达(南沙)律师事务所</td>
-                            <td style="padding:8px; border:1px solid #ddd;">南沙区大塘小学</td>
-                            <td style="padding:8px; border:1px solid #ddd; text-align:right;">3,042元</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">🏛️ 区属单位采购（定点议价）</div>
-            <div class="item-content">
-                <p style="margin-bottom:10px;">4月13日集中发布多个区属单位法律服务采购公告：</p>
-                <p><strong>教育系统：</strong>广州大学、番禺区天峰小学、中学生劳动技术学校、骏景中学、白云区空港实验中学等</p>
-                <p><strong>街道办：</strong>天河区石牌/凤凰/车陂街道办、天河区雅贝幼儿园</p>
-                <p><strong>其他：</strong>海珠区房屋征收中心、南沙区水务局、市燃气事务中心、广州市民营企业投诉中心</p>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>📅 每日定时更新 | 数据来源：广东招标网、采招网、政府采购平台</p>
-            <p>⚠️ 仅供参考，以官方公告为准</p>
-        </div>
+      </div>
     </div>
+    
+    <div class="info-item">
+      <div class="info-title">
+        <span class="badge">采购</span>
+        广州轻工国有企业2026年常年法律顾问服务项目
+      </div>
+      <div class="info-detail">
+        <p><strong>📌 采购方式：</strong>竞争性谈判</p>
+        <p><strong>📋 服务内容：</strong>日常法律服务、合同审核、法律咨询、普法培训、非诉讼专项法律服务（含法律意见书出具）</p>
+        <p><strong>📋 资质要求：</strong></p>
+        <p>• 律师事务所成立3年以上，常驻机构20名以上受聘律师</p>
+        <p>• 至少5名10年以上执业经验律师</p>
+        <p>• 熟悉国资监管法律法规，有担任国企或政府部门法律顾问经验</p>
+        <p>• 服务团队至少4人，含1名主办律师（10年以上）、1名具有香港法律事务服务资质律师</p>
+        <p>• 需擅长企业出清、改制、土地收储和征收、特困企业处置领域</p>
+        <p class="deadline"><strong>⏰ 截止时间：</strong>2026年4月29日 17:30</p>
+        <div class="contact-box">
+          <p><strong>📞 联系方式：</strong></p>
+          <p>联系人：林女士</p>
+          <p>地址：广州市越秀区府前路253-255号广州外贸大楼9楼</p>
+          <p>文件获取：发邮件至指定邮箱获取竞争性谈判文件</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="info-item">
+      <div class="info-title">
+        <span class="badge purple">专项</span>
+        广州市高新技术创业服务中心应收账款专项法律服务
+      </div>
+      <div class="info-detail">
+        <p><strong>📌 项目概况：</strong>为采购方涉及12家企业房屋租赁合同纠纷、服务合同纠纷提供诉讼代理法律服务，包括发送律师催款函、代理一审二审执行全流程。</p>
+        <p><strong>💰 采购控制价：</strong>总价包干 60,000元</p>
+        <p><strong>📋 资质要求：</strong></p>
+        <p>• 设立5年以上</p>
+        <p>• 指定合伙人作为负责人，执业8年以上</p>
+        <p>• 近5年未受行政主管部门、行业协会处罚</p>
+        <p class="deadline"><strong>⏰ 截止时间：</strong>2026年4月22日 17:30</p>
+        <div class="contact-box">
+          <p><strong>📞 联系方式：</strong>详见律标通微信公众号或律标通官网</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="info-item">
+      <div class="info-title">
+        <span class="badge success">2年合同</span>
+        广州琶醍投资管理有限公司2026-2027年常年法律顾问采购
+      </div>
+      <div class="info-detail">
+        <p><strong>📌 项目内容：</strong>常年法律顾问服务及另行委托法律专项服务</p>
+        <p><strong>💰 项目控制价：</strong>98,000元（常年法律顾问部分）</p>
+        <p><strong>📅 服务期限：</strong>2年</p>
+        <p><strong>📋 资质要求：</strong>具有律师事务所执业许可证，未被列入失信名单</p>
+        <p class="deadline"><strong>⏰ 截止时间：</strong>2026年4月24日 14:00</p>
+      </div>
+    </div>
+    
+    <div class="section-title">✅ 近期成交公告（供参考）</div>
+    
+    <div class="success-item">
+      <div class="title">🔹 广州市海珠区南石头街道办事处法律服务</div>
+      <div class="info">
+        <p>成交律所：<strong>广东卓信律师事务所</strong></p>
+        <p>成交价：<strong>37,500元</strong></p>
+      </div>
+    </div>
+    
+    <div class="success-item">
+      <div class="title">🔹 广州市体育科学研究所法律顾问服务</div>
+      <div class="info">
+        <p>成交律所：<strong>广东南方福瑞德律师事务所</strong></p>
+        <p>成交价：<strong>30,000元</strong></p>
+      </div>
+    </div>
+    
+    <div class="success-item">
+      <div class="title">🔹 广州市天河区审计局法律服务定点采购</div>
+      <div class="info">
+        <p>成交金额：<strong>70,000元</strong></p>
+        <p>服务期：2026年4月1日至2026年12月31日</p>
+      </div>
+    </div>
+    
+    <div class="success-item">
+      <div class="title">🔹 广州市广园市政建设有限公司2026-2029年度常年法律顾问</div>
+      <div class="info">
+        <p>成交律所：<strong>广东合富律师事务所</strong></p>
+        <p>成交价：<strong>207,000元</strong>（服务广园公司及下属一家子企业）</p>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>📮 信息来源：广东招标网、采招网、广州市政府采购平台、南沙区人民政府</p>
+      <p>⚠️ 本资讯仅供参考，以官方公告为准</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
