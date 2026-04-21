@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小太阳财经政法早报 | 2026年4月21日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #0a1628;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+        .header h1 {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .header .date {
+            color: #5a7a9a;
+            font-size: 13px;
+        }
+        .card-container {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+        .news-card {
+            background: linear-gradient(145deg, #112240, #1a365d);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            display: none;
+            animation: fadeIn 0.3s ease;
+            border: 1px solid rgba(100,181,246,0.2);
+        }
+        .news-card.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .category-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .category-caijing { background: linear-gradient(135deg, #11998e, #38ef7d); color: #fff; }
+        .category-zhengwen { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; }
+        .category-fazhi { background: linear-gradient(135deg, #f093fb, #f5576c); color: #fff; }
+        .news-title {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .news-content {
+            color: #a8b2d1;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .news-highlight {
+            background: rgba(100,181,246,0.15);
+            border-left: 3px solid #64b5f6;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 12px;
+        }
+        .news-highlight .label {
+            color: #64b5f6;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .news-highlight .value {
+            color: #e0e6ed;
+            font-size: 13px;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+        .nav-btn {
+            background: linear-gradient(135deg, #1e3a5f, #2d5a87);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-btn:hover { background: linear-gradient(135deg, #2d5a87, #3d7ab5); }
+        .nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+        .page-indicator {
+            color: #5a7a9a;
+            font-size: 13px;
+            background: rgba(255,255,255,0.05);
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            color: #5a7a9a;
+            font-size: 12px;
+        }
+        .source-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.08);
+            color: #7a8ba8;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            margin-top: 12px;
+        }
+        .link-btn {
+            display: inline-block;
+            background: rgba(100,181,246,0.2);
+            color: #64b5f6;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📰 小太阳财经政法早报</h1>
+        <div class="date">2026年4月21日 星期二 · 第8期</div>
+    </div>
+
+    <div class="card-container">
+        <!-- 第1条：财经 -->
+        <div class="news-card active" data-index="0">
+            <span class="category-tag category-caijing">💹 财经</span>
+            <h2 class="news-title">美伊停火僵局推升油价 WTI暴涨6.87%突破89美元</h2>
+            <div class="news-content">
+                美以与伊朗临时停火协议将于4月22日到期，美国总统特朗普表示"极不可能"延长停火，扬言到期将"大量炸弹"爆炸。伊朗方面则态度强硬，最高领袖哈梅内伊重申战争赔偿立场，伊朗外交部明确表示暂无第二轮谈判计划。
+            </div>
+            <div class="news-highlight">
+                <div class="label">📊 市场反应</div>
+                <div class="value">WTI原油暴涨6.87%至89.61美元/桶；布伦特原油涨5.64%至95.48美元/桶；现货黄金突破4841美元/盎司</div>
+            </div>
+            <div class="news-highlight">
+                <div class="label">💡 分析</div>
+                <div class="value">霍尔木兹海峡封锁僵局持续，全球市场已损失超5亿桶原油。国际油价大幅波动将对全球供应链和通胀预期产生深远影响。</div>
+            </div>
+            <span class="source-tag">来源：新华社、央视新闻</span>
+        </div>
+
+        <!-- 第2条：财经 -->
+        <div class="news-card" data-index="1">
+            <span class="category-tag category-caijing">💹 财经</span>
+            <h2 class="news-title">苹果宣布换帅：库克9月卸任 CEO权杖交给特努斯</h2>
+            <div class="news-content">
+                苹果公司宣布重大人事变动，现任CEO蒂姆·库克将于今年9月正式卸任，转任执行董事会主席。现任硬件工程高级副总裁约翰·特努斯（John Ternus）将接棒成为新任CEO。这是苹果公司自2011年以来首次 CEO 交接。
+            </div>
+            <div class="news-highlight">
+                <div class="label">👤 新帅档案</div>
+                <div class="value">约翰·特努斯在苹果任职超过20年，主导了iPhone、iPad、Mac等多条产品线的硬件工程，被视为苹果内部最有力的接班候选人。</div>
+            </div>
+            <span class="source-tag">来源：央视财经</span>
+        </div>
+
+        <!-- 第3条：财经 -->
+        <div class="news-card" data-index="2">
+            <span class="category-tag category-caijing">💹 财经</span>
+            <h2 class="news-title">宁德时代"超级科技日"发布 多款新型电池亮相</h2>
+            <div class="news-content">
+                宁德时代今日举办2026年"超级科技日"发布会，聚焦钠电池、凝聚态电池、快充技术等前沿领域，正式发布适配AI算力的新型电池解决方案，引领能源技术革新。
+            </div>
+            <div class="news-highlight">
+                <div class="label">🔋 技术亮点</div>
+                <div class="value">钠电池成本优势明显、凝聚态电池能量密度提升、快充技术可大幅缩短充电时间，为AI数据中心等高算力场景提供绿色能源支撑。</div>
+            </div>
+            <span class="source-tag">来源：人民日报</span>
+        </div>
+
+        <!-- 第4条：财经 -->
+        <div class="news-card" data-index="3">
+            <span class="category-tag category-caijing">💹 财经</span>
+            <h2 class="news-title">A股三大指数集体翻红 3400+个股飘红</h2>
+            <div class="news-content">
+                4月20日，A股三大指数开盘涨跌不一，随后盘中集体翻红。上证指数涨0.54%，深证成指涨0.61%，创业板指涨0.03%。全市超3400只个股飘红，液冷服务器、培育钻石、半导体、稀有金属等概念板块领涨。
+            </div>
+            <div class="news-highlight">
+                <div class="label">📊 板块动向</div>
+                <div class="value">液冷服务器板块涨幅居首，半导体产业链持续活跃，AI算力相关概念依然是市场主线。</div>
+            </div>
+            <span class="source-tag">来源：中国新闻网</span>
+        </div>
+
+        <!-- 第5条：政闻 -->
+        <div class="news-card" data-index="4">
+            <span class="category-tag category-zhengwen">🏛️ 政闻</span>
+            <h2 class="news-title">习近平同沙特王储通电话：中方主张立即全面停火止战</h2>
+            <div class="news-content">
+                国家主席习近平20日下午同沙特王储兼首相穆罕默德通电话。针对当前中东海湾地区局势，习近平强调，中方主张立即、全面停火止战，支持一切有利于恢复和平的努力，坚持通过政治外交途径化解争端。霍尔木兹海峡应该保持正常通行，这符合地区国家和国际社会共同利益。
+            </div>
+            <div class="news-highlight">
+                <div class="label">🌐 中方立场</div>
+                <div class="value">中国始终不渝走和平发展道路，推动构建人类命运共同体，在国际事务中发挥负责任大国作用。</div>
+            </div>
+            <span class="source-tag">来源：央视新闻</span>
+        </div>
+
+        <!-- 第6条：政闻 -->
+        <div class="news-card" data-index="5">
+            <span class="category-tag category-zhengwen">🏛️ 政闻</span>
+            <h2 class="news-title">全国人大常委会4月27-30日审议多部法律草案</h2>
+            <div class="news-content">
+                十四届全国人大常委会第六十五次委员长会议召开，决定十四届全国人大常委会第十五次会议于4月27日至30日在北京举行，将审议多部重要法律草案，涵盖民生、经济、法治等多个领域。
+            </div>
+            <div class="news-highlight">
+                <div class="label">📅 立法进程</div>
+                <div class="value">本次会议是今年重要的立法节点，多部法律草案将进入审议程序，进一步完善中国特色社会主义法律体系。</div>
+            </div>
+            <span class="source-tag">来源：新华社</span>
+        </div>
+
+        <!-- 第7条：政闻 -->
+        <div class="news-card" data-index="6">
+            <span class="category-tag category-zhengwen">🏛️ 政闻</span>
+            <h2 class="news-title">日本7.7级地震引发海啸 全球半导体供应或受影响</h2>
+            <div class="news-content">
+                日本本州东部附近海域20日发生7.7级地震（震级从初报7.4级上修），震源深度10千米，北海道、青森、岩手等太平洋沿岸地区观测到海啸波。专家表示，该地震带目前处于高度活跃期。震中恰为全球半导体材料、设备、存储芯片核心供应基地。
+            </div>
+            <div class="news-highlight">
+                <div class="label">⚠️ 产业链影响</div>
+                <div class="value">日本在全球半导体材料供应中占据重要地位，地震可能导致硅片、光刻胶、特种气体等关键材料供应紧张，需密切关注后续影响。</div>
+            </div>
+            <span class="source-tag">来源：央视新闻</span>
+        </div>
+
+        <!-- 第8条：政闻 -->
+        <div class="news-card" data-index="7">
+            <span class="category-tag category-zhengwen">🏛️ 政闻</span>
+            <h2 class="news-title">2026全球6G技术大会南京开幕 中国6G研发全球领先</h2>
+            <div class="news-content">
+                2026全球6G技术大会今日在南京开幕，来自全球的顶尖专家和产业领袖齐聚一堂，共同探讨6G技术标准、架构与演进路径。我国6G研发与产业落地保持全球领先地位，太赫兹通信、智能超表面、空天地海一体化网络等前沿技术成为焦点。
+            </div>
+            <div class="news-highlight">
+                <div class="label">📡 技术前沿</div>
+                <div class="value">6G将实现空天地海全覆盖，峰值速率可达1Tbps，时延低至0.1ms，为全息通信、自动驾驶等场景提供基础支撑。</div>
+            </div>
+            <span class="source-tag">来源：央视新闻</span>
+        </div>
+
+        <!-- 第9条：法制 -->
+        <div class="news-card" data-index="8">
+            <span class="category-tag category-fazhi">⚖️ 法制</span>
+            <h2 class="news-title">国务院发布《反外国不当域外管辖条例》 法治利剑捍卫国家利益</h2>
+            <div class="news-content">
+                国务院公布《中华人民共和国反外国不当域外管辖条例》，自公布之日起施行。该条例首次以立法形式宣示中国不接受外国不当域外管辖的严正立场，明确建立识别阻断制度和恶意实体清单制度，可对违规外国组织、个人采取九类反制措施。
+            </div>
+            <div class="news-highlight">
+                <div class="label">📜 核心条款</div>
+                <div class="value">可采取资产冻结、交易禁止、入境禁令、罚款等九类反制措施，并可延伸至实控实体，大幅提高违法成本。</div>
+            </div>
+            <span class="source-tag">来源：法治日报</span>
+        </div>
+
+        <!-- 第10条：法制 -->
+        <div class="news-card" data-index="9">
+            <span class="category-tag category-fazhi">⚖️ 法制</span>
+            <h2 class="news-title">最高检发布第61批指导性案例 剑指新型隐性受贿犯罪</h2>
+            <div class="news-content">
+                最高人民检察院发布第六十一批指导性案例，聚焦依法惩治新型、隐性受贿犯罪。涵盖虚增交易环节型、放贷收息型、房产交易型、投资收益型、原始股预期收益型等5种新型受贿类型，为全国检察机关提供办案指导。
+            </div>
+            <div class="news-highlight">
+                <div class="label">🔍 典型案例</div>
+                <div class="value">针对实践中争议较多、社会关注度高的新型受贿犯罪，明确认定标准和数额计算方式，织密反腐败法网。</div>
+            </div>
+            <span class="source-tag">来源：新华社</span>
+        </div>
+
+        <!-- 第11条：法制 -->
+        <div class="news-card" data-index="10">
+            <span class="category-tag category-fazhi">⚖️ 法制</span>
+            <h2 class="news-title">最高法公布Q1审判数据：受理案件1060.79万件</h2>
+            <div class="news-content">
+                最高人民法院公布2026年第一季度司法审判工作主要数据。人民法院受理各类案件1060.79万件，同比略有下降。受理刑事案件、民商事案件数量同比下降，受理行政案件、执行案件数量同比上升。
+            </div>
+            <div class="news-highlight">
+                <div class="label">📊 数据亮点</div>
+                <div class="value">知识产权法庭成立7年来作出司法处罚13件、移送违法犯罪线索18件，认定虚假诉讼1件、恶意诉讼8件。</div>
+            </div>
+            <span class="source-tag">来源：最高人民法院网站</span>
+        </div>
+
+        <!-- 第12条：法制 -->
+        <div class="news-card" data-index="11">
+            <span class="category-tag category-fazhi">⚖️ 法制</span>
+            <h2 class="news-title">中央纪委通报国企领导政绩观扭曲 多人受处分</h2>
+            <div class="news-content">
+                中央层面树立和践行正确政绩观学习教育工作专班、中央纪委办公厅公开通报中国航空器材集团原董事长任宇、原总会计师赵保辉等政绩观扭曲错位、欺瞒组织、侵害群众利益等问题。给予任宇、赵保辉撤销党内职务、政务撤职处分。
+            </div>
+            <div class="news-highlight">
+                <div class="label">⚠️ 典型教训</div>
+                <div class="value">任宇等人在国外公务途中聚众饮酒致航班延误68分钟，回国后隐瞒不报，在多次学习教育中均未对照检查，心存侥幸、欺骗组织。</div>
+            </div>
+            <span class="source-tag">来源：央视新闻</span>
+        </div>
+
+        <!-- 第13条：法制 -->
+        <div class="news-card" data-index="12">
+            <span class="category-tag category-fazhi">⚖️ 法制</span>
+            <h2 class="news-title">最高法发布第三批涉外商事海事调解典型案例</h2>
+            <div class="news-content">
+                最高人民法院发布第三批涉外商事海事调解典型案例，涵盖跨境投资、股权转让、买卖合同、船舶经营管理、海难救助、涉外仲裁裁决承认与执行等多个领域，涉及韩国、意大利、丹麦、也门、葡萄牙等国当事人。
+            </div>
+            <div class="news-highlight">
+                <div class="label">🌐 法治化营商</div>
+                <div class="value">展现人民法院服务高水平对外开放、护航海洋经济高质量发展的司法担当，践行新时代"枫桥经验"。</div>
+            </div>
+            <span class="source-tag">来源：最高人民法院</span>
+        </div>
+
+        <!-- 第14条：法制 -->
+        <div class="news-card" data-index="13">
+            <span class="category-tag category-fazhi">⚖️ 法制</span>
+            <h2 class="news-title">"两高"联合发文惩治"机闹" 维护民航飞行安全</h2>
+            <div class="news-content">
+                最高人民法院、最高人民检察院联合发布关于办理危害民航飞行安全刑事案件适用法律若干问题的解释，明确"机闹"行为的法律适用标准，填补了危害民航飞行安全刑事案件法律适用的细化空白。《解释》共7条，自2026年4月9日起施行。
+            </div>
+            <div class="news-highlight">
+                <div class="label">✈️ 法律红线</div>
+                <div class="value">明确强占座位、擅自打开应急舱门、违规使用电子设备等"机闹"行为的罪与非罪边界，保障旅客出行安全。</div>
+            </div>
+            <span class="source-tag">来源：央视新闻</span>
+        </div>
+    </div>
+
+    <div class="nav-container">
+        <button class="nav-btn" id="prevBtn" onclick="changePage(-1)" disabled>
+            ← 上一条
+        </button>
+        <span class="page-indicator" id="pageIndicator">1 / 14</span>
+        <button class="nav-btn" id="nextBtn" onclick="changePage(1)">
+            下一条 →
+        </button>
+    </div>
+
+    <div class="footer">
+        小太阳财经政法早报 · 每天08:30更新<br>
+        发送至：收发室素材接收群
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const totalPages = 14;
+        const cards = document.querySelectorAll('.news-card');
+        
+        function showPage(index) {
+            cards.forEach((card, i) => {
+                card.classList.toggle('active', i === index);
+            });
+            document.getElementById('pageIndicator').textContent = `${index + 1} / ${totalPages}`;
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === totalPages - 1;
+        }
+        
+        function changePage(delta) {
+            const newPage = currentPage + delta;
+            if (newPage >= 0 && newPage < totalPages) {
+                currentPage = newPage;
+                showPage(currentPage);
+            }
+        }
+        
+        // 键盘导航
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changePage(-1);
+            if (e.key === 'ArrowRight') changePage(1);
+        });
+        
+        // 触摸滑动支持
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+        });
+        document.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                changePage(diff > 0 ? 1 : -1);
+            }
+        });
+    </script>
+</body>
+</html>
