@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小太阳财经政法早报 2026年4月22日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #1565c0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 5px;
+        }
+        .header .date {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            perspective: 1000px;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-inner {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .category-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+        .category-财经 { background: linear-gradient(135deg, #e3f2fd, #bbdefb); color: #1565c0; }
+        .category-政闻 { background: linear-gradient(135deg, #fce4ec, #f8bbd9); color: #c2185b; }
+        .category-法制 { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); color: #2e7d32; }
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a237e;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .card-content {
+            font-size: 15px;
+            color: #424242;
+            line-height: 1.8;
+            flex: 1;
+        }
+        .card-content p {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            background: linear-gradient(120deg, #fff9c4 0%, #fff59d 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .card-footer {
+            padding: 15px 25px;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e0e0e0;
+        }
+        .page-indicator {
+            font-size: 13px;
+            color: #666;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-btn {
+            background: #1565c0;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            background: #0d47a1;
+            transform: scale(1.05);
+        }
+        .nav-btn:disabled {
+            background: #bdbdbd;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .source-link {
+            font-size: 12px;
+            color: #1565c0;
+            margin-top: 10px;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 12px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-inner {
+            animation: fadeIn 0.4s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>☀️ 小太阳财经政法早报</h1>
+        <div class="date">2026年4月22日 星期三 | 每日8:30准时送达</div>
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <div class="card-inner" id="cardContent"></div>
+            <div class="card-footer">
+                <div class="page-indicator" id="pageIndicator"></div>
+                <div class="nav-buttons">
+                    <button class="nav-btn" id="prevBtn" onclick="prevCard()">◀ 上一条</button>
+                    <button class="nav-btn" id="nextBtn" onclick="nextCard()">下一条 ▶</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>小太阳AI出品 | 聚焦财经政闻·传递法治声音</p>
+    </div>
+
+    <script>
+        const newsData = [
+            {
+                category: "财经",
+                categoryClass: "财经",
+                title: "国际油价飙升！布伦特原油突破101美元/桶",
+                content: `<p>受美伊局势持续紧张影响，国际原油市场大幅波动：</p>
+                <p>• 布伦特原油突破<span class="highlight">101美元/桶</span>，日内涨5.78%</p>
+                <p>• WTI原油突破92美元/桶，日内涨5.26%</p>
+                <p>• 美国至4月17日当周API原油库存减少447万桶，远超预期的180万桶</p>
+                <p>马士基已建议避免通过霍尔木兹海峡运输，反映该区域地缘风险对全球供应链的潜在影响。</p>`,
+                source: "来源：芝麻AI"
+            },
+            {
+                category: "财经",
+                categoryClass: "财经",
+                title: "A股量价齐升！沪指收获三连阳，剑指4100点",
+                content: `<p>昨日A股市场迎来放量普涨行情：</p>
+                <p>• 沪指成功收复<span class="highlight">60日均线</span>，均线系统呈现完美多头排列</p>
+                <p>• 科创50指数大涨近<span class="highlight">2%</span>，表现格外强势</p>
+                <p>• 两市成交量较前一交易日大幅增加1500亿元，总成交额逼近<span class="highlight">2.6万亿</span></p>
+                <p>技术面来看，只要市场不有效跌破5日均线，短期多头攻势将持续延续。</p>`,
+                source: "来源：市场分析"
+            },
+            {
+                category: "财经",
+                categoryClass: "财经",
+                title: "一季度宏观杠杆率上升6.6个百分点",
+                content: `<p>国家金融与发展实验室数据显示：</p>
+                <p>• 2026年一季度宏观杠杆率从2025年末的<span class="highlight">302.6%</span>上升至<span class="highlight">309.3%</span></p>
+                <p>• 居民部门债务同比增长<span class="highlight">-0.4%</span>，自1995年三季度以来首次出现负增长</p>
+                <p>• 企业部门债务同比增长7.8%，处于历史较低水平</p>
+                <p>• 政府部门杠杆率上升1.8个百分点至70.3%</p>`,
+                source: "来源：NIFD季报"
+            },
+            {
+                category: "财经",
+                categoryClass: "财经",
+                title: "SpaceX披露招股书：2025年负债攀升至230亿美元",
+                content: `<p>SpaceX最新披露的财务数据显示：</p>
+                <p>• 2025年负债规模攀升至<span class="highlight">230亿美元</span></p>
+                <p>• 主要源于收购人工智能公司xAI</p>
+                <p>• 规划的轨道人工智能数据中心等项目技术尚未验证，或不具备商业可行性</p>
+                <p>与此同时，OpenAI推出ChatGPT Images2.0图像模型，Meta计划在员工电脑安装追踪软件收集数据用于AI训练。</p>`,
+                source: "来源：财经前沿"
+            },
+            {
+                category: "政闻",
+                categoryClass: "政闻",
+                title: "中莫关系提升为新时代中莫命运共同体",
+                content: `<p>国家主席习近平4月21日在北京同莫桑比克总统查波举行会谈：</p>
+                <p>• 两国一致同意将双边关系提升至<span class="highlight">新时代中莫命运共同体</span></p>
+                <p>• 这是今年首位对中国进行国事访问的非洲国家领导人</p>
+                <p>• 两国元首共同见证签署<span class="highlight">20余项合作文件</span>，涵盖"一带一路"、能源、农业、卫生等领域</p>
+                <p>• 中方将于5月1日起对53个非洲建交国全面实施零关税举措</p>`,
+                source: "来源：外交部"
+            },
+            {
+                category: "政闻",
+                categoryClass: "政闻",
+                title: "习近平会见老挝人民革命党中央总书记特使",
+                content: `<p>4月21日下午，习近平在人民大会堂会见老挝人革党中央政治局委员、常务副总理沙伦赛：</p>
+                <p>• 今年是<span class="highlight">中老建交65周年</span>暨"中老友好年"</p>
+                <p>• 双方将推动构建中老命运共同体新的五年行动计划</p>
+                <p>• 沙伦赛转达通伦总书记致习近平总书记的亲笔信</p>
+                <p>• 两国将继续秉持"十六字"方针和"四好"精神，深化全面务实合作</p>`,
+                source: "来源：央视新闻"
+            },
+            {
+                category: "政闻",
+                categoryClass: "政闻",
+                title: "美伊局势紧张：霍尔木兹海峡成焦点",
+                content: `<p>美伊围绕停火协议及谈判展开多轮博弈：</p>
+                <p>• 特朗普称应巴基斯坦方面请求延长停火期限</p>
+                <p>• 伊朗武装部队警告已做好<span class="highlight">全面战备</span></p>
+                <p>• 伊朗强调控制霍尔木兹海峡是重要筹码</p>
+                <p>• 伊朗表示不会出席原定于4月22日在伊斯兰堡举行的会谈</p>
+                <p>伊朗方面称，持续的海上封锁被其视为"战争行为"。</p>`,
+                source: "来源：国际要闻"
+            },
+            {
+                category: "法制",
+                categoryClass: "法制",
+                title: "两高发布贪污贿赂案件新司法解释，5月1日起实施",
+                content: `<p>最高人民法院、最高人民检察院4月10日联合发布：</p>
+                <p>• 《关于办理贪污贿赂刑事案件适用法律若干问题的解释（二）》</p>
+                <p>• <span class="highlight">公职人员巨额财产来源不明罪</span>立案标准从30万提至300万</p>
+                <p>• <span class="highlight">民企挪用资金罪</span>入刑门槛从6万降至3万</p>
+                <p>• 实现公私主体"一把尺子量到底"的平等保护</p>`,
+                source: "来源：法治瞭望"
+            },
+            {
+                category: "法制",
+                categoryClass: "法制",
+                title: "全国人大常委会第二十二次会议4月27日至30日举行",
+                content: `<p>赵乐际委员长4月20日主持召开委员长会议：</p>
+                <p>• 审议<span class="highlight">监狱法修订草案</span>、社会救助法草案、医疗保障法草案</p>
+                <p>• 审议<span class="highlight">企业国有资产法修订草案</span>、农业法修订草案</p>
+                <p>• 审议<span class="highlight">国防动员法修订草案</span>、水法修订草案</p>
+                <p>• 审议批准中国与多国的刑事司法协助条约</p>`,
+                source: "来源：中国人大网"
+            },
+            {
+                category: "法制",
+                categoryClass: "法制",
+                title: "中国出台《反外国不当域外管辖条例》",
+                content: `<p>国务院4月公布重磅法规：</p>
+                <p>• 《中华人民共和国<span class="highlight">反外国不当域外管辖条例</span>》自公布之日起施行</p>
+                <p>• 首次以立法形式宣示中国不接受外国不当域外管辖</p>
+                <p>• 创设识别阻断制度，可对不当管辖措施实施"禁执令"</p>
+                <p>• 设立恶意实体清单，可采取资产冻结、交易禁止等<span class="highlight">九类反制措施</span></p>`,
+                source: "来源：法治日报"
+            },
+            {
+                category: "法制",
+                categoryClass: "法制",
+                title: "最高法：加大对强奸、猥亵儿童、诈骗等犯罪惩治力度",
+                content: `<p>最高人民法院4月14日发布2026年第一季度司法审判数据：</p>
+                <p>• 人民法院受理各类案件<span class="highlight">1060.79万件</span></p>
+                <p>• 受理刑事案件、民商事案件数量同比下降</p>
+                <p>• 受理行政案件、执行案件数量同比上升</p>
+                <p>• 最高检部署<span class="highlight">16项"检护民生"重点任务</span></p>`,
+                source: "来源：最高法官网"
+            },
+            {
+                category: "财经",
+                categoryClass: "财经",
+                title: "美股三大指数集体收跌，中概股普跌",
+                content: `<p>隔夜全球金融市场剧烈分化：</p>
+                <p>• 道指跌0.59%，纳指跌0.59%，标普500跌0.63%</p>
+                <p>• 纳斯达克中国金龙指数收跌<span class="highlight">2.55%</span></p>
+                <p>• 大全新能源跌9.02%，康迪车业跌8.85%</p>
+                <p>• 大型科技股多数下跌，苹果、奈飞跌超2%</p>`,
+                source: "来源：美股收盘"
+            },
+            {
+                category: "财经",
+                categoryClass: "财经",
+                title: "亚投行呼吁加大投融资力度保护全球水循环",
+                content: `<p>亚投行发布《2026年亚洲基础设施融资报告》：</p>
+                <p>• 全球水务项目在发展融资总额中的占比从<span class="highlight">30%</span>降至<span class="highlight">10%</span></p>
+                <p>• 长期投资不足和治理缺位正削弱水循环系统完整性</p>
+                <p>• 呼吁各方将水系保护纳入基础设施投资优先领域</p>`,
+                source: "来源：亚投行"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function renderCard(index) {
+            const card = newsData[index];
+            const cardContent = document.getElementById('cardContent');
+            const pageIndicator = document.getElementById('pageIndicator');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            cardContent.innerHTML = `
+                <div class="category-tag category-${card.categoryClass}">${card.category} · 第${index + 1}/${newsData.length}条</div>
+                <h2 class="card-title">${card.title}</h2>
+                <div class="card-content">${card.content}</div>
+                <div class="source-link">${card.source}</div>
+            `;
+
+            pageIndicator.textContent = `第 ${index + 1} / ${newsData.length} 条`;
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === newsData.length - 1;
+        }
+
+        function nextCard() {
+            if (currentIndex < newsData.length - 1) {
+                currentIndex++;
+                renderCard(currentIndex);
+            }
+        }
+
+        function prevCard() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderCard(currentIndex);
+            }
+        }
+
+        // 初始化
+        renderCard(0);
+    </script>
+</body>
+</html>
