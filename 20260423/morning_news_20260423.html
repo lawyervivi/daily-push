@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小太阳财经政法早报 2026-04-23</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #1a1a2e; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.header {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 5px;
+}
+.header .date {
+  font-size: 14px;
+  color: #888;
+}
+.card-container {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+}
+.card {
+  background: linear-gradient(145deg, #16213e 0%, #1a1a2e 100%);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  display: none;
+  border: 1px solid rgba(102,126,234,0.2);
+}
+.card.active { display: block; }
+.category {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.cat-finance { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: #fff; }
+.cat-politics { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: #1a1a2e; }
+.cat-law { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: #1a1a2e; }
+.card h2 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.card .source {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.card .content {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.card .content p { margin-bottom: 10px; }
+.card .content strong { color: #fff; }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+.btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.btn-prev { background: rgba(102,126,234,0.3); color: #fff; }
+.btn-next { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; }
+.btn:hover { transform: scale(1.02); opacity: 0.9; }
+.btn:disabled { opacity: 0.3; cursor: not-allowed; transform: none; }
+.indicator {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 16px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+}
+.dot.active { background: #667eea; }
+.footer {
+  color: #555;
+  font-size: 12px;
+  margin-top: 20px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>☀️ 小太阳财经政法早报</h1>
+  <div class="date">2026年4月23日 星期四 | 第8期</div>
+</div>
+<div class="card-container">
+  <div class="card active" data-index="0">
+    <span class="category cat-finance">💹 财经</span>
+    <h2>A股强势回暖 沪指重返4100点</h2>
+    <div class="source">来源：陆家嘴财经早餐</div>
+    <div class="content">
+      <p><strong>📈 市场表现：</strong>A股低开高走，沪指收报4106.26点，上涨0.52%；创业板指涨1.73%刷新逾10年新高；两市成交额达2.58万亿元，赚钱效应回升。</p>
+      <p><strong>🔧 板块动态：</strong>半导体、通信设备、算力硬件等科技板块强势领涨；算电协同、CPO概念、PCB概念股涨幅居前；AI算力仍是市场核心主线。</p>
+      <p><strong>💰 资金动向：</strong>南向资金净买入48.9亿港元；两市融资余额连续增加；百亿私募今年以来超九成实现正收益。</p>
+    </div>
+  </div>
+  
+  <div class="card" data-index="1">
+    <span class="category cat-finance">💹 财经</span>
+    <h2>美股收涨 纳指创历史新高</h2>
+    <div class="source">来源：新浪财经</div>
+    <div class="content">
+      <p><strong>📊 美股表现：</strong>道指涨0.69%，纳指涨1.64%创历史新高，标普500涨1.05%。英伟达涨超1%，谷歌、苹果、微软、亚马逊涨超2%。</p>
+      <p><strong>⛽ 原油市场：</strong>布伦特原油升破100美元/桶，WTI原油突破92美元/桶。受霍尔木兹海峡局势影响，油价大幅上涨。</p>
+      <p><strong>🪙 贵金属：</strong>现货黄金失守4730美元/盎司；比特币升破79000美元，日内涨3.56%。</p>
+    </div>
+  </div>
+  
+  <div class="card" data-index="2">
+    <span class="category cat-finance">💹 财经</span>
+    <h2>公募基金规模终结11连增</h2>
+    <div class="source">来源：陆家嘴财经早餐</div>
+    <div class="content">
+      <p><strong>📉 规模变化：</strong>截至3月底，公募基金规模37.53万亿元，环比回落超1万亿元。股票基金规模下降超5000亿元，混合基金下降超3000亿元。</p>
+      <p><strong>🔄 结构变化：</strong>债券基金规模增长近1400亿元，货币基金下降超2600亿元。投资者风险偏好有所下降。</p>
+      <p><strong>🏆 重仓股：</strong>一季度末前十大重仓股为中际旭创、宁德时代、新易盛、腾讯控股、贵州茅台等；药明康德新进前十大，寒武纪退出。</p>
+    </div>
+  </div>
+  
+  <div class="card" data-index="3">
+    <span class="category cat-finance">💹 财经</span>
+    <h2>长三角一季度进出口4.49万亿</h2>
+    <div class="source">来源：今日头条</div>
+    <div class="content">
+      <p><strong>🚢 外贸数据：</strong>一季度长三角进出口总值4.49万亿元，同比增长15.8%，规模创历史同期新高，占全国进出口总值近四成。</p>
+      <p><strong>🏦 货币政策：</strong>央行4月22日开展60亿元7天期逆回购操作，利率维持1.40%不变，当日实现净投放55亿元。</p>
+      <p><strong>🌐 AI出海：</strong>中国开源AI模型在国际主流平台下载量超越美国模型，全球AI发展格局迎来转变。</p>
+    </div>
+  </div>
+  
+  <div class="card" data-index="4">
+    <span class="category cat-finance">💹 财经</span>
+    <h2>谷歌发布TPU 8t/8i两款AI芯片</h2>
+    <div class="source">来源：陆家嘴财经早餐</div>
+    <div class="content">
+      <p><strong>💻 芯片发布：</strong>谷歌在Cloud Next 2026大会发布TPU 8t和TPU 8i。TPU 8t性价比比前代提升2.8倍，可将前沿模型开发周期从数月缩短至数周。</p>
+      <p><strong>🚗 特斯拉动态：</strong>特斯拉Q1营收224亿美元，同比增长16%；马斯克称FSD无监督版本将于Q4推送；中国车型将接入豆包和DeepSeek。</p>
+      <p><strong>📱 苹果修复：</strong>苹果公司修复安全漏洞，此前美国警方可借此提取iPhone已删除聊天记录。</p>
+    </div>
+  </div>
+  
+  <div class="card" data-index="5">
+    <span class="category cat-politics">🏛️ 政闻</span>
+    <h2>在韩志愿军烈士遗骸安葬仪式举行</h2>
+    <div class="source">来源：央视新闻</div>
+    <div class="content">
+      <p><strong>🕯️ 归国历程：</strong>4月22日，运-20B专机接迎第十三批12位在韩志愿军烈士遗骸归国。车队行驶29.7公里，前往沈阳抗美援朝烈士陵园。</p>
+      <p><strong>📅 今日安葬：</strong>4月23日上午，在沈阳抗美援朝烈士陵园举行安葬仪式，迎接英雄回家。</p>
+    </div>
+  </div>
+  
+  <div class="card" data-index="6">
+    <span class="category cat-politics">🏛️ 政闻</span>
+    <h2>中国空间站将迎来首批外籍航天员</h2>
+    <div class="source">来源：新京报</div>
+    <div class="content">
+      <p><strong>🌟 航天员选拔：</strong>中国载人航天工程首批外籍航天员选拔工作结束，2名巴基斯坦籍候选对象最终入选。</p>
+      <p><strong>👨‍🚀 训练计划：</strong>他们将作为预备航天员来华参加训练，完成后以载荷专家身份参加飞行任务，成为首位进入中国空间站的外籍航天员。</p>
+      <p><strong>🚀 国际合作：</strong>这是中国航天国际合作的又一重要里程碑，展现中国航天开放包容的态度。</p>
+    </div>
+  </div>
+  
+  <div class="card" data-index="7">
+    <span class="category cat-politics">🏛️ 政闻</span>
+    <h2>中办、国办部署节能降碳工作</h2>
+    <div class="source">来源：央视新闻</div>
+    <div class="content">
+      <p><strong>⚡ 政策要点：</strong>《关于更高水平更高质量做好节能降碳工作的意见》发布，提出优化居民阶梯电价制度、健全分时电价机制。</p>
+      <p><strong>🌱 发展方向：</strong>严控能源消费不合理增长，大力发展非化石能源与新型储能，推动绿色低碳转型。</p>
+      <p><strong>🏘️ 青年发展：</strong>共青团等15部门联合印发意见，提出18项举措深化青年发展型城市建设。</p>
+    </div>
+  </div>
+  
+  <div class="card" data-index="8">
+    <span class="category cat-politics">🏛️ 政闻</span>
+    <h2>美伊停火延长 霍尔木兹局势紧张</h2>
+    <div class="source">来源：新浪财经</div>
+    <div class="content">
+      <p><strong>⚖️ 停火延长：</strong>美伊临时停火协议延长，特朗普表示最早可能在周五重启和谈。伊朗方面否认举行新谈判，称特朗普"又说谎了"。</p>
+      <p><strong>🚢 海峡局势：</strong>伊朗在霍尔木兹海峡扣押两艘集装箱船；英法牵头30余国召开军事会议，商讨海峡安全方案。</p>
+      <p><strong>💣 扫雷难题：</strong>五角大楼披露，彻底清除霍尔木兹海峡水雷或需6个月，影响或持续至年末。</p>
+    </div>
+  </div>
+  
+  <div class="card" data-index="9">
+    <span class="category cat-law">⚖️ 法制</span>
+    <h2>两高发布司法解释加大反腐力度</h2>
+    <div class="source">来源：人民网</div>
+    <div class="content">
+      <p><strong>📜 新规内容：</strong>《关于办理贪污贿赂刑事案件适用法律若干问题的解释(二)》发布，共22条，5月1日起施行。</p>
+      <p><strong>🔍 重点变化：</strong>民企职务犯罪量刑对标公职人员；3万元即可构成受贿罪；股权珠宝等"雅贿"按市场价格认定价值。</p>
+      <p><strong>🎯 覆盖范围：</strong>预期收益型受贿、斡旋受贿等新型腐败形式全部纳入打击范围。</p>
+    </div>
+  </div>
+  
+  <div class="card" data-index="10">
+    <span class="category cat-law">⚖️ 法制</span>
+    <h2>最高检部署"检护民生"专项行动</h2>
+    <div class="source">来源：人民网</div>
+    <div class="content">
+      <p><strong>📋 重点任务：</strong>最高检下发通知，部署16项"检护民生"重点任务，紧盯就业、消费、社保、医疗等重点领域。</p>
+      <p><strong>👥 重点人群：</strong>聚焦妇女儿童、残疾人、老年人等重点群体权益保障。</p>
+      <p><strong name="legal-areas">⚕️ 重点问题：</strong>重点治理危害食药安全、侵害劳动者合法权益等突出问题。</p>
+    </div>
+  </div>
+  
+  <div class="card" data-index="11">
+    <span class="category cat-law">⚖️ 法制</span>
+    <h2>中国涉外法治体系再完善</h2>
+    <div class="source">来源：司法部</div>
+    <div class="content">
+      <p><strong>🛡️ 反不当域外管辖：</strong>《反对外国不当域外管辖措施条例》出台，首次以立法形式宣示不接受外国不当域外管辖的严正立场。</p>
+      <p><strong name="supply-chain">⛓️ 供应链安全：</strong>《产业链供应链安全监督管理规定》建立关键领域清单制度，针对集成电路等"卡脖子"领域强化保障。</p>
+      <p><strong>⚖️ 救济渠道：</strong>赋予公民、组织司法救济权，可依法向法院起诉要求赔偿因不当管辖造成的损失。</p>
+    </div>
+  </div>
+  
+  <div class="card" data-index="12">
+    <span class="category cat-law">⚖️ 法制</span>
+    <h2>个人信息保护专项行动将开展</h2>
+    <div class="source">来源：人民网</div>
+    <div class="content">
+      <p><strong>🔒 治理重点：</strong>中央网信办会同工信部、公安部，2026年将开展个人信息保护系列专项行动。</p>
+      <p><strong>📱 治理领域：</strong>聚焦APP、互联网广告、教育、交通、卫生健康、金融等重点领域违法违规收集使用个人信息问题。</p>
+      <p><strong>🏆 最高法表态：</strong>对虚假诉讼、恶意诉讼坚决说"不"，成立7年来共作出司法处罚13件。</p>
+    </div>
+  </div>
+
+  <div class="nav">
+    <button class="btn btn-prev" onclick="changeCard(-1)">◀ 上一条</button>
+    <button class="btn btn-next" onclick="changeCard(1)">下一条 ▶</button>
+  </div>
+  <div class="indicator" id="indicator"></div>
+</div>
+<div class="footer">
+  小太阳财经政法早报 | 每日08:30更新 | 发送至"收发室素材接收群"
+</div>
+
+<script>
+let currentIndex = 0;
+const totalCards = 13;
+const cards = document.querySelectorAll('.card');
+const indicator = document.getElementById('indicator');
+
+// Initialize indicators
+for (let i = 0; i < totalCards; i++) {
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  indicator.appendChild(dot);
+}
+
+function changeCard(direction) {
+  cards[currentIndex].classList.remove('active');
+  document.querySelectorAll('.dot')[currentIndex].classList.remove('active');
+  
+  currentIndex += direction;
+  if (currentIndex < 0) currentIndex = totalCards - 1;
+  if (currentIndex >= totalCards) currentIndex = 0;
+  
+  cards[currentIndex].classList.add('active');
+  document.querySelectorAll('.dot')[currentIndex].classList.add('active');
+  
+  document.querySelector('.btn-prev').disabled = false;
+  document.querySelector('.btn-next').disabled = false;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') changeCard(-1);
+  if (e.key === 'ArrowRight') changeCard(1);
+});
+
+// Touch swipe support
+let touchStartX = 0;
+document.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+});
+document.addEventListener('touchend', (e) => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) {
+    changeCard(diff > 0 ? 1 : -1);
+  }
+});
+</script>
+</body>
+</html>
