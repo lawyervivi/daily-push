@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小太阳财经政法早报 - 2026年4月24日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #1a1a2e;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #e94560;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        .header .date {
+            color: #a0a0a0;
+            font-size: 14px;
+        }
+        .card-container {
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+        }
+        .card {
+            background: linear-gradient(145deg, #16213e, #1a1a2e);
+            border-radius: 16px;
+            padding: 24px;
+            min-height: 420px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(233,69,96,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+        }
+        .category-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .tag-caijing { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; }
+        .tag-zhengwen { background: linear-gradient(135deg, #f093fb, #f5576c); color: #fff; }
+        .tag-fazhi { background: linear-gradient(135deg, #4facfe, #00f2fe); color: #fff; }
+        .card-title {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .card-content {
+            color: #c0c0c0;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .card-content p { margin-bottom: 10px; }
+        .highlight { color: #e94560; font-weight: 600; }
+        .source {
+            color: #666;
+            font-size: 11px;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-btns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        .nav-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .nav-btn.prev { background: #333; color: #fff; }
+        .nav-btn.next { background: linear-gradient(135deg, #e94560, #ff6b6b); color: #fff; }
+        .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(233,69,96,0.3); }
+        .nav-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+        .page-indicator {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+        .page-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #333;
+            margin: 0 3px;
+        }
+        .page-dot.active { background: #e94560; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📰 小太阳财经政法早报</h1>
+        <div class="date">2026年4月24日 星期五</div>
+    </div>
+    
+    <div class="card-container">
+        <div class="card" id="newsCard">
+            <!-- 内容由JS填充 -->
+        </div>
+        
+        <div class="nav-btns">
+            <button class="nav-btn prev" id="prevBtn" onclick="prevNews()">← 上一条</button>
+            <button class="nav-btn next" id="nextBtn" onclick="nextNews()">下一条 →</button>
+        </div>
+        
+        <div class="page-indicator" id="pageIndicator">
+            <!-- 页码由JS填充 -->
+        </div>
+    </div>
+
+    <script>
+        const newsData = [
+            {
+                category: "财经",
+                tagClass: "tag-caijing",
+                title: "中际旭创市值突破万亿",
+                content: `<p><span class="highlight">4月23日，中际旭创股价突破900元/股，公司总市值首次突破万亿，成为A股第八只市值过万亿的个股。</span></p>
+                <p>中际旭创核心业绩几乎全部来自全资子公司苏州旭创，是苏州产业培育的典型案例。随着AI算力基础设施建设热潮，光模块需求增长，公司承接红利。</p>
+                <p>但也面临产能、原材料短缺和价格下降等挑战。</p>`,
+                source: "来源：芝麻AI | 新浪财经"
+            },
+            {
+                category: "财经",
+                tagClass: "tag-caijing",
+                title: "A股放量下跌，多空博弈升级",
+                content: `<p><span class="highlight">4月23日，A股呈现放量下跌态势，沪指收跌0.32%，创业板指收跌0.87%，沪深京三市成交额放量至2.82万亿元。</span></p>
+                <p>板块分化明显，有色及通信等科技板块回调，石油、煤炭、白酒等板块上涨。</p>
+                <p>后市具备实质业绩支撑的细分领域仍有配置价值，缺乏基本面验证的纯题材品种面临调整压力。</p>`,
+                source: "来源：芝麻AI"
+            },
+            {
+                category: "财经",
+                tagClass: "tag-caijing",
+                title: "美伊局势紧张，全球原油市场波动",
+                content: `<p><span class="highlight">美伊战争持续，霍尔木兹海峡航运受阻，全球原油库存急剧下降。</span></p>
+                <p>高盛认为油价表现克制是风险溢价降低、市场提前去库存等因素叠加结果。当前原油市场呈"现货升水"格局，若中东供应长期受阻，油价存在上行风险。</p>`,
+                source: "来源：芝麻AI"
+            },
+            {
+                category: "财经",
+                tagClass: "tag-caijing",
+                title: "银行股H股涨势强劲",
+                content: `<p><span class="highlight">近段时间，银行股H股涨势亮眼，中证香港银行投资指数年初至今涨幅超10%，4月21日四大行H股均创历史高价。</span></p>
+                <p>相比之下，A股银行股2026年表现疲软。银行股H股走强是基本面、估值红利、市场环境与资金偏好等因素共同作用，专家预计后市仍具备估值修复空间。</p>`,
+                source: "来源：芝麻AI"
+            },
+            {
+                category: "政闻",
+                tagClass: "tag-zhengwen",
+                title: "习近平：义乌小商品闯出大市场",
+                content: `<p><span class="highlight">中共中央总书记、国家主席、中央军委主席习近平近日作出重要指示。</span></p>
+                <p>习近平指出，义乌小商品闯出大市场、做成大产业，形成"义乌发展经验"，这是因地制宜发展县域经济的成功实践。</p>`,
+                source: "来源：金融时报"
+            },
+            {
+                category: "政闻",
+                tagClass: "tag-zhengwen",
+                title: "何立峰会见美国黑石集团董事长",
+                content: `<p><span class="highlight">中共中央政治局委员、国务院副总理何立峰23日在人民大会堂会见美国黑石集团董事长兼首席执行官苏世民。</span></p>
+                <p>何立峰表示，今年一季度中国经济实现良好开局，发展韧性和活力进一步彰显。</p>`,
+                source: "来源：金融时报"
+            },
+            {
+                category: "政闻",
+                tagClass: "tag-zhengwen",
+                title: "日经225指数突破6万点",
+                content: `<p><span class="highlight">4月23日，日经225指数首次突破6万点关口，续创新高。韩国KOSPI指数涨幅超1%，创下历史新高。</span></p>
+                <p>日本众议院全体会上表决通过了有关设置"国家情报局"的法案。</p>`,
+                source: "来源：央视新闻"
+            },
+            {
+                category: "政闻",
+                tagClass: "tag-zhengwen",
+                title: "美伊谈判再现分歧，霍尔木兹局势紧张",
+                content: `<p><span class="highlight">美伊原定的临时停火于22日正式结束，新一轮谈判仍因核心分歧难以推进。</span></p>
+                <p>伊朗将海上封锁解除作为谈判前提，美方则坚持伊朗必须移交浓缩铀。双方已进入"停火已过期、谈判未重启"的危险僵持阶段。</p>`,
+                source: "来源：央视新闻"
+            },
+            {
+                category: "政闻",
+                tagClass: "tag-zhengwen",
+                title: "特朗普宣布黎以停火延长3周",
+                content: `<p><span class="highlight">美国总统特朗普23日宣布，以色列与黎巴嫩之间的临时停火协议将延长3周，持续至5月18日。</span></p>
+                <p>华盛顿会谈"进展顺利"，期待在不久的将来接待以色列总理内塔尼亚胡及黎巴嫩总统奥恩到访。</p>`,
+                source: "来源：央视新闻"
+            },
+            {
+                category: "法制",
+                tagClass: "tag-fazhi",
+                title: "国务院颁布两部重要法规",
+                content: `<p><span class="highlight">2026年4月，国务院相继公布《产业链供应链安全的规定》与《反外国不当域外管辖条例》。</span></p>
+                <p>这是反击有的西方国家霸权主义和强权政治的迫切需要，是维护国家利益和人民利益的迫切需要，标志着中国运用法治方式应对外部风险挑战迈入新阶段。</p>`,
+                source: "来源：法治日报"
+            },
+            {
+                category: "法制",
+                tagClass: "tag-fazhi",
+                title: "人大常委会第二十二次会议将举行",
+                content: `<p><span class="highlight">十四届全国人大常委会第二十二次会议将于4月27日至30日在北京举行。</span></p>
+                <p>会议将审议监狱法修订草案、社会救助法草案、医疗保障法草案、耕地保护和质量提升法草案等多部法律草案。</p>`,
+                source: "来源：法治日报"
+            },
+            {
+                category: "法制",
+                tagClass: "tag-fazhi",
+                title: "司法部发布新就业形态典型案例",
+                content: `<p><span class="highlight">司法部发布第十二批行政复议典型案例，聚焦新就业群体权益保护、新业态监管、社保政策落实等热点民生问题。</span></p>
+                <p>将外卖送餐员"在线待命—接单配送—返程等待"完整工作流程认定为其工作的必要组成部分，有效破解了职业伤害认定难题。</p>`,
+                source: "来源：中国网"
+            },
+            {
+                category: "法制",
+                tagClass: "tag-fazhi",
+                title: "7家电商平台被罚没35.97亿元",
+                content: `<p><span class="highlight">4月17日，国家市场监督管理总局依法对7家电商平台"幽灵外卖"系列案作出行政处罚决定。</span></p>
+                <p>责令7家电商平台改正违法行为，暂停新增蛋糕店铺3至9个月不等，并处以罚没款共计35.97亿元。对7家平台企业法定代表人和食品安全总监合计处以罚款1968.74万元。</p>`,
+                source: "来源：光明网、新华网"
+            },
+            {
+                category: "法制",
+                tagClass: "tag-fazhi",
+                title: "证监会原纪检组组长被提起公诉",
+                content: `<p><span class="highlight">中国证监会原党委委员、中央纪委国家监委驻证监会纪检监察组原组长王会民涉嫌受贿案，由国家监察委员会调查终结。</span></p>
+                <p>最高人民检察院依法以涉嫌受贿罪对其作出逮捕决定，并指定由四川省成都市人民检察院审查起诉，近日已向成都市中级人民法院提起公诉。</p>`,
+                source: "来源：最高检"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function renderNews() {
+            const news = newsData[currentIndex];
+            const card = document.getElementById('newsCard');
+            card.innerHTML = `
+                <span class="category-tag ${news.tagClass}">${news.category}</span>
+                <div class="card-title">${news.title}</div>
+                <div class="card-content">${news.content}</div>
+                <div class="source">${news.source}</div>
+            `;
+            
+            document.getElementById('prevBtn').disabled = currentIndex === 0;
+            document.getElementById('nextBtn').disabled = currentIndex === newsData.length - 1;
+            
+            // 更新页码
+            let dots = '';
+            for (let i = 0; i < newsData.length; i++) {
+                dots += `<span class="page-dot ${i === currentIndex ? 'active' : ''}"></span>`;
+            }
+            document.getElementById('pageIndicator').innerHTML = dots;
+        }
+
+        function prevNews() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderNews();
+            }
+        }
+
+        function nextNews() {
+            if (currentIndex < newsData.length - 1) {
+                currentIndex++;
+                renderNews();
+            }
+        }
+
+        // 键盘导航
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevNews();
+            if (e.key === 'ArrowRight') nextNews();
+        });
+
+        renderNews();
+    </script>
+</body>
+</html>
