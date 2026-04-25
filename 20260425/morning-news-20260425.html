@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>财经政法早报 2026-04-25</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #0d2137 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.container {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+}
+.header {
+  text-align: center;
+  padding: 20px 0;
+  color: #fff;
+}
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #4fc3f7, #81d4fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.header .date {
+  font-size: 13px;
+  color: #90a4ae;
+}
+.header .summary {
+  font-size: 12px;
+  color: #78909c;
+  margin-top: 6px;
+}
+.card-wrapper {
+  position: relative;
+  perspective: 1000px;
+}
+.card {
+  background: linear-gradient(145deg, #1e3a5f 0%, #152a45 100%);
+  border-radius: 16px;
+  padding: 24px;
+  min-height: 420px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4), 0 0 1px rgba(79,195,247,0.3);
+  border: 1px solid rgba(79,195,247,0.2);
+  display: flex;
+  flex-direction: column;
+}
+.card-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  width: fit-content;
+}
+.tag-caijing { background: linear-gradient(90deg, #1565c0, #1976d2); color: #fff; }
+.tag-zhengwen { background: linear-gradient(90deg, #7b1fa2, #9c27b0); color: #fff; }
+.tag-fazhi { background: linear-gradient(90deg, #c62828, #e53935); color: #fff; }
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.card-content {
+  font-size: 14px;
+  color: #b0bec5;
+  line-height: 1.8;
+  flex: 1;
+}
+.card-highlight {
+  background: rgba(79,195,247,0.1);
+  border-left: 3px solid #4fc3f7;
+  padding: 12px;
+  margin: 12px 0;
+  border-radius: 0 8px 8px 0;
+}
+.card-highlight p {
+  color: #e0f7fa;
+  font-size: 13px;
+}
+.card-link {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.card-link a {
+  color: #4fc3f7;
+  font-size: 12px;
+  text-decoration: none;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.pagination button {
+  background: rgba(79,195,247,0.15);
+  border: 1px solid rgba(79,195,247,0.3);
+  color: #4fc3f7;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+.pagination button:hover {
+  background: rgba(79,195,247,0.3);
+}
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.page-indicator {
+  color: #78909c;
+  font-size: 13px;
+}
+.footer {
+  text-align: center;
+  margin-top: 16px;
+  color: #607d8b;
+  font-size: 11px;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.card { animation: fadeIn 0.4s ease-out; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>财经政法早报</h1>
+    <div class="date">2026年4月25日 星期六 · 农历三月初九</div>
+    <div class="summary">精选12条要闻 · 点击卡片切换</div>
+  </div>
+  <div class="card-wrapper">
+    <div class="card" id="newsCard"></div>
+  </div>
+  <div class="pagination">
+    <button onclick="prevNews()" id="prevBtn">◀ 上一篇</button>
+    <span class="page-indicator" id="pageIndicator">1/12</span>
+    <button onclick="nextNews()" id="nextBtn">下一篇 ▶</button>
+  </div>
+  <div class="footer">小太阳财经政法早报 · 每日08:30更新</div>
+</div>
+<script>
+const newsData = [
+  {
+    tag: "财经",
+    tagClass: "tag-caijing",
+    title: "一季度财政收入开门红",
+    content: "财政部数据显示，一季度全国财政收入61613亿元，同比增长2.4%，增幅比前2个月提高1.7个百分点，创近3年同期新高。",
+    highlight: "反映"十五五"开局之年我国经济运行起步有力、开局良好，为完成全年预算目标奠定坚实基础。",
+    link: "https://www.mof.gov.cn/"
+  },
+  {
+    tag: "财经",
+    tagClass: "tag-caijing",
+    title: "QFII获准参与国债期货交易",
+    content: "证监会宣布，从4月24日起允许合格境外投资者参与国债期货交易，交易目的限于套期保值。此举旨在持续扩大QFII可投资范围，丰富利率风险管理工具。",
+    highlight: "增强人民币债券资产吸引力，提升境外机构投资行为的稳定性。",
+    link: "https://www.csrc.gov.cn/"
+  },
+  {
+    tag: "财经",
+    tagClass: "tag-caijing",
+    title: "创业板第四套上市标准启用",
+    content: "深交所正式发布深化创业板改革首批4件配套业务规则，标志着创业板第四套上市标准正式启用，符合条件的优质创新企业可按要求申报。",
+    highlight: "科创板首单适用"重组简易审核程序"案例落地，中微公司发行股份购买资产获受理。",
+    link: "https://www.szse.cn/"
+  },
+  {
+    tag: "财经",
+    tagClass: "tag-caijing",
+    title: "DeepSeek-V4正式发布",
+    content: "DeepSeek-V4预览版本正式上线并开源，标配百万上下文能力，支持华为昇腾950国产AI芯片，在Agent能力、世界知识和推理性能上均实现领先。",
+    highlight: "价格优势显著：每百万token输出DeepSeek V4-Pro仅$3.48，而Claude Opus 4.7为$25，差距达7倍。",
+    link: "https://www.deepseek.com/"
+  },
+  {
+    tag: "财经",
+    tagClass: "tag-caijing",
+    title: "A股弱势整理 创业板回调",
+    content: "昨日A股弱势整理，上证指数收跌0.33%报4079.9点，深证成指跌0.69%，创业板指跌1.41%。市场成交额2.66万亿元。",
+    highlight: "算力硬件方向回调明显，油气股、商业航天、CPO、算力租赁概念股下挫；化工股、锂电池、半导体产业链走强。",
+    link: "https://www.eastmoney.com/"
+  },
+  {
+    tag: "财经",
+    tagClass: "tag-caijing",
+    title: "美股标普500创新高",
+    content: "美股创纪录新高，标普500指数涨近1%创2024年以来最长周度连涨；纳斯达克100指数收盘涨1.9%创纪录新高。英特尔受AI需求驱动暴涨24%，创1987年以来最大单日涨幅。",
+    highlight: "谷歌宣布向Anthropic投资100亿美元，并可能追加至多300亿美元。",
+    link: "https://finance.yahoo.com/"
+  },
+  {
+    tag: "政闻",
+    tagClass: "tag-zhengwen",
+    title: "习近平致电祝贺两国总统",
+    content: "习近平24日分别致电尼扎尔·阿米迪，祝贺他就任伊拉克共和国总统；致电罗穆亚尔德·瓦达尼，祝贺他当选贝宁共和国总统。",
+    highlight: "推动中伊战略伙伴关系、中贝战略伙伴关系不断迈上新台阶，更好造福两国人民。",
+    link: "http://www.xinhuanet.com/"
+  },
+  {
+    tag: "政闻",
+    tagClass: "tag-zhengwen",
+    title: "美伊和谈有望重启",
+    content: "白宫称美国特使威特科夫与库什纳将于周六前往巴基斯坦推进与伊朗的谈判进程。伊朗外长阿拉格齐表示，德黑兰至伊斯坦布尔、马斯喀特和北京的客运航班25日起恢复。",
+    highlight: "美军三艘航母首次同时在中东部署，局势微妙。",
+    link: "http://www.chinanews.com/"
+  },
+  {
+    tag: "政闻",
+    tagClass: "tag-zhengwen",
+    title: "大熊猫\"平平\"\"福双\"将赴美",
+    content: "中美开启新一轮大熊猫保护合作，来自成都的大熊猫"平平"与"福双"将赴美开启十年旅居生活，标志着两国在生物多样性保护领域的深入合作。",
+    highlight: "此次合作将进一步促进大熊猫种群保护研究工作。",
+    link: "http://www.xinhuanet.com/"
+  },
+  {
+    tag: "法制",
+    tagClass: "tag-fazhi",
+    title: "全国人大下周审议多部法律草案",
+    content: "十四届全国人大常委会第二十二次会议4月27日至30日在北京举行，将审议监狱法修订草案、社会救助法草案、医疗保障法草案、耕地保护和质量提升法草案等多部法律。",
+    highlight: "监狱法时隔30余年首次大修，拟加强人民检察院对监狱刑罚执行活动的监督。",
+    link: "http://www.npc.gov.cn/"
+  },
+  {
+    tag: "法制",
+    tagClass: "tag-fazhi",
+    title: "公安部公布侵犯知识产权典型案例",
+    content: "公安部24日公布10起严厉打击侵犯知识产权犯罪典型案例，涉及侵犯商业秘密、盗录传播春节档院线电影、制售假冒品牌产品、制售伪劣化肥等。",
+    highlight: "市场监管总局发布《中国打击侵权假冒工作年度报告(2025)》，"十四五"期间查处侵权盗版案件1.28万件。",
+    link: "http://www.mps.gov.cn/"
+  },
+  {
+    tag: "法制",
+    tagClass: "tag-fazhi",
+    title: "中国发布反外国不当域外管辖条例",
+    content: "国务院公布《中华人民共和国反外国不当域外管辖条例》，首次以立法形式宣示中国不接受外国不当域外管辖的严正立场，建立"禁执令"制度作为纠正、阻断措施。",
+    highlight: "明确中国有权对与中国存在"适当联系"的行为实施域外管辖，占据法理与道义制高点。",
+    link: "http://www.gov.cn/"
+  }
+];
+let currentIndex = 0;
+function renderCard(index) {
+  const card = document.getElementById('newsCard');
+  const item = newsData[index];
+  card.innerHTML = `
+    <span class="card-tag ${item.tagClass}">${item.tag}</span>
+    <h2 class="card-title">${item.title}</h2>
+    <div class="card-content">${item.content}</div>
+    <div class="card-highlight"><p>${item.highlight}</p></div>
+    <div class="card-link"><a href="${item.link}" target="_blank">查看原文 →</a></div>
+  `;
+  document.getElementById('pageIndicator').textContent = `${index+1}/${newsData.length}`;
+  document.getElementById('prevBtn').disabled = index === 0;
+  document.getElementById('nextBtn').disabled = index === newsData.length - 1;
+}
+function prevNews() {
+  if (currentIndex > 0) { currentIndex--; renderCard(currentIndex); }
+}
+function nextNews() {
+  if (currentIndex < newsData.length - 1) { currentIndex++; renderCard(currentIndex); }
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowLeft') prevNews();
+  if (e.key === 'ArrowRight') nextNews();
+});
+renderCard(0);
+</script>
+</body>
+</html>
