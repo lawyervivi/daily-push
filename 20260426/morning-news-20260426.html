@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小太阳财经政法早报 2026.04.26</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#0a1628;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:20px}
+.header{text-align:center;margin-bottom:20px}
+.header h1{color:#fff;font-size:24px;font-weight:600;margin-bottom:5px}
+.header .date{color:#6b7c93;font-size:14px}
+.card-container{width:100%;max-width:600px;position:relative}
+.card{background:linear-gradient(145deg,#1a2a45,#162238);border-radius:16px;padding:24px;min-height:420px;display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.08)}
+.card-tag{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500;margin-bottom:12px}
+.tag-caijing{background:linear-gradient(135deg,#e74c3c,#c0392b);color:#fff}
+.tag-zhengwen{background:linear-gradient(135deg,#3498db,#2980b9);color:#fff}
+.tag-fazhi{background:linear-gradient(135deg,#9b59b6,#8e44ad);color:#fff}
+.card h2{color:#fff;font-size:18px;line-height:1.5;margin-bottom:16px;border-left:3px solid #3498db;padding-left:12px}
+.card-content{color:#b8c5d6;font-size:14px;line-height:1.8;flex:1}
+.card-content p{margin-bottom:10px}
+.card-content strong{color:#fff}
+.card-link{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1)}
+.card-link a{color:#5dade2;font-size:12px;text-decoration:none;word-break:break-all}
+.nav{width:100%;max-width:600px;display:flex;justify-content:space-between;align-items:center;margin-top:20px}
+.nav button{background:linear-gradient(135deg,#3498db,#2980b9);color:#fff;border:none;padding:12px 32px;border-radius:25px;font-size:14px;cursor:pointer;transition:all 0.3s}
+.nav button:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(52,152,219,0.4)}
+.nav button:disabled{opacity:0.5;cursor:not-allowed;transform:none}
+.nav .dots{display:flex;gap:8px}
+.nav .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer;transition:all 0.3s}
+.nav .dot.active{background:#3498db;width:24px;border-radius:4px}
+.footer{color:#6b7c93;font-size:12px;text-align:center;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>☀️ 小太阳财经政法早报</h1>
+<div class="date">2026年4月26日 星期日 · 第87期</div>
+</div>
+<div class="card-container">
+<div class="card" id="card">
+<div id="card-inner"></div>
+</div>
+</div>
+<div class="nav">
+<button onclick="prevCard()" id="prevBtn">← 上一篇</button>
+<div class="dots" id="dots"></div>
+<button onclick="nextCard()" id="nextBtn">下一篇 →</button>
+</div>
+<div class="footer">小太阳出品 · 每日08:30更新</div>
+<script>
+const cards = [
+{tag:"财经",tagClass:"tag-caijing",title:"房地产企稳趋势显现，市场分化仍是显著特征",content:"<p><strong>京沪等重点城市</strong>出现修复，但不少三、四线城市仍面临压力。即便是表现较好的重点城市，二手房与新房、主城与远郊等，销售表现也存在差距，市场复杂性和多元性显现。</p><p>一季度全国超100市（县）出台房地产相关政策约<strong>160条</strong>，聚焦公积金优化、多子女家庭购房支持、住房以旧换新等领域。</p>",link:"https://c.m.163.com/news/a/KRDVDBE405199O55.html"},
+{tag:"财经",tagClass:"tag-caijing",title:"CPU行业或掀新一轮涨价潮",content:"<p>AI算力需求持续爆发，有ODM厂商表示自3月起：</p><p>• 消费电子CPU价格涨幅 <strong>5%~10%</strong></p><p>• 服务器CPU价格涨幅 <strong>10%~20%</strong></p><p>供应链透露，国际大厂酝酿三季度再进行新一轮涨价。英特尔一季度财报远超预期，股价盘中涨超<strong>27%</strong>。</p>",link:"https://c.m.163.com/news/a/KRDVDBE405199O55.html"},
+{tag:"财经",tagClass:"tag-caijing",title:"八部门联合规范金融产品网络营销",content:"<p>《金融产品网络营销管理办法》发布，<strong>2026年9月30日起</strong>施行。</p><p>明确非银行支付机构不得将贷款等金融产品列入支付工具选项、提供营销服务，规范支付场景展示逻辑，切断金融营销变现路径。</p><p><strong>花呗、白条等产品</strong>将面临重大调整。</p>",link:"https://m.sohu.com/a/1014638987_122014422/"},
+{tag:"财经",tagClass:"tag-caijing",title:"三大交易所新规出炉",content:"<p>沪深北交易所同步发布修订后的新版交易规则，<strong>7月6日起</strong>实施：</p><p>• 上交所：扩大盘后固定价格交易适用范围、提高主板风险警示股票涨跌幅限制</p><p>• 深交所：强化董秘职责、健全履职保障</p><p>• 北交所：推出股票盘后固定价格交易</p>",link:"https://m.sohu.com/a/1014638987_122014422/"},
+{tag:"财经",tagClass:"tag-caijing",title:"加密货币市场跳水，近10万人爆仓",content:"<p>4月25日，<strong>美伊谈判变数不断</strong>，伊朗立场更加强硬，强调按自身条件结束战争。美军增强对伊朗海上封锁，伊朗警告将强力回应。</p><p>加密货币市场全线跳水，24小时内超<strong>9.8万人爆仓</strong>，金额达1.88亿美元。霍尔木兹海峡局势持续影响市场。</p>",link:"https://m.sohu.com/a/1014638987_122014422/"},
+{tag:"财经",tagClass:"tag-caijing",title:"中东冲突波及全球石化产能",content:"<p>中东冲突波及全球约<strong>50%的乙烯和聚乙烯产能</strong>。美国化工巨头陶氏化学已于4月宣布提高聚乙烯价格，每磅上调30美分，涨幅约<strong>60%</strong>。</p><p>国际能源署预计全球LNG供应紧张状态可能持续至<strong>2027年年底</strong>。</p>",link:"https://c.m.163.com/news/a/KRDVDBE405199O55.html"},
+{tag:"财经",tagClass:"tag-caijing",title:"北京国际车展刷新全球规模纪录",content:"<p>2026北京国际车展展车数量达<strong>1451辆</strong>，其中首发车181辆、概念车71辆。</p><p>现场数百家外国媒体、参展商了解中国制造的新能源汽车、飞行汽车、机器人等产品。</p>",link:"https://c.m.163.com/news/a/KRDVDBE405199O55.html"},
+{tag:"财经",tagClass:"tag-caijing",title:"一季度专项债券发行增长20.8%",content:"<p>财政部数据显示，一季度全国共发行新增专项债券<strong>11599亿元</strong>，较去年同期增加1996亿元。</p><p>西藏一季度GDP增长<strong>6.1%</strong>，增速继续位居全国第一。雄安新区外贸进出口总值205.5亿元，同比增长<strong>17.6倍</strong>。</p>",link:"https://finance.jrj.com.cn/2026/04/26055056897054.shtml"},
+{tag:"财经",tagClass:"tag-caijing",title:"我国首个全国产控制系统水光互补项目投运",content:"<p>4月25日，我国首个全国产控制系统水光互补项目在云南大理正式投运。项目总装机容量达<strong>543万千瓦</strong>，通过\"水光协同、储送一体\"破解光伏大规模并网波动性难题。</p>",link:"https://c.m.163.com/news/a/KRDVDBE405199O55.html"},
+{tag:"政闻",tagClass:"tag-zhengwen",title:"习近平同老挝、佛得角领导人互致贺电",content:"<p>4月25日，国家主席习近平同老挝人民革命党中央委员会总书记、国家主席通伦互致贺电，庆祝两国建交<strong>65周年</strong>。</p><p>同日，习近平同佛得角总统内韦斯互致贺电，庆祝两国建交<strong>50周年</strong>。国务院总理李强同老挝政府总理宋赛互致贺电。</p>",link:"https://finance.jrj.com.cn/2026/04/26055056897054.shtml"},
+{tag:"政闻",tagClass:"tag-zhengwen",title:"王毅会见缅甸总统敏昂莱",content:"<p>当地时间4月25日，缅甸新任总统敏昂莱在内比都会见中共中央政治局委员、外交部长王毅。</p><p>敏昂莱表示，缅方始终视缅中关系为缅最重要的双边关系，<strong>绝不允许</strong>在缅境内发生任何有损中国利益的行为，将继续加大打击网赌电诈，切实保护中方人员、机构和项目安全。</p>",link:"http://m.toutiao.com/group/7632754703327183394/"},
+{tag:"政闻",tagClass:"tag-zhengwen",title:"德国商业景气指数创新低",content:"<p>德国慕尼黑经济研究所数据显示，德国4月商业景气指数从3月的86.3点降至<strong>84.4点</strong>。这是该指数自2020年5月以来的最低点。</p><p>国际信用评级机构标准普尔将比利时信用评级从\"AA\"下调至\"AA-\"，评级展望为\"稳定\"。</p>",link:"https://finance.jrj.com.cn/2026/04/26055056897054.shtml"},
+{tag:"法制",tagClass:"tag-fazhi",title:"最高法发布西部陆海新通道建设典型案例",content:"<p>最高人民法院发布<strong>第二批</strong>人民法院服务和保障西部陆海新通道建设典型案例。</p><p>涵盖跨境金融纠纷、涉外投资纠纷、港口建设纠纷、跨境物流纠纷等领域，为\"一带一路\"建设提供高质量司法服务和保障。</p>",link:"http://m.toutiao.com/group/7632157389143228974/"},
+{tag:"法制",tagClass:"tag-fazhi",title:"一季度人民法院受理案件1060.79万件",content:"<p>最高法公布2026年第一季度司法审判工作主要数据：</p><p>• 受理各类案件<strong>1060.79万件</strong></p><p>• 先行调解案件348.29万件，调解成功119.36万件，同比增长<strong>205.11%</strong></p><p>• 全国法院两年以上未结诉讼案件数量同比下降<strong>8.87%</strong></p>",link:"https://tsg.china-news-online.com/h5/index/newDetail?id=210009"},
+{tag:"法制",tagClass:"tag-fazhi",title:"一季度信披违规案件频发",content:"<p>本周已有<strong>7家A股公司</strong>因信息披露违法违规被证监会立案，涉及黑芝麻、神马股份、喜临门等。</p><p>涉及生产经营、财务报表等多方面问题，反映出监管层持续强化信息披露监管、保护投资者权益的决心。</p>",link:"https://m.sohu.com/a/1014638987_122014422/"}
+];
+let current = 0;
+function renderCard(idx) {
+const c = cards[idx];
+document.getElementById('card-inner').innerHTML = 
+`<span class="card-tag ${c.tagClass}">${c.tag}</span>
+<h2>${c.title}</h2>
+<div class="card-content">${c.content}</div>
+<div class="card-link"><a href="${c.link}" target="_blank">原文链接 ↗</a></div>`;
+document.getElementById('prevBtn').disabled = idx === 0;
+document.getElementById('nextBtn').disabled = idx === cards.length - 1;
+document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i === idx));
+}
+function createDots() {
+const container = document.getElementById('dots');
+cards.forEach((_,i) => {
+const d = document.createElement('div');
+d.className = 'dot' + (i===0?' active':'');
+d.onclick = () => {current=i;renderCard(current);};
+container.appendChild(d);
+});
+}
+function prevCard(){if(current>0){current--;renderCard(current)}}
+function nextCard(){if(current<cards.length-1){current++;renderCard(current)}}
+createDots();renderCard(0);
+</script>
+</body>
+</html>
