@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小太阳财经政法早报 | 2026年4月27日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #0a1628; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.header h1 {
+  color: #4a9eff;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.header .date {
+  color: #8899aa;
+  font-size: 14px;
+}
+.card-container {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  height: 580px;
+}
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #132743 0%, #1a3a5c 50%, #0f2847 100%);
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(74,158,255,0.2);
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(74,158,255,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.card.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.card.prev {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.card-category {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.cat-finance { background: linear-gradient(135deg, #1e5a8a, #2d7fc9); color: #fff; }
+.cat-politics { background: linear-gradient(135deg, #8a1e5a, #c92d7f); color: #fff; }
+.cat-law { background: linear-gradient(135deg, #1e8a3d, #2dc94d); color: #fff; }
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.card-content {
+  font-size: 15px;
+  color: #b8c5d6;
+  line-height: 1.8;
+}
+.card-content p { margin-bottom: 10px; }
+.card-content strong { color: #4a9eff; }
+.highlight-box {
+  background: rgba(74,158,255,0.1);
+  border-left: 3px solid #4a9eff;
+  padding: 10px 14px;
+  margin: 12px 0;
+  border-radius: 0 8px 8px 0;
+}
+.card-index {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  font-size: 13px;
+  color: rgba(74,158,255,0.6);
+}
+.nav-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  max-width: 480px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(74,158,255,0.25);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.dot.active { background: #4a9eff; transform: scale(1.3); }
+.dot:hover { background: rgba(74,158,255,0.6); }
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+.nav-btn {
+  padding: 10px 28px;
+  border: 1px solid rgba(74,158,255,0.4);
+  background: transparent;
+  color: #4a9eff;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+.nav-btn:hover { background: rgba(74,158,255,0.15); }
+.nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.footer {
+  text-align: center;
+  margin-top: 24px;
+  color: #5a6a7a;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📰 小太阳财经政法早报</h1>
+  <div class="date">2026年4月27日 星期一 | 第14期</div>
+</div>
+
+<div class="card-container" id="cardContainer">
+  <!-- Card 1: 财经 -->
+  <div class="card active" data-index="0">
+    <span class="card-category cat-finance">💰 财经</span>
+    <h2 class="card-title">央行4000亿MLF操作落地</h2>
+    <div class="card-content">
+      <p>为保持银行体系流动性充裕，央行今日以固定数量、利率招标方式开展<strong>4000亿元MLF操作</strong>，期限1年期。</p>
+      <div class="highlight-box">
+        <p><strong>关键信息：</strong></p>
+        <p>• 本月MLF到期6000亿元</p>
+        <p>• 净回笼2000亿元</p>
+        <p>• 结束连续13个月加量续做</p>
+      </div>
+      <p>东方金诚分析：此次操作属于"削峰填谷"，不代表货币政策转向，旨在引导资金面稳定。</p>
+    </div>
+    <span class="card-index">1 / 12</span>
+  </div>
+
+  <!-- Card 2: 财经 -->
+  <div class="card" data-index="1">
+    <span class="card-category cat-finance">📊 金融市场</span>
+    <h2 class="card-title">A股交易规则重大调整</h2>
+    <div class="card-content">
+      <p>上交所修订发布《交易规则（2026年修订）》，7月6日起实施：</p>
+      <div class="highlight-box">
+        <p><strong>三大变化：</strong></p>
+        <p>• 盘后固定价格交易扩至全部A股和基金</p>
+        <p>• 基金收盘阶段改为集合竞价</p>
+        <p>• 主板风险警示股票涨跌幅由5%调整为10%</p>
+      </div>
+      <p>深交所同步深化创业板改革，第四套上市标准正式启用，符合条件的优质创新企业可按要求申报。</p>
+    </div>
+    <span class="card-index">2 / 12</span>
+  </div>
+
+  <!-- Card 3: 财经 -->
+  <div class="card" data-index="2">
+    <span class="card-category cat-finance">🤖 科技</span>
+    <h2 class="card-title">DeepSeek V4发布 价格降至1/10</h2>
+    <div class="card-content">
+      <p>DeepSeek-V4预览版上线并同步开源，包括V4-Pro和V4-Flash两个版本。</p>
+      <div class="highlight-box">
+        <p><strong>重磅降价：</strong></p>
+        <p>• 输入缓存命中价格降至1/10</p>
+        <p>• V4-Pro限时2.5折至5月5日</p>
+        <p>• 折后输入最低0.025元/百万Tokens</p>
+      </div>
+      <p>V4将细粒度专家并行方案同时在英伟达GPU和华为昇腾NPU上完成验证，押注昇腾950预计下半年量产。</p>
+    </div>
+    <span class="card-index">3 / 12</span>
+  </div>
+
+  <!-- Card 4: 财经 -->
+  <div class="card" data-index="3">
+    <span class="card-category cat-finance">📈 大宗商品</span>
+    <h2 class="card-title">黄金走低 原油大涨</h2>
+    <div class="card-content">
+      <p>国际大宗商品市场分化明显：</p>
+      <div class="highlight-box">
+        <p><strong>黄金：</strong>现货黄金失守4690美元/盎司，日内跌幅0.64%</p>
+        <p><strong>原油：</strong>布伦特突破101美元/桶，涨幅1.90%；WTI突破96美元/桶</p>
+      </div>
+      <p>高盛因中东产量下调，将2026年Q4布伦特原油价格预测上调至90美元/桶。美伊谈判进展牵动市场神经。</p>
+    </div>
+    <span class="card-index">4 / 12</span>
+  </div>
+
+  <!-- Card 5: 财经 -->
+  <div class="card" data-index="4">
+    <span class="card-category cat-finance">🏛️ 政策</span>
+    <h2 class="card-title">QFII获准参与国债期货</h2>
+    <div class="card-content">
+      <p>证监会联合央行、外汇局公告：自4月24日起，允许合格境外投资者参与国债期货交易，交易目的限于套期保值。</p>
+      <div class="highlight-box">
+        <p><strong>意义：</strong></p>
+        <p>• 持续扩大QFII可投资范围</p>
+        <p>• 丰富境外机构投资者风险管理工具</p>
+        <p>• 增强人民币债券资产吸引力</p>
+      </div>
+      <p>此举旨在促进债券期现货市场高质量发展，提升境外机构投资行为稳定性。</p>
+    </div>
+    <span class="card-index">5 / 12</span>
+  </div>
+
+  <!-- Card 6: 财经 -->
+  <div class="card" data-index="5">
+    <span class="card-category cat-finance">💼 企业</span>
+    <h2 class="card-title">东方甄选四大主播集体离职</h2>
+    <div class="card-content">
+      <p>4月25日，东方甄选主播明明、天权、中灿、林林陆续发长文宣布离职。俞敏洪回应：已与主播沟通挽留，尊重其个人职业规划与发展选择。</p>
+      <div class="highlight-box">
+        <p><strong>俞敏洪公开致歉：</strong></p>
+        <p>承认公司管理方式有偏差，过度侧重制度管控，忽视人文关怀。后续将优化管理模式，平衡制度与人文。</p>
+      </div>
+    </div>
+    <span class="card-index">6 / 12</span>
+  </div>
+
+  <!-- Card 7: 政闻 -->
+  <div class="card" data-index="6">
+    <span class="card-category cat-politics">🏛️ 政闻</span>
+    <h2 class="card-title">中办国办加强新就业群体服务管理</h2>
+    <div class="card-content">
+      <p>《关于加强新就业群体服务管理的意见》正式发布，系统部署：</p>
+      <div class="highlight-box">
+        <p><strong>核心要点：</strong></p>
+        <p>• 加强互联网平台算法治理</p>
+        <p>• 督促平台合理确定劳动报酬</p>
+        <p>• 保障新就业群体休息权益</p>
+        <p>• 推动公共服务随人走</p>
+      </div>
+      <p>规范算法，提高透明度，保障新就业群体对算法规则的知情权、参与权、选择权。</p>
+    </div>
+    <span class="card-index">7 / 12</span>
+  </div>
+
+  <!-- Card 8: 政闻 -->
+  <div class="card" data-index="7">
+    <span class="card-category cat-politics">🌐 国际</span>
+    <h2 class="card-title">美伊谈判进展 特朗普称将获胜</h2>
+    <div class="card-content">
+      <p>美国总统特朗普26日表示，伊朗战争很快会结束，美国"将取得胜利"。伊方则通过中间人传达三阶段谈判方案。</p>
+      <div class="highlight-box">
+        <p><strong>伊朗谈判方案：</strong></p>
+        <p>• 第一阶段：彻底结束战争，获得安全保证</p>
+        <p>• 第二阶段：研究霍尔木兹海峡管理</p>
+        <p>• 第三阶段：涉及核问题</p>
+      </div>
+      <p>霍尔木兹海峡运输受阻，波及全球石化产业链。</p>
+    </div>
+    <span class="card-index">8 / 12</span>
+  </div>
+
+  <!-- Card 9: 政闻 -->
+  <div class="card" data-index="8">
+    <span class="card-category cat-politics">🏛️ 国内</span>
+    <h2 class="card-title">国常会研究科技创新与海洋经济</h2>
+    <div class="card-content">
+      <p>李强总理主持召开国常会，研究部署：</p>
+      <div class="highlight-box">
+        <p><strong>会议要点：</strong></p>
+        <p>• 锚定2035年建成科技强国战略目标</p>
+        <p>• 加强原创性引领性科技攻关</p>
+        <p>• 推动海洋经济高质量发展</p>
+        <p>• 审议通过《行政法规制定程序条例》</p>
+      </div>
+      <p>充分发挥新型举国体制优势，加快实现高水平科技自立自强。</p>
+    </div>
+    <span class="card-index">9 / 12</span>
+  </div>
+
+  <!-- Card 10: 法制 -->
+  <div class="card" data-index="9">
+    <span class="card-category cat-law">⚖️ 法制</span>
+    <h2 class="card-title">中央巡视组进驻五大政法机关</h2>
+    <div class="card-content">
+      <p>4月18日，二十届中央第七轮巡视完成进驻，15个巡视组进驻36家中央单位，政法系统五大核心机关全部在列：</p>
+      <div class="highlight-box">
+        <p>• 中央政法委</p>
+        <p>• 最高人民法院</p>
+        <p>• 最高人民检察院</p>
+        <p>• 公安部</p>
+        <p>• 司法部</p>
+      </div>
+      <p>巡视时间两个半月，重点严查"人情案、关系案、金钱案"和枉法裁判。</p>
+    </div>
+    <span class="card-index">10 / 12</span>
+  </div>
+
+  <!-- Card 11: 法制 -->
+  <div class="card" data-index="10">
+    <span class="card-category cat-law">🔨 专项行动</span>
+    <h2 class="card-title">4·2行动严打非法放贷暴力催收</h2>
+    <div class="card-content">
+      <p>公安部联合多部门启动代号"4·2行动"的全国专项严打，截至4月20日成果：</p>
+      <div class="highlight-box">
+        <p><strong>战果统计：</strong></p>
+        <p>• 打掉非法团伙：1000+个</p>
+        <p>• 抓获涉案人员：5000+人</p>
+        <p>• 关停违规机构：1100+家</p>
+        <p>• 涉案总金额：超360亿元</p>
+      </div>
+      <p>重点打击：无牌非法网贷、套路贷、暴力催收、贷款黑中介，一碰就刑拘。</p>
+    </div>
+    <span class="card-index">11 / 12</span>
+  </div>
+
+  <!-- Card 12: 法制 -->
+  <div class="card" data-index="11">
+    <span class="card-category cat-law">📋 立法</span>
+    <h2 class="card-title">多部法律案提请审议</h2>
+    <div class="card-content">
+      <p>十四届全国人大常委会第二十二次会议4月27日至30日在京举行，审议多部重要法律案：</p>
+      <div class="highlight-box">
+        <p><strong>重点法律草案：</strong></p>
+        <p>• 监狱法修订草案（三审稿）</p>
+        <p>• 社会救助法草案（三审稿）</p>
+        <p>• 医疗保障法草案（二审稿）</p>
+        <p>• 耕地保护和质量提升法草案</p>
+        <p>• 企业国有资产法修订草案</p>
+        <p>• 农业法修订草案</p>
+      </div>
+    </div>
+    <span class="card-index">12 / 12</span>
+  </div>
+</div>
+
+<div class="nav-dots" id="navDots"></div>
+<div class="nav-buttons">
+  <button class="nav-btn" id="prevBtn" onclick="prevCard()">◀ 上一条</button>
+  <button class="nav-btn" id="nextBtn" onclick="nextCard()">下一条 ▶</button>
+</div>
+<div class="footer">
+  小太阳财经政法早报 | 每日08:30更新 | 点击翻页阅读全部内容
+</div>
+
+<script>
+let currentIndex = 0;
+const totalCards = 12;
+const cards = document.querySelectorAll('.card');
+const navDots = document.getElementById('navDots');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+// Create dots
+for (let i = 0; i < totalCards; i++) {
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goToCard(i);
+  navDots.appendChild(dot);
+}
+
+function updateCards() {
+  cards.forEach((card, i) => {
+    card.classList.remove('active', 'prev');
+    if (i === currentIndex) {
+      card.classList.add('active');
+    } else if (i < currentIndex) {
+      card.classList.add('prev');
+    }
+  });
+  
+  document.querySelectorAll('.dot').forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentIndex);
+  });
+  
+  prevBtn.disabled = currentIndex === 0;
+  nextBtn.disabled = currentIndex === totalCards - 1;
+}
+
+function nextCard() {
+  if (currentIndex < totalCards - 1) {
+    currentIndex++;
+    updateCards();
+  }
+}
+
+function prevCard() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateCards();
+  }
+}
+
+function goToCard(index) {
+  currentIndex = index;
+  updateCards();
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') nextCard();
+  if (e.key === 'ArrowLeft') prevCard();
+});
+</script>
+</body>
+</html>
