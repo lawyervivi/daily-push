@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小太阳财经政法早报 2026-04-30</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #0a1628; 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  padding: 20px;
+}
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header h1 {
+  color: #ffd700;
+  font-size: 24px;
+  text-shadow: 0 0 20px rgba(255,215,0,0.5);
+}
+.header .date {
+  color: #7aa2f7;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.card-container {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+.card {
+  background: linear-gradient(145deg, #1a2744 0%, #0d1929 100%);
+  border-radius: 16px;
+  padding: 30px 25px;
+  min-height: 420px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  border: 1px solid rgba(122,162,247,0.3);
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+.card.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.card-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.badge-finance { background: linear-gradient(135deg, #f093fb, #f5576c); color: white; }
+.badge-politics { background: linear-gradient(135deg, #4facfe, #00f2fe); color: white; }
+.badge-law { background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; }
+.card-title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+.card-content {
+  color: #c0d0e8;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.card-highlight {
+  background: rgba(255,215,0,0.1);
+  border-left: 3px solid #ffd700;
+  padding: 12px 15px;
+  margin: 15px 0;
+  border-radius: 0 8px 8px 0;
+}
+.card-highlight p { color: #ffd700; font-size: 13px; }
+.card-footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(122,162,247,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-indicator { color: #7aa2f7; font-size: 12px; }
+.nav-btn {
+  background: linear-gradient(135deg, #7aa2f7, #5a7fcc);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+.nav-btn:hover { transform: scale(1.05); box-shadow: 0 5px 20px rgba(122,162,247,0.4); }
+.nav-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.nav-container { display: flex; gap: 10px; margin-top: 20px; justify-content: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>☀️ 小太阳财经政法早报</h1>
+  <div class="date">2026年4月30日 星期四</div>
+</div>
+
+<div class="card-container">
+  <!-- 卡片1：财经 -->
+  <div class="card active">
+    <span class="card-badge badge-finance">💹 财经</span>
+    <h2 class="card-title">美联储维持利率不变 鲍威尔卸任后留任理事</h2>
+    <div class="card-content">
+      <p>美联储4月29日宣布维持基准利率在3.5%-3.75%区间不变，这是连续第三次按兵不动。声明显示12名委员中8票赞成、4票反对，分歧创1992年以来最严重。</p>
+      <div class="card-highlight">
+        <p>💡 鲍威尔确认5月15日主席任期结束后将继续留任美联储理事至2028年，以捍卫机构独立性。</p>
+      </div>
+      <p>市场预期今年剩余会议几无降息或加息可能，美联储政策立场已转鹰派。</p>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">1 / 12</span>
+    </div>
+  </div>
+
+  <!-- 卡片2：财经 -->
+  <div class="card">
+    <span class="card-badge badge-finance">💹 财经</span>
+    <h2 class="card-title">国际油价飙升 布伦特原油突破118美元/桶</h2>
+    <div class="card-content">
+      <p>受中东霍尔木兹海峡局势紧张影响，国际油价29日大幅上涨。纽约原油突破106美元/桶，涨幅6.95%；布伦特原油突破118美元/桶，涨幅6.08%，创2022年6月以来新高。</p>
+      <div class="card-highlight">
+        <p>⚠️ 标普上调2026年WTI原油价格预测至95美元/桶，布伦特至100美元/桶。霍尔木兹海峡航运风险可能导致间歇性中断。</p>
+      </div>
+      <p>全球农产品价格指数升至2023年11月以来最高水平，食品通胀风险加剧。</p>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">2 / 12</span>
+    </div>
+  </div>
+
+  <!-- 卡片3：财经 -->
+  <div class="card">
+    <span class="card-badge badge-finance">💹 财经</span>
+    <h2 class="card-title">科技巨头财报亮眼 微软Azure增长39%</h2>
+    <div class="card-content">
+      <p>微软第三财季营收828.9亿美元同比增18%，净利润318亿美元同比增23%；AI业务年化收入超370亿美元同比增123%。谷歌母公司Alphabet营收1099亿美元同比增22%，净利润同比增长81%，谷歌云营收200亿美元大增63%。</p>
+      <div class="card-highlight">
+        <p>📈 Meta因上调全年资本支出预期至1250-1450亿美元，盘后跌5.32%。亚马逊AWS增速创15季度新高，净利润增长77%。</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">3 / 12</span>
+    </div>
+  </div>
+
+  <!-- 卡片4：财经 -->
+  <div class="card">
+    <span class="card-badge badge-finance">💹 财经</span>
+    <h2 class="card-title">六大行一季度业绩向好 合计盈利近3600亿</h2>
+    <div class="card-content">
+      <p>2026年一季度六大行悉数实现归母净利润同比增长：</p>
+      <p style="margin-top:10px">• 工商银行 869.41亿 (+3.31%)<br>• 建设银行 862.91亿 (+3.53%)<br>• 农业银行 751.85亿 (+4.52%)<br>• 中国银行 566.31亿 (+4.17%)<br>• 交通银行 261.62亿 (+3.11%)<br>• 邮储银行 257.26亿 (+1.90%)</p>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">4 / 12</span>
+    </div>
+  </div>
+
+  <!-- 卡片5：财经 -->
+  <div class="card">
+    <span class="card-badge badge-finance">💹 财经</span>
+    <h2 class="card-title">深圳住房公积金贷款政策大幅优化</h2>
+    <div class="card-content">
+      <p>深圳市住建局发布《关于进一步优化调整房地产相关政策的通知》，4月30日起施行：</p>
+      <div class="card-highlight">
+        <p>🏠 单独申请公积金贷款额度提高至70万元；夫妻共同申请提高至130万元。</p>
+      </div>
+      <p>多地楼市政策持续加码，二线城市全面放开限购限贷，首套房首付比例降至20%。</p>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">5 / 12</span>
+    </div>
+  </div>
+
+  <!-- 卡片6：财经 -->
+  <div class="card">
+    <span class="card-badge badge-finance">💹 财经</span>
+    <h2 class="card-title">黄金突破4550美元 央行购金需求支撑</h2>
+    <div class="card-content">
+      <p>现货黄金突破4550美元/盎司，纽约期金一度突破4570美元/盎司。30年期美国国债收益率自2025年7月以来首次触及5%。</p>
+      <div class="card-highlight">
+        <p>🥇 全球央行黄金储备持续增加，避险资金不断流入贵金属市场，支撑金价走强。</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">6 / 12</span>
+    </div>
+  </div>
+
+  <!-- 卡片7：政经 -->
+  <div class="card">
+    <span class="card-badge badge-politics">📋 政经</span>
+    <h2 class="card-title">刘浩凌任证监会副主席</h2>
+    <div class="card-content">
+      <p>国务院决定任命刘浩凌为中国证监会副主席。刘浩凌1971年出生，先后获得北京大学英语学士、中国政法大学法学学士、美国爱荷华大学法学硕士、英国伦敦大学伦敦商学院金融学硕士学位。</p>
+      <div class="card-highlight">
+        <p>📋 曾任职于中国出口信用保险公司、中国投资有限责任公司等，具有丰富的金融监管经验。</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">7 / 12</span>
+    </div>
+  </div>
+
+  <!-- 卡片8：政经 -->
+  <div class="card">
+    <span class="card-badge badge-politics">📋 政经</span>
+    <h2 class="card-title">中国4月官方制造业PMI数据发布</h2>
+    <div class="card-content">
+      <p>国家统计局4月30日发布4月官方制造业PMI数据，市场普遍预测制造业景气度可能小幅波动。</p>
+      <div class="card-highlight">
+        <p>📊 央行近期持续加大逆周期调节力度，4月累计开展超万亿元逆回购操作，维护月末流动性平稳。</p>
+      </div>
+      <p>一季度末金融机构人民币贷款余额280.51万亿元，同比增长5.7%。</p>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">8 / 12</span>
+    </div>
+  </div>
+
+  <!-- 卡片9：法制 -->
+  <div class="card">
+    <span class="card-badge badge-law">⚖️ 法制</span>
+    <h2 class="card-title">2026年严打行动启动 七类行为严惩不贷</h2>
+    <div class="card-content">
+      <p>2026年严打整治行动全面铺开，重点聚焦民生领域：</p>
+      <p style="margin-top:8px">① 电信诈骗与"两卡"黑灰产<br>② 金融黑灰产与非法放贷<br>③ 网络造谣与网络暴力<br>④ 农资造假与医保诈骗<br>⑤ 医保基金违规使用</p>
+      <div class="card-highlight">
+        <p>⚠️ 帮信罪入罪门槛降低，非法买卖、出租、出借电话卡银行卡3张以上将被联合惩戒。</p>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">9 / 12</span>
+    </div>
+  </div>
+
+  <!-- 卡片10：法制 -->
+  <div class="card">
+    <span class="card-badge badge-law">⚖️ 法制</span>
+    <h2 class="card-title">两高发布贪污贿赂司法解释 剑指民企腐败</h2>
+    <div class="card-content">
+      <p>最高法、最高检联合发布《关于办理贪污贿赂刑事案件适用法律若干问题的解释(二)》，5月1日起施行：</p>
+      <div class="card-highlight">
+        <p>📌 非国家工作人员受贿罪入罪门槛从6万降至3万<br>📌 职务侵占罪"数额巨大"标准从100万降至20万<br>📌 终身追责，退休后仍可能被追究</p>
+      </div>
+      <p>彻底打破民企与国企追责的"双轨制"，民企反腐进入新时代。</p>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">10 / 12</span>
+    </div>
+  </div>
+
+  <!-- 卡片11：法制 -->
+  <div class="card">
+    <span class="card-badge badge-law">⚖️ 法制</span>
+    <h2 class="card-title">314亿非法集资案宣判 主犯被判无期</h2>
+    <div class="card-content">
+      <p>长沙市中级人民法院宣判中战华信集团刘必安等16人非法集资案：</p>
+      <p style="margin-top:8px">• 涉案金额：314亿余元<br>• 受害家庭：超6万个<br>• 未兑付金额：61亿余元</p>
+      <div class="card-highlight">
+        <p>⚖️ 主犯刘必安以集资诈骗罪被判无期徒刑，剥夺政治权利终身，没收个人全部财产。</p>
+      </div>
+      <p>释放强烈信号：防范和打击非法金融活动总体战全面启动。</p>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">11 / 12</span>
+    </div>
+  </div>
+
+  <!-- 卡片12：法制 -->
+  <div class="card">
+    <span class="card-badge badge-law">⚖️ 法制</span>
+    <h2 class="card-title">枫桥经验新实践 乡村治理有妙招</h2>
+    <div class="card-content">
+      <p>人民日报报道乡村治理三大样本：</p>
+      <p style="margin-top:8px">🏘️ 浙江诸暨"三事分议"：有事好商量，大事不独断、小事不敷衍</p>
+      <p style="margin-top:8px">🏘️ 江西寻乌"联村联户"：法律服务团队下沉村组，打通最后一公里</p>
+      <p style="margin-top:8px">🏘️ 广东蕉岭"客家围屋"：矛盾纠纷化解率达99.6%，围屋变和屋</p>
+    </div>
+    <div class="card-footer">
+      <span class="page-indicator">12 / 12</span>
+    </div>
+  </div>
+</div>
+
+<div class="nav-container">
+  <button class="nav-btn" id="prevBtn" onclick="changeCard(-1)">◀ 上一条</button>
+  <button class="nav-btn" id="nextBtn" onclick="changeCard(1)">下一条 ▶</button>
+</div>
+
+<script>
+let currentCard = 0;
+const cards = document.querySelectorAll('.card');
+const totalCards = cards.length;
+
+function showCard(index) {
+  cards.forEach((card, i) => {
+    card.classList.remove('active');
+    if (i === index) card.classList.add('active');
+  });
+  document.getElementById('prevBtn').disabled = index === 0;
+  document.getElementById('nextBtn').disabled = index === totalCards - 1;
+}
+
+function changeCard(direction) {
+  currentCard += direction;
+  if (currentCard < 0) currentCard = 0;
+  if (currentCard >= totalCards) currentCard = totalCards - 1;
+  showCard(currentCard);
+}
+
+// 触摸滑动支持
+let touchStartX = 0;
+document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+document.addEventListener('touchend', e => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) {
+    if (diff > 0 && currentCard < totalCards - 1) { currentCard++; showCard(currentCard); }
+    else if (diff < 0 && currentCard > 0) { currentCard--; showCard(currentCard); }
+  }
+});
+
+// 键盘支持
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft' && currentCard > 0) { currentCard--; showCard(currentCard); }
+  if (e.key === 'ArrowRight' && currentCard < totalCards - 1) { currentCard++; showCard(currentCard); }
+});
+
+showCard(0);
+</script>
+</body>
+</html>
