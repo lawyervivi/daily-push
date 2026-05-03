@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小太阳财经政法早报 | 2026年5月3日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #0a1628; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header h1 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 10px rgba(0,150,255,0.3);
+}
+.header .date {
+  color: #4a90d9;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.container {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(145deg, #1a2744, #0d1a2d);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(74,144,217,0.1);
+  overflow: hidden;
+  border: 1px solid rgba(74,144,217,0.2);
+}
+.card {
+  display: none;
+  padding: 30px 25px;
+  min-height: 480px;
+  animation: fadeIn 0.3s ease;
+}
+.card.active { display: block; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.category {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+.cat-finance { background: linear-gradient(135deg, #1e3a5f, #2a5a8f); color: #6ba3ff; border: 1px solid rgba(107,163,255,0.3); }
+.cat-politics { background: linear-gradient(135deg, #3d1f4a, #5a2d6a); color: #d88aff; border: 1px solid rgba(216,138,255,0.3); }
+.cat-law { background: linear-gradient(135deg, #1f4a3d, #2d6a5a); color: #8affc8; border: 1px solid rgba(138,255,200,0.3); }
+.title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+.content {
+  color: #a8b8d8;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.content p { margin-bottom: 12px; }
+.highlight {
+  color: #4fc3f7;
+  font-weight: 500;
+}
+.source {
+  color: #5a7a9a;
+  font-size: 12px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: rgba(0,0,0,0.3);
+  border-top: 1px solid rgba(74,144,217,0.2);
+}
+.nav-btn {
+  background: linear-gradient(135deg, #1e3a5f, #2a5a8f);
+  border: 1px solid rgba(74,144,217,0.4);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+.nav-btn:hover { background: linear-gradient(135deg, #2a5a8f, #3a7abf); }
+.nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.indicator {
+  display: flex;
+  gap: 8px;
+}
+.indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2a4a6a;
+  transition: all 0.3s;
+}
+.indicator span.active { background: #4a90d9; width: 24px; border-radius: 4px; }
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #4a6080;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📰 小太阳财经政法早报</h1>
+  <div class="date">2026年5月3日 · 星期日 · 第37期</div>
+</div>
+<div class="container">
+  <div class="card active" data-category="finance">
+    <span class="category cat-finance">💹 财经</span>
+    <h2 class="title">巴菲特股东大会落幕：阿贝尔首秀，伯克希尔一季度净利暴增120%</h2>
+    <div class="content">
+      <p>2026年5月2日，"股神"巴菲特旗下伯克希尔·哈撒韦年度股东大会在奥马哈举行。这是格雷格·阿贝尔接任CEO后的首次独立主持大会，标志着伯克希尔"阿贝尔时代"正式开启。</p>
+      <p><span class="highlight">📊 一季度亮眼业绩：</span>公司一季度净利暴增120%，主要受保险业务反弹推动；现金储备飙升至<span class="highlight">2.7万亿元</span>，创历史新高。</p>
+      <p><span class="highlight">💰 苹果投资回报：</span>巴菲特透露，伯克希尔从苹果投资中累计获利<span class="highlight">1850亿美元</span>，成为史上最成功的投资之一。</p>
+    </div>
+    <div class="source">来源：新浪财经、中国基金报</div>
+  </div>
+
+  <div class="card" data-category="finance">
+    <span class="category cat-finance">💹 财经</span>
+    <h2 class="title">比亚迪一季报"爆雷"：净利润41亿同比跌55%，汇兑亏损21亿敲警钟</h2>
+    <div class="content">
+      <p>比亚迪2026年一季度财报显示，净利润41亿元，比去年同期下跌超过55%。</p>
+      <p><span class="highlight">⚠️ 汇兑损失：</span>仅汇兑亏损一项就在账面上蚀掉约<span class="highlight">21亿元</span>，成为利润下滑的核心原因。</p>
+      <p><span class="highlight">🚗 出海挑战：</span>今年2月，比亚迪海外月销量首次超过国内。但汇率波动警示出海车企：落地过程需面对远比国内更复杂的难题。</p>
+    </div>
+    <div class="source">来源：新行情</div>
+  </div>
+
+  <div class="card" data-category="finance">
+    <span class="category cat-finance">💹 财经</span>
+    <h2 class="title">A股2025年报收官：上市公司营收73万亿，研发投入1.94万亿创新高</h2>
+    <div class="content">
+      <p>中国上市公司协会数据显示，2025年中国境内上市公司实现营收<span class="highlight">73.01万亿元</span>，同比增长1.2%。</p>
+      <p><span class="highlight">📈 研发投入：</span>全市场上市公司研发投入合计<span class="highlight">1.94万亿元</span>，连续4年正增长，彰显创新驱动战略深入实施。</p>
+      <p><span class="highlight">🌐 境外收入：</span>3848家上市公司披露境外收入，合计实现境外收入<span class="highlight">12.38万亿元</span>，同比增长13.3%。</p>
+    </div>
+    <div class="source">来源：中国上市公司协会</div>
+  </div>
+
+  <div class="card" data-category="finance">
+    <span class="category cat-finance">💹 财经</span>
+    <h2 class="title">中国减持美债至6826亿美元，美财长紧急表态：中美"绝不脱钩"</h2>
+    <div class="content">
+      <p>美国财政部数据显示，截至2026年4月，中国持有的美债规模已降至<span class="highlight">6826亿美元</span>，较年初减少769亿美元。</p>
+      <p><span class="highlight">🏛️ 美方回应：</span>美国财长贝森特迅速表态，强调中美关系处于"舒适位置"，双方<span class="highlight">绝不会"脱钩"</span>。</p>
+      <p><span class="highlight">💡 专家分析：</span>此次减持的核心逻辑在于"安全"——当前美国信用状况令人担忧，减持美债是优化外储结构的战略举措。</p>
+    </div>
+    <div class="source">来源：战忽智库、中新网</div>
+  </div>
+
+  <div class="card" data-category="politics">
+    <span class="category cat-politics">🏛️ 政闻</span>
+    <h2 class="title">商务部发布阻断禁令：反制美国对恒力石化等5家中企制裁</h2>
+    <div class="content">
+      <p>5月2日，商务部重磅发布阻断禁令，明确中国主体<span class="highlight">无需承认</span>美方以"涉伊朗石油交易"为由，对恒力石化等5家企业实施的制裁措施。</p>
+      <p><span class="highlight">⚖️ 法律效力：</span>阻断法令明确禁止中国企业和个人遵守外国制裁措施，违者将面临法律后果。这是中国坚定维护<span class="highlight">国家主权与企业合法权益</span>的强力回击。</p>
+    </div>
+    <div class="source">来源：央视新闻</div>
+  </div>
+
+  <div class="card" data-category="politics">
+    <span class="category cat-politics">🏛️ 政闻</span>
+    <h2 class="title">外交部回应赖清德窜访斯威士兰："偷渡式"外窜闹剧沦为国际笑柄</h2>
+    <div class="content">
+      <p>外交部发言人就赖清德搭乘斯威士兰国王"私人飞机"窜访斯威士兰回应：</p>
+      <p><span class="highlight">🗣️ 官方表态：</span>"赖清德上演'偷渡式'外窜闹剧，<span class="highlight">沦为国际笑柄</span>。"</p>
+      <p><span class="highlight">⚠️ 警告：</span>"奉劝斯威士兰等个别国家看清历史大势、顺应时代潮流，不要为少数'台独'分裂分子<span class="highlight">火中取栗</span>。"</p>
+    </div>
+    <div class="source">来源：外交部官网</div>
+  </div>
+
+  <div class="card" data-category="politics">
+    <span class="category cat-politics">🏛️ 政闻</span>
+    <h2 class="title">平陆运河青年枢纽进入有水调试，9月通航在望</h2>
+    <div class="content">
+      <p>5月1日，平陆运河青年枢纽破除围堰，正式进入有水调试阶段，为9月通航奠定坚实基础。</p>
+      <p><span class="highlight">🌊 工程意义：</span>平陆运河是西部陆海新通道的骨干工程，建成后将成为<span class="highlight">我国西南地区运距最短、最经济、最便捷的出海通道</span>。</p>
+      <p><span class="highlight">🏗️ 技术突破：</span>青年枢纽船闸是目前国内在建规模最大的内河省水船闸，采用多项创新技术。</p>
+    </div>
+    <div class="source">来源：央视新闻</div>
+  </div>
+
+  <div class="card" data-category="politics">
+    <span class="category cat-politics">🏛️ 政闻</span>
+    <h2 class="title">浙江抽水蓄能电站竖井贯通：637米深度创中国纪录</h2>
+    <div class="content">
+      <p>5月2日，浙江松阳抽水蓄能电站2号竖井贯通，以<span class="highlight">637米深度</span>创下中国抽水蓄能行业最深纪录。</p>
+      <p><span class="highlight">⚡ 能源战略：</span>抽水蓄能是构建新型电力系统的重要组成部分，对于保障电网安全稳定运行、促进新能源消纳具有重要意义。</p>
+      <p><span class="highlight">🇨🇳 技术实力：</span>该工程展现了中国在复杂地质条件下进行超深地下工程施工的顶尖实力。</p>
+    </div>
+    <div class="source">来源：人民日报</div>
+  </div>
+
+  <div class="card" data-category="law">
+    <span class="category cat-law">⚖️ 法制</span>
+    <h2 class="title">《贪污贿赂司法解释(二)》5月1日施行：非国家工作人员受贿入罪门槛大幅降低</h2>
+    <div class="content">
+      <p>最高法、最高检联合发布《关于办理贪污贿赂刑事案件适用法律若干问题的解释(二)》，5月1日起正式施行。</p>
+      <p><span class="highlight">📋 核心变化：</span>取消非国家工作人员受贿罪、职务侵占罪等罪名与国家工作人员的"倍数折算"规则，<span class="highlight">量刑标准全面并轨</span>。</p>
+      <p><span class="highlight">⚖️ 影响：</span>国企与民企人员实施同类犯罪，将适用完全相同的数额标准，"身份红利"彻底消失。</p>
+    </div>
+    <div class="source">来源：最高人民法院官网</div>
+  </div>
+
+  <div class="card" data-category="law">
+    <span class="category cat-law">⚖️ 法制</span>
+    <h2 class="title">《行政诉讼起诉期限解释》5月1日施行：民告官告别"立案难"</h2>
+    <div class="content">
+      <p>《最高人民法院关于适用行政诉讼起诉期限若干问题的解释》5月1日起全国统一施行，共11条，直击"民告官"维权痛点。</p>
+      <p><span class="highlight">📅 期限统一：</span>全国统一执行"<span class="highlight">6个月常规期+1年最长保护期</span>"，彻底解决各地标准不一的乱象。</p>
+      <p><span class="highlight">🏠 不动产案件：</span>征地、拆迁、宅基地等案件，最长保护期<span class="highlight">20年</span>；普通案件最长<span class="highlight">5年</span>。</p>
+    </div>
+    <div class="source">来源：最高人民法院官网</div>
+  </div>
+
+  <div class="card" data-category="law">
+    <span class="category cat-law">⚖️ 法制</span>
+    <h2 class="title">首部《商事调解条例》5月1日施行，填补专门立法空白</h2>
+    <div class="content">
+      <p>《商事调解条例》作为我国首部专门规范商事调解活动的行政法规，5月1日起正式施行。</p>
+      <p><span class="highlight">📋 主要内容：</span></p>
+      <p>• 明确商事调解组织设立条件，强调<span class="highlight">非营利性</span></p>
+      <p>• 建立利益冲突审查、投诉处理等内部管理制度</p>
+      <p>• 明确调解费用按照<span class="highlight">公平、合理原则</span>制定</p>
+    </div>
+    <div class="source">来源：国务院官网</div>
+  </div>
+
+  <div class="card" data-category="law">
+    <span class="category cat-law">⚖️ 法制</span>
+    <h2 class="title">民用无人机新国标5月1日施行：实名登记+激活，全流程可追溯</h2>
+    <div class="content">
+      <p>《民用无人驾驶航空器实名登记和激活要求》与《民用无人驾驶航空器系统运行识别规范》两项强制性国家标准正式实施。</p>
+      <p><span class="highlight">📝 新规要点：</span></p>
+      <p>• 所有民用无人机必须在<span class="highlight">UOM平台</span>完成实名登记并激活</p>
+      <p>• 存量无人机须在<span class="highlight">2027年6月1日前</span>完成补登记</p>
+      <p>• 逾期未登记者将被<span class="highlight">限制飞行</span></p>
+    </div>
+    <div class="source">来源：民航局官网</div>
+  </div>
+
+  <div class="nav">
+    <button class="nav-btn" id="prevBtn" onclick="changeCard(-1)">← 上一篇</button>
+    <div class="indicator" id="indicator"></div>
+    <button class="nav-btn" id="nextBtn" onclick="changeCard(1)">下一篇 →</button>
+  </div>
+</div>
+<div class="footer">小太阳财经政法早报 · 每天08:30准时送达</div>
+<script>
+const cards = document.querySelectorAll('.card');
+const indicator = document.getElementById('indicator');
+let current = 0;
+cards.forEach((_, i) => {
+  const dot = document.createElement('span');
+  dot.onclick = () => goTo(i);
+  indicator.appendChild(dot);
+});
+function update() {
+  cards.forEach((c, i) => c.classList.toggle('active', i === current));
+  document.querySelectorAll('.indicator span').forEach((d, i) => d.classList.toggle('active', i === current));
+  document.getElementById('prevBtn').disabled = current === 0;
+  document.getElementById('nextBtn').disabled = current === cards.length - 1;
+}
+function changeCard(n) { current = Math.max(0, Math.min(cards.length - 1, current + n)); update(); }
+function goTo(i) { current = i; update(); }
+document.addEventListener('keydown', e => { if (e.key === 'ArrowRight') changeCard(1); if (e.key === 'ArrowLeft') changeCard(-1); });
+update();
+</script>
+</body>
+</html>
