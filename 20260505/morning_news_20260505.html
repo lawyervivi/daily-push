@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小太阳财经政法早报 | 2026年5月5日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #0a1628;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.container { width: 100%; max-width: 480px; }
+.card {
+  background: linear-gradient(145deg, #1a2a4a, #0d1f3c);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #0d2240 100%);
+  padding: 24px 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-icon { font-size: 28px; }
+.logo-text { font-size: 18px; font-weight: 700; color: #fff; }
+.date-badge {
+  background: rgba(255,255,255,0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #a8c5e2;
+}
+.main-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.sub-title {
+  font-size: 14px;
+  color: #7a9cc6;
+  line-height: 1.5;
+}
+.page-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background: rgba(0,0,0,0.2);
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.dot.active { background: #4a9eff; width: 24px; border-radius: 4px; }
+.content { padding: 24px 28px; min-height: 380px; }
+.page { display: none; }
+.page.active { display: block; animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.category-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.tag-finance { background: rgba(76,175,80,0.2); color: #81c784; }
+.tag-politics { background: rgba(244,67,54,0.2); color: #ef9a9a; }
+.tag-law { background: rgba(156,39,176,0.2); color: #ce93d8; }
+.news-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.news-content {
+  font-size: 15px;
+  color: #b8c9dc;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.news-content strong { color: #fff; }
+.highlight-box {
+  background: rgba(74,158,255,0.1);
+  border-left: 3px solid #4a9eff;
+  padding: 14px 18px;
+  border-radius: 0 12px 12px 0;
+  margin-top: 16px;
+}
+.highlight-box p { font-size: 14px; color: #8ab4d8; line-height: 1.6; }
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 28px 24px;
+  gap: 12px;
+}
+.nav-btn {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.prev-btn {
+  background: rgba(255,255,255,0.1);
+  color: #8ab4d8;
+}
+.next-btn {
+  background: linear-gradient(135deg, #4a9eff, #2d7dd2);
+  color: #fff;
+}
+.nav-btn:hover { transform: translateY(-2px); }
+.nav-btn:active { transform: translateY(0); }
+.footer {
+  text-align: center;
+  padding: 16px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 12px;
+  color: #5a7a9a;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <div class="header">
+      <div class="header-top">
+        <div class="logo">
+          <span class="logo-icon">☀️</span>
+          <span class="logo-text">小太阳早报</span>
+        </div>
+        <span class="date-badge">2026.05.05 周二</span>
+      </div>
+      <h1 class="main-title">财经政法早报</h1>
+      <p class="sub-title">聚焦财经热点 · 解读政法动态</p>
+    </div>
+    
+    <div class="page-indicator" id="pageIndicator"></div>
+    
+    <div class="content" id="content"></div>
+    
+    <div class="nav-buttons">
+      <button class="nav-btn prev-btn" onclick="prevPage()">◀ 上一页</button>
+      <button class="nav-btn next-btn" onclick="nextPage()">下一页 ▶</button>
+    </div>
+    
+    <div class="footer">小太阳财经政法早报 · 每日08:30更新</div>
+  </div>
+</div>
+
+<script>
+const pages = [
+  {
+    type: 'finance',
+    tag: '💹 财经头条',
+    title: '霍尔木兹局势升温 全球市场震荡',
+    content: '<p>中东局势持续紧张，美伊在霍尔木兹海峡对峙升级。伊朗向美舰实施警告射击，美军宣布启动"疏导行动"协助被困船只通行。</p><p><strong>市场影响：</strong>国际油价应声大涨，WTI原油涨超4%，布油涨近6%。避险情绪升温，黄金白银同步走强。亚太股市普遍上涨，港股恒生科技指数涨超2%。</p>',
+    highlight: '⚠️ 提醒：A股5月6日（周三）恢复交易，央行已宣布3000亿逆回购护航'
+  },
+  {
+    type: 'finance',
+    tag: '💰 港股动态',
+    title: '港股科技股爆发 小米大涨超8%',
+    content: '<p>5月4日港股全线大涨，恒生指数涨1.24%报26095点，恒生科技指数涨2.16%突破5000点。</p><p><strong>热点板块：</strong>科技互联网领涨，小米集团涨超8%，百度、阿里涨超4%；半导体爆发，多只个股单日涨幅超20%。</p><p><strong>分析师观点：</strong>中国经济一季度数据优于预期，增强全球资本配置中国资产意愿。</p>',
+    highlight: '📈 港股通5月6日同步恢复，关注北向资金动向'
+  },
+  {
+    type: 'finance',
+    tag: '🏦 政策利好',
+    title: '央行3000亿逆回购 精准护航A股开盘',
+    content: '<p>央行宣布5月6日开展3000亿元买断式逆回购操作，期限91天，直接对冲节后企业缴税压力。</p><p><strong>政策解读：</strong></p><ul style="color:#b8c9dc;font-size:14px;line-height:2;margin-left:16px;"><li>• 精准卡点开盘日，注入"活水"</li><li>• 横跨二季度，锁定中期流动性</li><li>• 叠加降准释放约1万亿资金</li></ul>',
+    highlight: '💡 政策底稳固，流动性宽松格局明确'
+  },
+  {
+    type: 'finance',
+    tag: '🤖 AI观察',
+    title: '豆包推出付费版本 AI分层收费时代来临',
+    content: '<p>豆包App Store页面显示付费版本服务声明，正式进入AI"分层收费"时代。</p><p><strong>定价体系：</strong></p><ul style="color:#b8c9dc;font-size:14px;line-height:2;margin-left:16px;"><li>• 标准版：68元/月（688元/年）</li><li>• 加强版：200元/月（2048元/年）</li><li>• 专业版：500元/月（5088元/年）</li></ul><p><strong>定位：</strong>付费功能专注复杂任务和生产力场景，免费版继续面向日常使用。</p>',
+    highlight: '🎯 AI商业化加速，从"免费大战"转向"价值分层"'
+  },
+  {
+    type: 'politics',
+    tag: '🌍 国际热点',
+    title: '美伊霍尔木兹对峙 双方强硬表态',
+    content: '<p>霍尔木兹海峡局势持续升温：</p><p>• <strong>伊朗：</strong>向美舰实施警告射击，公布海峡新管控区域，革命卫队将强制拦截"违规船只"</p><p>• <strong>美国：</strong>宣布启动"自由计划"疏导行动，特朗普警告伊朗"将被从地球表面炸飞"</p><p>• <strong>阿联酋：</strong>遭伊朗无人机袭击，紧急发布导弹预警</p>',
+    highlight: '⚠️ 霍尔木兹海峡海上安全威胁等级升至"极高"'
+  },
+  {
+    type: 'politics',
+    tag: '🇷🇺 俄乌局势',
+    title: '普京宣布胜利日停火 乌方回应',
+    content: '<p>俄罗斯总统普京宣布，为纪念卫国战争胜利，5月8日至9日实施胜利日停火，希望乌克兰方面效仿。</p><p>乌克兰总统泽连斯基回应：乌方尚未收到正式停火呼吁，但决定自6日零时起单方面实施停火。</p><p><strong>国际斡旋：</strong>巴基斯坦推动美伊对话，伊朗外长呼吁美方保持警醒，避免被"不怀好意者"拖入冲突。</p>',
+    highlight: '🕊️ 俄乌冲突出现降温迹象，地缘风险有所缓解'
+  },
+  {
+    type: 'law',
+    tag: '⚖️ 司法解释',
+    title: '最高法发布知识产权惩罚性赔偿新解释',
+    content: '<p>最高人民法院发布《关于审理侵害知识产权民事纠纷案件适用惩罚性赔偿的解释》（法释〔2026〕7号），5月1日起施行。</p><p><strong>核心要点：</strong></p><ul style="color:#b8c9dc;font-size:14px;line-height:2;margin-left:16px;"><li>• 明确"故意侵权+情节严重"双要件</li><li>• 细化侵权故意的8种认定情形</li><li>• 赔偿倍数最高5倍，可非整数</li><li>• 引入行业协会利润率参考</li></ul>',
+    highlight: '📌 强化知识产权保护，严惩恶意侵权行为'
+  },
+  {
+    type: 'law',
+    tag: '⚖️ 司法解释',
+    title: '最高法发布矿产资源纠纷司法解释',
+    content: '<p>最高人民法院发布《关于审理矿产资源纠纷案件适用法律若干问题的解释》，2月1日起施行，《矿业权解释》同时废止。</p><p><strong>主要内容：</strong></p><ul style="color:#b8c9dc;font-size:14px;line-height:2;margin-left:16px;"><li>• 明确矿业权出让合同生效和解除</li><li>• 规范矿业权流转（转让、出资、抵押）</li><li>• 规定压覆矿产资源的补偿范围</li><li>• 强化矿业权人权益保护</li></ul>',
+    highlight: '📌 服务矿业高质量发展，保障国家矿产资源安全'
+  },
+  {
+    type: 'law',
+    tag: '📋 典型案例',
+    title: '"订婚强奸案"被告刑满出狱',
+    content: '<p>山西大同"订婚强奸案"涉案男子席某因强奸罪被判3年，5月4日刑满出狱。</p><p><strong>案件警示：</strong></p><ul style="color:#b8c9dc;font-size:14px;line-height:2;margin-left:16px;"><li>• 订婚关系不等于性同意</li><li>• 是否构成强奸，核心是"违背妇女意志"</li><li>• 处女膜状态与强奸认定无必然联系</li><li>• 精神胁迫、反抗不能也构成犯罪</li></ul>',
+    highlight: '📌 该案入选"新时代推动法治进程2025年度十大案件"'
+  },
+  {
+    type: 'law',
+    tag: '⚖️ 行政诉讼',
+    title: '最高法发布行政诉讼起诉期限审查规则',
+    content: '<p>最高人民法院发布《关于适用行政诉讼起诉期限若干问题的解释》（法释〔2026〕3号），配套发布4个典型案例。</p><p><strong>裁判规则：</strong></p><ul style="color:#b8c9dc;font-size:14px;line-height:2;margin-left:16px;"><li>• 强制拆除主体不明时，起算点从"知道主体"起算</li><li>• 行政行为未外化（未送达），不起算起诉期限</li><li>• 信访维权不属于扣除法定事由</li><li>• 最长不得超过1年期限的起算条件</li></ul>',
+    highlight: '📌 保障当事人依法及时行使诉权，统一裁判标准'
+  }
+];
+
+let currentPage = 0;
+const content = document.getElementById('content');
+const indicator = document.getElementById('pageIndicator');
+
+function renderPage() {
+  const p = pages[currentPage];
+  let tagClass = 'tag-finance';
+  if (p.type === 'politics') tagClass = 'tag-politics';
+  if (p.type === 'law') tagClass = 'tag-law';
+  
+  content.innerHTML = `
+    <div class="page active">
+      <span class="category-tag ${tagClass}">${p.tag}</span>
+      <h2 class="news-title">${p.title}</h2>
+      <div class="news-content">${p.content}</div>
+      <div class="highlight-box"><p>${p.highlight}</p></div>
+    </div>
+  `;
+  
+  indicator.innerHTML = pages.map((_, i) => 
+    `<span class="dot ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})"></span>`
+  ).join('');
+  
+  document.querySelector('.prev-btn').style.opacity = currentPage === 0 ? '0.4' : '1';
+  document.querySelector('.next-btn').style.opacity = currentPage === pages.length - 1 ? '0.4' : '1';
+}
+
+function nextPage() {
+  if (currentPage < pages.length - 1) {
+    currentPage++;
+    renderPage();
+  }
+}
+
+function prevPage() {
+  if (currentPage > 0) {
+    currentPage--;
+    renderPage();
+  }
+}
+
+function goToPage(idx) {
+  currentPage = idx;
+  renderPage();
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') nextPage();
+  if (e.key === 'ArrowLeft') prevPage();
+});
+
+renderPage();
+</script>
+</body>
+</html>
