@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小太阳财经政法早报 | 2026年5月6日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 10px rgba(79, 172, 254, 0.5);
+        }
+        .header .date {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+        .card-container {
+            width: 100%;
+            max-width: 480px;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .card {
+            display: none;
+            padding: 24px;
+            min-height: 400px;
+        }
+        .card.active { display: block; }
+        .card-category {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .category-finance { background: #e3f2fd; color: #1565c0; }
+        .category-politics { background: #fce4ec; color: #c62828; }
+        .category-law { background: #e8f5e9; color: #2e7d32; }
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a2e;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .card-content {
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .card-source {
+            font-size: 12px;
+            color: #718096;
+            margin-top: auto;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            background: #f7fafc;
+            gap: 8px;
+        }
+        .pagination button {
+            width: 36px;
+            height: 36px;
+            border: none;
+            border-radius: 50%;
+            background: #4299e1;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .pagination button:hover { background: #2b6cb0; }
+        .pagination button:disabled { background: #cbd5e0; cursor: not-allowed; }
+        .page-info {
+            font-size: 14px;
+            color: #4a5568;
+            min-width: 60px;
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 12px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>☀️ 小太阳财经政法早报</h1>
+        <div class="date">2026年5月6日 星期三 | 第12期</div>
+    </div>
+    
+    <div class="card-container">
+        <!-- 财经1 -->
+        <div class="card active" data-index="0">
+            <span class="card-category category-finance">💹 财经</span>
+            <h3 class="card-title">美股全线收涨 纳指与标普500再创历史新高</h3>
+            <p class="card-content">北京时间5月6日凌晨，美国股市全线走高，三大指数集体收涨。英特尔大涨12.95%，多家机构上调其目标价，AI相关业务占总营收六成。美光收高11.10%创历史新高，市值突破7000亿美元。纳斯达克中国金龙指数收高0.12%。</p>
+            <p class="card-source">📊 新浪财经</p>
+        </div>
+        
+        <!-- 财经2 -->
+        <div class="card" data-index="1">
+            <span class="card-category category-finance">🛢️ 能源</span>
+            <h3 class="card-title">美伊停火协议维持 油价应声下跌</h3>
+            <p class="card-content">美国国防部长称美伊停火协议仍有效，缓解市场对冲突升级担忧。原油期货收于每桶102.27美元，跌幅3.90%。布伦特原油跌4%，收于每桶110美元下方。高盛警告全球石油库存下降速度和分布不均，局部短缺风险较高。</p>
+            <p class="card-source">📊 新华财经</p>
+        </div>
+        
+        <!-- 财经3 -->
+        <div class="card" data-index="2">
+            <span class="card-category category-finance">🏦 金融</span>
+            <h3 class="card-title">央行开展3000亿买断式逆回购 保持流动性充裕</h3>
+            <p class="card-content">5月6日，中国人民银行以固定数量、利率招标、多重价位中标方式开展3000亿元买断式逆回购操作，期限3个月(91天)，到期日8月5日。此举旨在保持银行体系流动性充裕，支持金融市场稳定运行。</p>
+            <p class="card-source">📊 新华财经</p>
+        </div>
+        
+        <!-- 财经4 -->
+        <div class="card" data-index="3">
+            <span class="card-category category-finance">🚗 车企</span>
+            <h3 class="card-title">多家车企4月销量出炉 零跑、极氪创历史新高</h3>
+            <p class="card-content">比亚迪4月销量32.11万辆；零跑汽车全系交付71387辆，同比增长73.9%，创单月交付纪录；极氪4月交付31787辆，同比增长132%创历史新高。北汽蓝谷4月销量17658辆，同比增长70.99%。</p>
+            <p class="card-source">📊 证券时报</p>
+        </div>
+        
+        <!-- 财经5 -->
+        <div class="card" data-index="4">
+            <span class="card-category category-finance">💰 大单</span>
+            <h3 class="card-title">东阳光签署160-190亿元算力服务大单</h3>
+            <p class="card-content">东阳光控股子公司东莞东阳光云智算科技有限公司与某企业签署《算力服务采购框架合同》，合同预计总金额160亿元至190亿元(含税)，合同期限60个月。涉及高性能算力服务器采购与部署。</p>
+            <p class="card-source">📊 新华财经</p>
+        </div>
+        
+        <!-- 财经6 -->
+        <div class="card" data-index="5">
+            <span class="card-category category-finance">🌏 环球</span>
+            <h3 class="card-title">澳大利亚央行年内第三次加息 基准利率升至4.35%</h3>
+            <p class="card-content">澳大利亚储备银行5日宣布加息25个基点至4.35%，这是继今年2月和3月分别加息25个基点后年内第三次加息。显示全球通胀压力仍存，各国央行货币政策分化。</p>
+            <p class="card-source">📊 新华财经</p>
+        </div>
+        
+        <!-- 财经7 -->
+        <div class="card" data-index="6">
+            <span class="card-category category-finance">🚄 出行</span>
+            <h3 class="card-title">五一假期铁路累计发送旅客突破1.17亿人次</h3>
+            <p class="card-content">5月4日全国铁路发送旅客2038.3万人次，4月29日以来累计发送旅客1.17亿人次，运输安全平稳有序。5月5日返程客流继续攀升，预计发送旅客2300万人次，计划加开旅客列车2225列。</p>
+            <p class="card-source">📊 新华社</p>
+        </div>
+        
+        <!-- 政闻1 -->
+        <div class="card" data-index="7">
+            <span class="card-category category-politics">🤝 外交</span>
+            <h3 class="card-title">中美经贸高层视频通话 推动双边关系健康发展</h3>
+            <p class="card-content">4月30日晚，中美经贸中方牵头人何立峰与美方财政部长贝森特、贸易代表格里尔举行视频通话。双方围绕落实两国元首共识，就经贸问题和务实合作进行坦诚交流，中方对美对华经贸限制措施表达关切。</p>
+            <p class="card-source">📰 央视新闻</p>
+        </div>
+        
+        <!-- 政闻2 -->
+        <div class="card" data-index="8">
+            <span class="card-category category-politics">🌊 中东</span>
+            <h3 class="card-title">伊朗启动霍尔木兹海峡通行管理新机制</h3>
+            <p class="card-content">伊朗已启动新的海上通行管理机制，对霍尔木兹海峡过往船只实施统一管理。船只需通过官方邮箱接收通行规则并获得通行许可。特朗普发文称"自由计划"将在短期内暂停。</p>
+            <p class="card-source">📰 新华社</p>
+        </div>
+        
+        <!-- 政闻3 -->
+        <div class="card" data-index="9">
+            <span class="card-category category-politics">⚔️ 军事</span>
+            <h3 class="card-title">美国务卿确认对伊朗"史诗怒火"军事行动已结束</h3>
+            <p class="card-content">美国国务卿鲁比奥表示，美国今年2月底对伊朗发动的"史诗怒火"军事行动已结束，"已完成这一阶段任务"。但美伊在地区影响力、核问题等方面的长期矛盾不会消除，未来不排除其他冲突再现。</p>
+            <p class="card-source">📰 新华社</p>
+        </div>
+        
+        <!-- 法制1 -->
+        <div class="card" data-index="10">
+            <span class="card-category category-law">⚖️ 法治</span>
+            <h3 class="card-title">商务部发布阻断禁令 维护中企合法权益</h3>
+            <p class="card-content">商务部发布2026年第21号公告，针对美国对5家中国企业实施涉伊朗石油制裁措施，依据《阻断办法》发布禁令，要求不得承认、执行、遵守美国制裁措施。这是中国涉外法律斗争的重要"中国方案"。</p>
+            <p class="card-source">⚖️ 中国新闻网</p>
+        </div>
+        
+        <!-- 法制2 -->
+        <div class="card" data-index="11">
+            <span class="card-category category-law">📋 新规</span>
+            <h3 class="card-title">5月新规：《渔业法》《药品管理法实施条例》等施行</h3>
+            <p class="card-content">新修订的《渔业法》5月1日起施行，严禁使用国家禁止的饵料药物；新修订《药品管理法实施条例》鼓励药品创新，对儿童药品、罕见病药品给予市场独占期。《通信短信息服务管理规定》加强垃圾短信治理。</p>
+            <p class="card-source">⚖️ 人民网</p>
+        </div>
+        
+        <!-- 法制3 -->
+        <div class="card" data-index="12">
+            <span class="card-category category-law">📋 新规</span>
+            <h3 class="card-title">首部《商事调解条例》施行 商事调解进入法治化</h3>
+            <p class="card-content">《商事调解条例》5月1日起施行，这是我国首部系统性规范商事调解的行政法规。确立调解组织设立标准、调解协议司法确认程序等制度，为职业化发展提供法治保障。</p>
+            <p class="card-source">⚖️ 界面新闻</p>
+        </div>
+        
+        <!-- 法制4 -->
+        <div class="card" data-index="13">
+            <span class="card-category category-law">📋 新规</span>
+            <h3 class="card-title">无人机两项强制性国标实施 须完成实名登记</h3>
+            <p class="card-content">《民用无人驾驶航空器实名登记和激活要求》和《民用无人驾驶航空器系统运行识别规范》两项强制性国家标准5月1日起实施。所有民用无人机须完成实名登记，飞行全程需报送身份、位置等信息。</p>
+            <p class="card-source">⚖️ 新华网</p>
+        </div>
+        
+        <!-- 法制5 -->
+        <div class="card" data-index="14">
+            <span class="card-category category-law">📋 新规</span>
+            <h3 class="card-title">殡葬领域明码标价规定5月31日起试行</h3>
+            <p class="card-content">国家市场监管总局、民政部联合印发《殡葬领域明码标价规定(试行)》，明确殡仪馆、公墓、骨灰堂、殡葬中介等经营者须全面、完整、清晰标示价格信息，不得将自身服务与代办服务混淆标示。</p>
+            <p class="card-source">⚖️ 新华网</p>
+        </div>
+        
+        <!-- 分隔页 -->
+        <div class="card" data-index="15">
+            <span class="card-category category-law">📋 法制专题</span>
+            <h3 class="card-title">贪腐犯罪量刑标准统一 营商环境更平等</h3>
+            <p class="card-content">最高法、最高检联合发布《关于办理贪污贿赂刑事案件适用法律若干问题的解释(二)》，5月1日起施行。明确非国家工作人员受贿罪、职务侵占罪等定罪量刑标准分别参照受贿罪、贪污罪执行，落实对不同所有制企业依法平等保护。</p>
+            <p class="card-source">⚖️ 最高法官网</p>
+        </div>
+        
+        <div class="pagination">
+            <button onclick="prevCard()" id="prevBtn">‹</button>
+            <span class="page-info"><span id="currentPage">1</span> / <span id="totalPages">16</span></span>
+            <button onclick="nextCard()" id="nextBtn">›</button>
+        </div>
+    </div>
+    
+    <div class="footer">
+        每天早上08:30准时推送 | 小太阳财经政法早报
+    </div>
+    
+    <script>
+        let currentIndex = 0;
+        const cards = document.querySelectorAll('.card');
+        const totalPages = cards.length;
+        
+        document.getElementById('totalPages').textContent = totalPages;
+        
+        function showCard(index) {
+            cards.forEach(card => card.classList.remove('active'));
+            cards[index].classList.add('active');
+            document.getElementById('currentPage').textContent = index + 1;
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === totalPages - 1;
+        }
+        
+        function nextCard() {
+            if (currentIndex < totalPages - 1) {
+                currentIndex++;
+                showCard(currentIndex);
+            }
+        }
+        
+        function prevCard() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showCard(currentIndex);
+            }
+        }
+        
+        // 键盘支持
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextCard();
+            if (e.key === 'ArrowLeft') prevCard();
+        });
+        
+        showCard(0);
+    </script>
+</body>
+</html>
