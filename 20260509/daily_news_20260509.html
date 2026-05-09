@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小太阳财经政法早报 | 2026年5月9日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a365d 50%, #0d2137 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+        .header {
+            text-align: center;
+            padding: 30px 0 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 50%, #f0f9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        .header .date {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+        .card {
+            background: linear-gradient(145deg, rgba(30,58,95,0.6) 0%, rgba(15,32,56,0.8) 100%);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(96,165,250,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        .card.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .category {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+        .category.财经 { background: linear-gradient(135deg, #059669, #10b981); }
+        .category.政闻 { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .category.法制 { background: linear-gradient(135deg, #7c3aed, #a78bfa); }
+        .category-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .card-content {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+        .card-content p { margin-bottom: 10px; }
+        .card-content .highlight {
+            color: #93c5fd;
+            font-weight: 500;
+        }
+        .tag {
+            display: inline-block;
+            background: rgba(96,165,250,0.15);
+            color: #93c5fd;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            margin-right: 6px;
+            margin-top: 8px;
+        }
+        .navigation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10,22,40,0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-btn {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover { transform: scale(1.05); }
+        .nav-btn:disabled {
+            background: #475569;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .progress {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+        .footer {
+            text-align: center;
+            padding: 60px 0 20px;
+            color: #64748b;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>小太阳财经政法早报</h1>
+            <div class="date">2026年5月9日 星期六 · 第1期</div>
+        </div>
+
+        <div class="card active" data-index="0">
+            <span class="category 政闻">政闻要闻</span>
+            <div class="category-title">俄乌同意9日起停火三天，互换1000名战俘</div>
+            <div class="card-content">
+                <p>俄罗斯总统助理乌沙科夫8日晚表示，俄方同意并支持美国总统特朗普提出的延长停火和俄乌交换被俘人员的方案。</p>
+                <p>泽连斯基下令，<span class="highlight">莫斯科红场9日举行的阅兵活动不会成为乌方攻击目标</span>。俄乌将在5月9日至11日停火三天，期间相互交换1000名战俘。</p>
+                <span class="tag">国际关系</span><span class="tag">地缘政治</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="1">
+            <span class="category 政闻">政闻要闻</span>
+            <div class="category-title">塔吉克斯坦总统拉赫蒙将访华</div>
+            <div class="card-content">
+                <p>应国家主席习近平邀请，塔吉克斯坦总统埃莫马利·拉赫蒙将于<span class="highlight">5月11日至14日对中国进行国事访问</span>。</p>
+                <p>这是今年中塔关系的重要高层交往，将进一步深化两国在"一带一路"框架下的合作。</p>
+                <span class="tag">外交</span><span class="tag">一带一路</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="2">
+            <span class="category 政闻">政闻要闻</span>
+            <div class="category-title">美伊在霍尔木兹海峡发生军事冲突</div>
+            <div class="card-content">
+                <p>美军中央司令部8日发布消息，美军当天在阿曼湾向两艘"违反美国封锁令"的伊朗油轮发射精确制导弹药，使其丧失航行能力。</p>
+                <p>伊朗外长表示，伊朗导弹库存及发射能力较2月28日<span class="highlight">提升20%</span>。伊朗正在制定霍尔木兹海峡相关法律草案。</p>
+                <span class="tag">中东局势</span><span class="tag">能源</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="3">
+            <span class="category 财经">财经要闻</span>
+            <div class="category-title">DeepSeek计划融资500亿元，估值或破3500亿</div>
+            <div class="card-content">
+                <p>据报道，DeepSeek正在寻求在其首轮融资中募集最多<span class="highlight">500亿元</span>，有望创下中国人工智能公司单轮融资的最高纪录。</p>
+                <p>DeepSeek创始人梁文锋计划个人最高出资200亿元。包含募资额在内，DeepSeek整体估值或将突破3500亿元。另有消息称DeepSeek计划在6月推出V4.1模型。</p>
+                <span class="tag">AI</span><span class="tag">融资</span><span class="tag">科技</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="4">
+            <span class="category 财经">财经要闻</span>
+            <div class="category-title">证监会严打财务造假，两公司合计被罚4.63亿</div>
+            <div class="card-content">
+                <p>证监会严肃查处清越科技、元道通信<span class="highlight">欺诈发行、财务造假</span>案件，拟对两家公司及相关责任人合计罚款4.63亿元。</p>
+                <p>因涉嫌触及重大违法强制退市情形，沪深交易所将依法启动退市程序。广发证券、立信会计师事务所将对受损投资者先行赔付。</p>
+                <span class="tag">监管</span><span class="tag">退市</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="5">
+            <span class="category 财经">财经要闻</span>
+            <div class="category-title">国内油价上调，年内第七次涨价</div>
+            <div class="card-content">
+                <p>自5月8日24时起，国内汽、柴油价格每吨分别上调320元、310元。</p>
+                <p>以50L油箱的私家车计算，加满一箱油将多花约<span class="highlight">12元</span>。92号、95号汽油每升分别上涨0.25元、0.27元。</p>
+                <span class="tag">油价</span><span class="tag">民生</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="6">
+            <span class="category 财经">财经要闻</span>
+            <div class="category-title">苹果与英特尔达成芯片代工协议</div>
+            <div class="card-content">
+                <p>知情人士透露，苹果公司已与英特尔达成初步协议，未来将由英特尔为苹果设备生产部分芯片。</p>
+                <p>受此消息提振，<span class="highlight">英特尔股价大涨超14%</span>。报道称特朗普政府居中撮合此次合作。</p>
+                <span class="tag">科技</span><span class="tag">芯片</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="7">
+            <span class="category 财经">财经要闻</span>
+            <div class="category-title">美光飙升15.5%，市值突破8000亿美元</div>
+            <div class="card-content">
+                <p>美股芯片股表现强劲，美光单周飙升38%，市值突破<span class="highlight">8400亿美元</span>，内存芯片热潮进入"抛物线"式上涨。</p>
+                <p>芯片指数本周累涨5.5%，与标普500、纳指均创收盘历史新高。AMD财报周累计大涨26%。</p>
+                <span class="tag">美股</span><span class="tag">半导体</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="8">
+            <span class="category 法制">法制动态</span>
+            <div class="category-title">司法部全面推行"扫码入企"工作</div>
+            <div class="card-content">
+                <p>司法部印发《关于全面推行"扫码入企"工作 进一步规范涉企行政检查的通知》，对"扫码入企"基本环节、基本要素进行统一规范。</p>
+                <p>"执法码"涵盖检查主体、人员、数量、事项、时间地点、结果等内容，<span class="highlight">行政检查必须"亮码"</span>，无"执法码"不得开展检查。</p>
+                <span class="tag">营商环境</span><span class="tag">依法行政</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="9">
+            <span class="category 法制">法制动态</span>
+            <div class="category-title">国务院成立调查组调查浏阳烟花爆炸事故</div>
+            <div class="card-content">
+                <p>国务院成立事故调查组，对湖南浏阳市华盛烟花制造燃放有限公司"<span class="highlight">5·4</span>"特别重大爆炸事故进行调查。</p>
+                <p>截至8日12时，事故造成37人死亡、1人失联，在医救治51人，现场搜救工作已基本结束。</p>
+                <span class="tag">安全生产</span><span class="tag">事故调查</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="10">
+            <span class="category 法制">法制动态</span>
+            <div class="category-title">第六个"民法典宣传月"全面启动</div>
+            <div class="card-content">
+                <p>2026年5月是第六个"民法典宣传月"，以<span class="highlight">"服务高质量发展"</span>为重点，组织开展民法典系列普法宣传。</p>
+                <p>宣传重点包括：习近平法治思想、"十五五"规划关于全面依法治国的部署、民法典与优化营商环境等相关的法律法规。</p>
+                <span class="tag">普法</span><span class="tag">民法典</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="11">
+            <span class="category 政闻">国际动态</span>
+            <div class="category-title">美国公布首批UFO相关政府文件</div>
+            <div class="card-content">
+                <p>美国国防部8日开始陆续公布首批<span class="highlight">160多份</span>与不明飞行物（UFO/UAP）相关的政府文件。</p>
+                <p>文件包括阿波罗任务飞船从月球上空拍到三个光点悬浮的照片，以及宇航员曾讨论漂浮靠近飞船的神秘物体。五角大楼表示公众可自行判断相关内容。</p>
+                <span class="tag">美国</span><span class="tag">国防</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="12">
+            <span class="category 政闻">国际动态</span>
+            <div class="category-title">日本政府债务超1343万亿日元，连续10年创新高</div>
+            <div class="card-content">
+                <p>日本财务省8日公布，截至2025财年末，包含国债和借款等在内的日本政府债务达到<span class="highlight">1343.8426万亿日元</span>。</p>
+                <p>这已是连续10年刷新历史最高纪录，引发市场对日本财政可持续性的担忧。</p>
+                <span class="tag">日本</span><span class="tag">债务</span>
+            </div>
+        </div>
+
+        <div class="card" data-index="13">
+            <span class="category 财经">科技前沿</span>
+            <div class="category-title">三部门联合印发智能体发展实施意见</div>
+            <div class="card-content">
+                <p>国家网信办、国家发改委、工信部联合印发《<span class="highlight">智能体规范应用与创新发展实施意见</span>》，提出四方面举措：</p>
+                <p>① 夯实发展基础，完善技术底座<br>② 守牢安全底线，防范安全风险<br>③ 强化应用牵引，提出19个典型应用场景<br>④ 建设创新生态，促进产业合作</p>
+                <span class="tag">AI</span><span class="tag">政策</span><span class="tag">智能体</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>— 小太阳财经政法早报 —</p>
+            <p>每天08:30准时送达</p>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="changeCard(-1)">◀ 上一条</button>
+        <span class="progress" id="progress">1 / 14</span>
+        <button class="nav-btn" id="nextBtn" onclick="changeCard(1)">下一条 ▶</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const cards = document.querySelectorAll('.card');
+        const total = cards.length;
+
+        function showCard(index) {
+            cards.forEach(card => card.classList.remove('active'));
+            cards[index].classList.add('active');
+            document.getElementById('progress').textContent = (index + 1) + ' / ' + total;
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === total - 1;
+        }
+
+        function changeCard(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex >= total) currentIndex = total - 1;
+            showCard(currentIndex);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') changeCard(-1);
+            if (e.key === 'ArrowRight') changeCard(1);
+        });
+
+        showCard(0);
+    </script>
+</body>
+</html>
