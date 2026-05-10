@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小太阳财经政法早报 | 2026年5月10日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #1a1a2e; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header h1 {
+  color: #ffd700;
+  font-size: 28px;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+.header .date {
+  color: #a0a0a0;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.header .mother {
+  color: #ff6b9d;
+  font-size: 16px;
+  margin-top: 10px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+.card-container {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(145deg, #16213e, #0f3460);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.card {
+  display: none;
+  padding: 25px;
+  min-height: 420px;
+  position: relative;
+}
+.card.active { display: block; }
+.card-num {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: rgba(255,255,255,0.3);
+  font-size: 48px;
+  font-weight: bold;
+}
+.card-tag {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+.tag-caijing { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; }
+.tag-zhengwen { background: linear-gradient(135deg, #f093fb, #f5576c); color: #fff; }
+.tag-fazhi { background: linear-gradient(135deg, #4facfe, #00f2fe); color: #fff; }
+.card-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.card-content {
+  color: #c0c0c0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.card-content strong { color: #ffd700; }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0,0,0,0.3);
+}
+.nav-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+.nav-btn:hover { transform: scale(1.05); }
+.nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.indicator {
+  display: flex;
+  gap: 8px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.dot.active { background: #ffd700; width: 20px; border-radius: 4px; }
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>☀️ 小太阳财经政法早报</h1>
+  <div class="date">2026年5月10日 星期日 | 第10期</div>
+  <div class="mother">🌸 母亲节快乐！愿天下所有妈妈幸福安康！</div>
+</div>
+
+<div class="card-container">
+  <!-- 第1页：财经 -->
+  <div class="card active" data-tag="caijing">
+    <div class="card-num">01</div>
+    <span class="card-tag tag-caijing">💹 财经</span>
+    <div class="card-title">国务院常务会议：研究推进地方政府债务风险化解</div>
+    <div class="card-content">
+      一揽子化债方案部署实施以来，债务风险化解取得明显成效。会议强调，要继续聚焦重点领域和薄弱环节，完善支持化债政策，增强地方自主偿债能力，确保如期完成化债任务，建立健全长效机制，坚决防范新增隐性债务。
+    </div>
+  </div>
+
+  <!-- 第2页：财经 -->
+  <div class="card" data-tag="caijing">
+    <div class="card-num">02</div>
+    <span class="card-tag tag-caijing">💹 财经</span>
+    <div class="card-title">前4月外贸两位数增长：进出口16.23万亿元</div>
+    <div class="card-content">
+      海关总署数据显示，1-4月我国货物贸易进出口总值<strong>16.23万亿元，同比增长14.9%</strong>。其中出口9.33万亿元，增长11.3%；进口6.90万亿元，增长20%。东盟、欧盟、美国为前三大贸易伙伴，"一带一路"国家合计进出口8.28万亿元，增长13.5%。
+    </div>
+  </div>
+
+  <!-- 第3页：财经 -->
+  <div class="card" data-tag="caijing">
+    <div class="card-num">03</div>
+    <span class="card-tag tag-caijing">💹 财经</span>
+    <div class="card-title">深圳再现"日光盘"：40分钟92套房源售罄</div>
+    <div class="card-content">
+      深圳福田区某楼盘开盘后仅40分钟，92套房源全部售罄。销售人员透露，外地购房者成主力军，"五一"期间来自北京、上海、杭州和香港的客户带动抢购热潮。受楼市新政提振，市场信心显著恢复。
+    </div>
+  </div>
+
+  <!-- 第4页：财经 -->
+  <div class="card" data-tag="caijing">
+    <div class="card-num">04</div>
+    <span class="card-tag tag-caijing">💹 财经</span>
+    <div class="card-title">DeepSeek融资500亿创纪录：估值或破3500亿</div>
+    <div class="card-content">
+      据报道，DeepSeek正在寻求首轮融资，募资规模最高达<strong>500亿元</strong>，若落地将创中国AI公司单轮融资最高纪录。本轮完成后整体估值或突破3500亿元，跻身全球AI独角兽第一梯队。创始人梁文锋计划个人出资200亿元，占本轮40%。
+    </div>
+  </div>
+
+  <!-- 第5页：财经 -->
+  <div class="card" data-tag="caijing">
+    <div class="card-num">05</div>
+    <span class="card-tag tag-caijing">💹 财经</span>
+    <div class="card-title">中欧班列破纪录！第13万列发车</div>
+    <div class="card-content">
+      5月9日，第13万列中欧班列X8037次由郑州圃田站发车开往德国汉堡，预计全程16天。前4月中欧班列通道网络持续拓宽，累计开行219列，同比增长55%。中欧班列已成为亚欧大陆重要的国际物流通道。
+    </div>
+  </div>
+
+  <!-- 第6页：财经 -->
+  <div class="card" data-tag="caijing">
+    <div class="card-num">06</div>
+    <span class="card-tag tag-caijing">💹 财经</span>
+    <div class="card-title">"本源悟空-180"上线：180比特超导量子计算机</div>
+    <div class="card-content">
+      我国第四代自主超导量子计算机<strong>"本源悟空-180"</strong>正式上线，搭载单核180个计算比特自主超导量子芯片。这标志着我国在量子计算领域自主化、实用化迈出关键一步，未来在材料模拟、药物设计、人工智能等领域潜力巨大。
+    </div>
+  </div>
+
+  <!-- 第7页：政闻 -->
+  <div class="card" data-tag="zhengwen">
+    <div class="card-num">07</div>
+    <span class="card-tag tag-zhengwen">🏛️ 政闻</span>
+    <div class="card-title">俄乌临时停火延长至5月11日</div>
+    <div class="card-content">
+      俄乌双方在美国斡旋下，同意将临时停火延长至5月11日。特朗普希望"大幅延长"，但俄方表示目前协议仅限三天。5月9日俄罗斯在莫斯科红场举行胜利日阅兵，纪念卫国战争胜利81周年，普京发表致辞强调坚决制止篡改历史图谋。
+    </div>
+  </div>
+
+  <!-- 第8页：政闻 -->
+  <div class="card" data-tag="zhengwen">
+    <div class="card-num">08</div>
+    <span class="card-tag tag-zhengwen">🏛️ 政闻</span>
+    <div class="card-title">中央生态环保督察：第三轮第六批全部进驻</div>
+    <div class="card-content">
+      第三轮第六批中央生态环保督察已全部实现进驻，将对辽宁、吉林、黑龙江、广东、广西、西藏、新疆7省（区）和新疆生产建设兵团开展督察。重点关注生态环境保护法律法规执行情况和突出问题整改情况。
+    </div>
+  </div>
+
+  <!-- 第9页：政闻 -->
+  <div class="card" data-tag="zhengwen">
+    <div class="card-num">09</div>
+    <span class="card-tag tag-zhengwen">🏛️ 政闻</span>
+    <div class="card-title">巴西对华免签5月11日生效</div>
+    <div class="card-content">
+      巴西政府宣布，自5月11日起对中国公民实施免签入境政策，停留期不超过30天。这是去年6月中国对巴西试行免签的对等举措。中巴两国在政治、经济、人文领域深化合作的强劲信号，跨洋交流将迎来新的春天。
+    </div>
+  </div>
+
+  <!-- 第10页：政闻 -->
+  <div class="card" data-tag="zhengwen">
+    <div class="card-num">10</div>
+    <span class="card-tag tag-zhengwen">🏛️ 政闻</span>
+    <div class="card-title">霍尔木兹海峡局势紧张：美军空袭伊朗油轮</div>
+    <div class="card-content">
+      5月8日，美军在霍尔木兹海峡空袭多艘伊朗油轮。受此影响，中国4月原油进口量同比下降约20%至3847万吨，创2022年7月以来新低。伊朗正制定霍尔木兹海峡相关法律草案，特朗普表示可能恢复"自由计划"行动。
+    </div>
+  </div>
+
+  <!-- 第11页：法制 -->
+  <div class="card" data-tag="fazhi">
+    <div class="card-num">11</div>
+    <span class="card-tag tag-fazhi">⚖️ 法制</span>
+    <div class="card-title">反腐新规5月1日施行：终身追责 民生领域从重</div>
+    <div class="card-content">
+      最高法、最高检发布《关于办理贪污贿赂刑事案件适用法律若干问题的解释(二)》，明确无论在职或退休，一旦查实贪污受贿均纳入终身追责。医疗、教育等民生领域从重处罚，非国家工作人员受贿入罪门槛从6万降至3万元，与公职人员标准一致。
+    </div>
+  </div>
+
+  <!-- 第12页：法制 -->
+  <div class="card" data-tag="fazhi">
+    <div class="card-num">12</div>
+    <span class="card-tag tag-fazhi">⚖️ 法制</span>
+    <div class="card-title">医生收红包回扣入刑：累计3万元以上追责</div>
+    <div class="card-content">
+      反腐新规明确，医务人员收受患者红包或药品器械供应商回扣，<strong>累计金额达到3万元以上</strong>，可追究非国家工作人员受贿罪刑事责任。个人向医务人员行贿金额达10万元以上，可认定为行贿罪。民生领域从重处罚，职业生涯当场改写。
+    </div>
+  </div>
+
+  <!-- 第13页：法制 -->
+  <div class="card" data-tag="fazhi">
+    <div class="card-num">13</div>
+    <span class="card-tag tag-fazhi">⚖️ 法制</span>
+    <div class="card-title">最高法行政诉讼起诉期限司法解释5月1日施行</div>
+    <div class="card-content">
+      《最高人民法院关于适用行政诉讼起诉期限若干问题的解释》共十一条，明确起诉期限与其他起诉条件衔接、特殊情况耽误期限不计算、复议后起诉期限为15日等内容，解决司法实践法律适用不统一问题。
+    </div>
+  </div>
+
+  <!-- 第14页：法制 -->
+  <div class="card" data-tag="fazhi">
+    <div class="card-num">14</div>
+    <span class="card-tag tag-fazhi">⚖️ 法制</span>
+    <div class="card-title">《商事调解条例》施行：首部专门立法填补空白</div>
+    <div class="card-content">
+      作为我国首部专门规范商事调解活动的行政法规，条例明确商事调解组织设立条件、调解活动基本规则、调解员资格与行为规范。调解协议具有合同效力，部分情形可申请司法确认，为企业提供诉讼仲裁外的新选择。
+    </div>
+  </div>
+
+  <!-- 第15页：法制 -->
+  <div class="card" data-tag="fazhi">
+    <div class="card-num">15</div>
+    <span class="card-tag tag-fazhi">⚖️ 法制</span>
+    <div class="card-title">知识产权惩罚性赔偿司法解释5月1日施行</div>
+    <div class="card-content">
+      《最高人民法院关于审理侵害知识产权民事纠纷案件适用惩罚性赔偿的解释》明确"恶意侵权、情节严重"认定标准、赔偿倍数适用范围及证据妨碍法律后果。显著降低权利人举证难度，企业一旦被认定故意侵权，将面临数倍惩罚性赔偿。
+    </div>
+  </div>
+
+  <!-- 导航 -->
+  <div class="nav">
+    <button class="nav-btn" id="prevBtn" onclick="changeCard(-1)">◀ 上一条</button>
+    <div class="indicator" id="indicator"></div>
+    <button class="nav-btn" id="nextBtn" onclick="changeCard(1)">下一条 ▶</button>
+  </div>
+</div>
+
+<div class="footer">
+  小太阳财经政法早报 · 每日08:30更新 · 收发室素材接收群
+</div>
+
+<script>
+let currentCard = 0;
+const cards = document.querySelectorAll('.card');
+const indicator = document.getElementById('indicator');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+// 创建指示器
+cards.forEach((_, i) => {
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goToCard(i);
+  indicator.appendChild(dot);
+});
+
+function updateCard() {
+  cards.forEach((card, i) => {
+    card.classList.toggle('active', i === currentCard);
+  });
+  document.querySelectorAll('.dot').forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentCard);
+  });
+  prevBtn.disabled = currentCard === 0;
+  nextBtn.disabled = currentCard === cards.length - 1;
+}
+
+function changeCard(dir) {
+  const newCard = currentCard + dir;
+  if (newCard >= 0 && newCard < cards.length) {
+    currentCard = newCard;
+    updateCard();
+  }
+}
+
+function goToCard(index) {
+  currentCard = index;
+  updateCard();
+}
+
+// 键盘控制
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') changeCard(-1);
+  if (e.key === 'ArrowRight') changeCard(1);
+});
+
+// 触摸滑动
+let touchStartX = 0;
+document.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+});
+document.addEventListener('touchend', (e) => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) changeCard(diff > 0 ? 1 : -1);
+});
+</script>
+</body>
+</html>
